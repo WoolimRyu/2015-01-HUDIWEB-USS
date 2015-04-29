@@ -696,7 +696,8 @@ li {
 }
 
 fieldset, pre {
-    border: 0;
+    border : 1;
+    border-color: #231f20;
     padding: 3% 5%;
     background: #ffc200;
 }
