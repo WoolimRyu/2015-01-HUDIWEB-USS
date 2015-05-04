@@ -56,6 +56,8 @@ app.controller('loginController', function ($scope, $req) {
     $scope.submit = function () {
         $req('/api/user/login', {user: JSON.stringify($scope.user)}, "POST").success(
             function (response) {
+            	if(response.error == 'success')
+            		location.href = "/";
                 alert(response.error);
             }
         )

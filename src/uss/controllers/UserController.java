@@ -72,9 +72,15 @@ public class UserController {
 			return gson.toJson(error);
 		}
 		request.getSession().setAttribute("user", fromDB);
-		response.sendRedirect("/");
-		error.put("error", "Success!!");
+		error.put("error", "success");
 		return gson.toJson(error);
+	}
+	
+	@RequestMapping(value="/logout")
+	public String logout(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		request.getSession().removeAttribute("user");
+		return "redirect:/";
 	}
 
 	@RequestMapping(method = RequestMethod.PUT)

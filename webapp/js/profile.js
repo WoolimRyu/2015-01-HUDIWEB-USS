@@ -45,6 +45,12 @@ app.factory('$req', function ($http) {
 
 app.controller('userController', function ($scope, $req, $routeParams, $timeout) {
     $scope.user = {};
+    
+    $scope.logout = function(){
+    	$req('/api/user/logout');
+    };
+    
+    
     $req('/api/user', {stringId: location.pathname.substring(1)}).success(
         function (response) {
             $scope.user = response;
