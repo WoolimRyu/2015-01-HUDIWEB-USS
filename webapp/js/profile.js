@@ -47,7 +47,8 @@ app.controller('userController', function ($scope, $req, $routeParams, $timeout)
     $scope.user = {};
     
     $scope.logout = function(){
-    	$req('/api/user/logout');
+    	$req('/api/user/logout', {});
+    	location.href = "/";
     };
     
     

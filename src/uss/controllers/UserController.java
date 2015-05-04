@@ -42,14 +42,19 @@ public class UserController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public void insert(HttpServletRequest request, HttpServletResponse response)
+	public String insert(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		String userString = ServletRequestUtils.getStringParameter(request,
 				"user");
 		Gson gson = new Gson();
 		User user = gson.fromJson(userString, User.class);
 		userDao.insert(user);
-		logger.debug("insert test result userId : {}", user.getStringId());
+
+		Map<String, String> error = new HashMap<String, String>();
+
+		request.getSession().setAttribute("user", user);
+		error.put("error", "success");
+		return gson.toJson(error);
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)

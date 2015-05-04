@@ -56,7 +56,7 @@ app.controller('userController', function ($scope, $req) {
     $scope.submit = function () {
         $req('/api/user', {user: JSON.stringify($scope.user)}, "POST").success(
             function (response) {
-            	if(response)
+            	if(response.error == 'success')
             		location.href="/";
                 alert("가입되었습니다.");
             }
