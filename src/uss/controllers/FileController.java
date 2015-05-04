@@ -38,6 +38,8 @@ public class FileController {
 	@ResponseBody
 	@RequestMapping(value = "/*", method = RequestMethod.GET)
 	public ModelAndView profile(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		
 		return new ModelAndView(new MyPlainHtmlView("profile.html"));
 	}
 
