@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 
 import uss.dao.UserDao;
+import uss.model.User;
 
 @RestController
 public class FileController { 
@@ -28,6 +29,16 @@ public class FileController {
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public ModelAndView index(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		return new ModelAndView(new MyPlainHtmlView("register.html"));
+	}
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public ModelAndView inde(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		Object o = request.getSession().getAttribute("user");
+		if(o == null)
+			return new ModelAndView(new MyPlainHtmlView("register.html"));
+		User user = (User) o;
+		response.sendRedirect("/"+user.getStringId());
+		return null;
 	}
 	
 	@ResponseBody

@@ -30,16 +30,22 @@ public class UserController {
 	private UserDao userDao;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public User find(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String stringId = ServletRequestUtils.getStringParameter(request, "stringId");
+	public User find(HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		String stringId = ServletRequestUtils.getStringParameter(request,
+				"stringId");
 		User user = userDao.find(stringId);
-		logger.debug("get test result userId : {} result: {}", stringId, user.toString());
+		if (user != null)
+			logger.debug("get test result userId : {} result: {}", stringId,
+					user.toString());
 		return user;
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public void insert(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String userString = ServletRequestUtils.getStringParameter(request, "user");
+	public void insert(HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		String userString = ServletRequestUtils.getStringParameter(request,
+				"user");
 		Gson gson = new Gson();
 		User user = gson.fromJson(userString, User.class);
 		userDao.insert(user);
@@ -47,8 +53,10 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String userString = ServletRequestUtils.getStringParameter(request, "user");
+	public String login(HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		String userString = ServletRequestUtils.getStringParameter(request,
+				"user");
 		Gson gson = new Gson();
 		User user = gson.fromJson(userString, User.class);
 		User fromDB = userDao.find(user.getStringId());
@@ -63,14 +71,18 @@ public class UserController {
 			error.put("error", "wrong password");
 			return gson.toJson(error);
 		}
+		request.getSession().setAttribute("user", fromDB);
+		response.sendRedirect("/");
 		error.put("error", "Success!!");
 		return gson.toJson(error);
 	}
 
 	@RequestMapping(method = RequestMethod.PUT)
-	public ModelAndView update(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public ModelAndView update(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView();
-		String userString = ServletRequestUtils.getStringParameter(request, "user");
+		String userString = ServletRequestUtils.getStringParameter(request,
+				"user");
 		Gson gson = new Gson();
 		User user = gson.fromJson(userString, User.class);
 		userDao.update(user);
