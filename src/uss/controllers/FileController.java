@@ -19,7 +19,7 @@ import org.springframework.web.servlet.View;
 import uss.dao.UserDao;
 
 @RestController
-public class FileController {
+public class FileController { 
 
 	@Autowired
 	private UserDao userDao;
