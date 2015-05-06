@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="css/CardListStyle.css">
+    <link rel="stylesheet" href="css/CardListLibrary.css">
+
+</head>
+
+<body>
+
+<html ng-app="ionicApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="https://code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+</head>
+
+<body ng-controller="MyCtrl">
+
+<ion-header-bar class="bar-positive">
+    <h1 class="title">카드 리스트</h1>
+</ion-header-bar>
+
+<ion-content>
+    <ion-list sortable draggable=".card" sorted="onReorder($fromIndex, $toIndex)">
+        <ion-item ng-repeat="contact in contacts" class="item-light item-avatar card item-complex">
+            <div class="item-content">
+                <img ng-src="{{contact.img}}" />
+                <div class="item-divider">{{contact.name}}</div>
+                <div class="item-text-wrap">
+                    <ul>
+                        <li>Job: {{contact.job}}</li>
+                        <li>Phone: {{contact.phone}}</li><!--
+                            <li>Mobile: {{contact.mobile}}</li>-->
+                        <!--<li>Email: {{contact.email}}</li>-->
+                    </ul>
+                </div>
+            </div>
+        </ion-item>
+    </ion-list>
+</ion-content>
+
+</body>
+</html>
+
+<script src="js/CardListScript.js"></script>
+
+</body>
+
+</html>
