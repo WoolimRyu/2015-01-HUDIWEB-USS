@@ -1,8 +1,5 @@
 package uss.controllers;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,10 +11,9 @@ import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
-
-import uss.dao.UserDao;
 import uss.model.User;
+import uss.model.response.Response;
+import uss.service.UserService;
 
 import com.google.gson.Gson;
 
@@ -27,78 +23,41 @@ public class UserController {
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
 	@Autowired
-	private UserDao userDao;
+	private UserService service;
 
-	@RequestMapping(method = RequestMethod.GET)
-	public User find(HttpServletRequest request, HttpServletResponse response)
-			throws Exception {
-		String stringId = ServletRequestUtils.getStringParameter(request,
-				"stringId");
-		User user = userDao.find(stringId);
-		if (user != null)
-			logger.debug("get test result userId : {} result: {}", stringId,
-					user.toString());
-		return user;
-	}
+	@Autowired
+	private Gson gson;
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String insert(HttpServletRequest request, HttpServletResponse response)
-			throws Exception {
-		String userString = ServletRequestUtils.getStringParameter(request,
-				"user");
-		Gson gson = new Gson();
-		User user = gson.fromJson(userString, User.class);
-		userDao.insert(user);
-
-		Map<String, String> error = new HashMap<String, String>();
-
-		request.getSession().setAttribute("user", user);
-		error.put("error", "success");
-		return gson.toJson(error);
+	public Response register(HttpServletRequest request) throws Exception {
+		User user = gson.fromJson(ServletRequestUtils.getStringParameter(request, "user"), User.class);
+		Response response = service.register(user);
+		if (!response.isError())
+			request.getSession().setAttribute("user", response.getResult());
+		return response;
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(HttpServletRequest request, HttpServletResponse response)
-			throws Exception {
-		String userString = ServletRequestUtils.getStringParameter(request,
-				"user");
-		Gson gson = new Gson();
-		User user = gson.fromJson(userString, User.class);
-		User fromDB = userDao.find(user.getStringId());
-
-		Map<String, String> error = new HashMap<String, String>();
-
-		if (fromDB == null) {
-			error.put("error", "not exist id");
-			return gson.toJson(error);
-		}
-		if (!fromDB.getPassword().equals(user.getPassword())) {
-			error.put("error", "wrong password");
-			return gson.toJson(error);
-		}
-		request.getSession().setAttribute("user", fromDB);
-		error.put("error", "success");
-		return gson.toJson(error);
+	public Response login(HttpServletRequest request) throws Exception {
+		User user = gson.fromJson(ServletRequestUtils.getStringParameter(request, "user"), User.class);
+		Response response = service.login(user);
+		if (!response.isError())
+			request.getSession().setAttribute("user", response.getResult());
+		return response;
 	}
-	
-	@RequestMapping(value="/logout")
-	public String logout(HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
+
+	@RequestMapping(value = "/logout")
+	public String logout(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.getSession().removeAttribute("user");
 		return "redirect:/";
 	}
 
 	@RequestMapping(method = RequestMethod.PUT)
-	public ModelAndView update(HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
-		ModelAndView mav = new ModelAndView();
-		String userString = ServletRequestUtils.getStringParameter(request,
-				"user");
-		Gson gson = new Gson();
-		User user = gson.fromJson(userString, User.class);
-		userDao.update(user);
+	public Response update(HttpServletRequest request) throws Exception {
+		User user = gson.fromJson(ServletRequestUtils.getStringParameter(request, "user"), User.class);
+		Response response = service.update(user, (User) request.getSession().getAttribute("user"));
 		logger.debug("update test result userId : {}", user.getStringId());
-		return mav;
+		return response;
 	}
 
 }
