@@ -1,0 +1,79 @@
+
+.search {
+/*  position: absolute;*/
+  /*top: 50%;
+  left: 50%;
+  */
+/*  margin-top: 30px;*/
+  width: 300px;
+  height: 80px;
+}
+
+svg {
+/*  position: absolute;*/
+position: relative;
+  transform: translateX(-246px);
+  width: 300px;
+  height: auto;
+  stroke-width: 8px;
+/*  stroke: #b3c33a;*/
+  stroke: black;
+  stroke-width: 1px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 64.6 206.305;
+  transition: all 0.5s ease-in-out;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.input-search {
+/*  position: absolute;*/
+position: relative;
+  width: calc(100% - 10px);
+  height: 64px;
+  top: -180px;
+  right: 20px;
+  bottom: 0;
+  left: 0;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.search-label {
+  position: relative;
+/*  position: absolute;*/
+  display: block;
+  width: 108px;
+  height: 108px;
+  top: -100px;
+/*  left: 50%;*/
+/*  margin-left: -54px;*/
+  z-index: 100;
+  transition: 0.5s ease-in-out;
+}
+
+.isActive .search-label {
+  transform: translateX(246px);
+}
+.isActive svg {
+  stroke-dashoffset: -65;
+  stroke-dasharray: 141.305 65;
+  transform: translateX(0);
+}
+.isActive.full svg {
+  stroke-dashoffset: -65;
+  stroke-dasharray: 141.305 65;
+  transform: translateX(0);
+}
+
+.full .search-label {
+  transform: translateX(246px);
+}
+.full svg {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 64.6 206.305;
+  transform: translateX(0);
+}
