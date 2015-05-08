@@ -6,98 +6,148 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
+  <link rel="stylesheet" href="css/searchsvg.css" media="screen" type="text/css"/>
 </head>
 
 <body>
 
-  <header class="header">
-    <div class="logo">
-      <a href=''><img src='image/create_thumb.png'><a>
-    </div>
+<header class="header">
+  <div class="logo">
+    <a href=''><img src='image/create_thumb.png'><a>
+  </div>
 
-    <a href="#" class="toggle_menu">
-      <i class="fa fa-navicon"></i>
-    </a>
+  <a href="#" class="toggle_menu">
+    <i class="fa fa-navicon"></i>
+  </a>
 
-    <nav class="menu">
-      <ul>
-        <li><a href="#" data-link="home">My Profile</a></li>
-        <li><a href="#" data-link="list">Card List</a></li>
-        <li><a href="#" data-link="bookmark">Bookmark</a></li>
-        <li><a href="#" data-link="search">Search People</a></li>
-        <li><a href="#" data-link="contact">Contact Us</a></li>
-        <li><a href="#" data-link="logout">Log Out</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="menu">
+    <ul>
+      <li><a href="#" data-link="home">My Profile</a></li>
+      <li><a href="#" data-link="list">Card List</a></li>
+      <li><a href="#" data-link="bookmark">Bookmark</a></li>
+      <li><a href="#" data-link="search">Search People</a></li>
+      <li><a href="#" data-link="contact">Contact Us</a></li>
+      <li><a href="#" data-link="logout">Log Out</a></li>
+    </ul>
+  </nav>
+</header>
 
 <section class="wrapper clearfix" data-section="home">
   Home contents...
 </section>
 
 <section class="wrapper clearfix" data-section="list">
-   Card list contents...
+  Card list contents...
 </section>
 
 <section class="wrapper clearfix" data-section="bookmark">
-  
-   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" viewBox="0 0 80 100" x="0px" y="0px">
-     <symbol id="star-black" viewBox="20 80 20 20">
-       <polygon fill="#4D4D4D" points="29.848,84.501 31.635,88.121 35.63,88.702 32.739,91.52 33.422,95.499 29.848,93.621  26.274,95.499 26.957,91.52 24.066,88.702 28.061,88.121 "/>
-     </symbol>
-   </svg>
-   <svg class="icon"><use xlink:href="#star-black" /></svg>
 
-   <div class="bookmarklet"><h2>BOOKMARK</h2></div>
+  <!-- 별표 svg !-->
+  <!--    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" viewBox="0 0 80 100" x="0px" y="0px">
+       <symbol id="star-black" viewBox="20 80 20 20">
+         <polygon fill="#4D4D4D" points="29.848,84.501 31.635,88.121 35.63,88.702 32.739,91.52 33.422,95.499 29.848,93.621  26.274,95.499 26.957,91.52 24.066,88.702 28.061,88.121 "/>
+       </symbol>
+     </svg>
+     <svg class="icon"><use xlink:href="#star-black" /></svg>
+   -->
+  <div class="bookmarklet">__________________   BOOKMARK</div>
+  <div class="searchBody"><div class="search">
+    <svg version="1.1" viewBox="0 0 142.358 24.582">
+      <path id="search-path" fill="none" d="M131.597,14.529c-1.487,1.487-3.542,2.407-5.811,2.407
+           c-4.539,0-8.218-3.679-8.218-8.218s3.679-8.218,8.218-8.218c4.539,0,8.218,3.679,8.218,8.218
+           C134.004,10.987,133.084,13.042,131.597,14.529c0,0,9.554,9.554,9.554,9.554H0"/>
+    </svg>
+    <label for="search" class="search-label"></label>
+    <input type="search" id="search" autocomplete="off" class="input-search"/>
+  </div> </div>
 
-   <ol class="rectangle-list">
-     <li><a href="">hulk</a></li>
-     <li><a href="">black widow</a></li>
-     <li><a href="">cAmerica</a></li>
-     <li><a href="">ironman</a></li>
-     <li><a href="">thor</a></li>     
-   </ol>
 
+  <div class="test">
+    <ol class="rectangle-list">
+      <li><a href=""><div class="userName">김둥둥</div>
+        <div class="userInfo">
+          <div class="userJob">구글사원</div><div class="userPhone">01011112324</div>
+        </div>
+      </a>
+      </li>
+      <li><a href=""><div class="userName">님둥둥</div>
+        <div class="userInfo">
+          <div class="userJob">구글사원</div><div class="userPhone">01011112324</div>
+        </div></a>
+      </li>
+      <li><a href=""><div class="userName">딤둥둥</div>
+        <div class="userInfo">
+          <div class="userJob">구글사원</div><div class="userPhone">01011112324</div>
+        </div></a>
+      </li>
+      <li><a href=""><div class="userName">림둥둥</div>
+        <div class="userInfo">
+          <div class="userJob">구글사원</div><div class="userPhone">01011112324</div>
+        </div></a>
+      </li>
+      <li><a href=""><div class="userName">밈둥둥</div>
+        <div class="userInfo">
+          <div class="userJob">구글사원</div><div class="userPhone">01011112324</div>
+        </div></a>
+      </li>
+      <li><a href=""><div class="userName">빔둥둥</div>
+        <div class="userInfo">
+          <div class="userJob">구글사원</div><div class="userPhone">01011112324</div>
+        </div></a>
+      </li>
+      <li><a href=""><div class="userName">심둥둥</div>
+        <div class="userInfo">
+          <div class="userJob">구글사원</div><div class="userPhone">01011112324</div>
+        </div></a>
+      </li>
+      <li><a href=""><div class="userName">임둥둥</div>
+        <div class="userInfo">
+          <div class="userJob">구글사원</div><div class="userPhone">01011112324</div>
+        </div></a>
+      </li>
+    </ol>
+    </test>
 </section>
 
 <section class="wrapper clearfix" data-section="search">
-   Search People contents...
+  Search People contents...
 </section>
 
 <section class="wrapper clearfix" data-section="contact">
-   <div class="inner">
-     <div class="inner_thumb">
-       <img src="https://unsplash.imgix.net/photo-1414541944151-2f3ec1cfd87d?fit=crop&fm=jpg&h=700&q=75&w=1050" class="media" alt=""/>
-     </div>
-     <div class="inner_text">
-       <form action="">
-         <label>
-           Name
-           <input type="text" placeholder="Your name" />
-         </label>
-         <label>
-           Email
-           <input type="email" placeholder="Your email" required />
-         </label>
-         <label>
-           Message
-           <textarea placeholder="Your message"></textarea>
-         </label>
+  <div class="inner">
+    <div class="inner_thumb">
+      <img src="https://unsplash.imgix.net/photo-1414541944151-2f3ec1cfd87d?fit=crop&fm=jpg&h=700&q=75&w=1050" class="media" alt=""/>
+    </div>
+    <div class="inner_text">
+      <form action="">
+        <label>
+          Name
+          <input type="text" placeholder="Your name" />
+        </label>
+        <label>
+          Email
+          <input type="email" placeholder="Your email" required />
+        </label>
+        <label>
+          Message
+          <textarea placeholder="Your message"></textarea>
+        </label>
 
-         <label>
-           <input type="submit" value="Send" />
-         </label>
-       </form>
-     </div>
-   </div>
+        <label>
+          <input type="submit" value="Send" />
+        </label>
+      </form>
+    </div>
+  </div>
 </section>
 
 <section class="wrapper clearfix" data-section="logout">
-   Log out
+  Log out
 </section>
 
-  <script src="js/index.js"></script>
-
+<script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+<script src="js/index.js"></script>
+<script src="js/searchsvg.js"></script>
 </body>
 
 </html>

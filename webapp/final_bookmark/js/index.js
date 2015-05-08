@@ -1,7 +1,7 @@
 var links = Array.prototype.slice.call(
-   document.querySelectorAll('[data-link]')),
+        document.querySelectorAll('[data-link]')),
     sections = Array.prototype.slice.call(
-  document.querySelectorAll('[data-section]'));
+        document.querySelectorAll('[data-section]'));
 
 var menu = d('.menu').querySelector('ul'),
     menuBtn = d('.toggle_menu');
@@ -16,7 +16,7 @@ function init(){
   // first time active home
   d('[data-section="home"]').classList.add('show-section');
   d('[data-link="home"]').classList.add('active');
-  
+
   try{
     // loader();
     navigation();
@@ -51,7 +51,7 @@ function removeLinks(_success){
   Array.prototype.forEach.call(links,function(o,i){
     o.classList.remove('active');});
   Array.prototype.forEach.call(sections,function(o,i){
-   o.classList.remove('show-section');
+    o.classList.remove('show-section');
   });
   if(_success()) return _success();
 }
