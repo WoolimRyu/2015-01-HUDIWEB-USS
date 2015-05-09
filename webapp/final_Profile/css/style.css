@@ -170,8 +170,8 @@ nav ul {
     max-height: 200px;
 }
 .inner .inner_thumb img{
-    width:100%;
-    display:block
+  width:100%;
+  display:block
 }
 .inner .inner_text {
     padding: 1em;
@@ -364,7 +364,7 @@ form input[type="submit"]:hover {
 @media (max-width: 550px) {
 
     form,form input,form label{
-        width:100%;
+      width:100%;
     }
     .lightModal .lightModal-inner {
         margin: 10% auto
@@ -402,141 +402,24 @@ form input[type="submit"]:hover {
 }
 
 
+/*
 
 
-ol {
-    counter-reset: li;
-    list-style: none;
-    font: 15px 'trebuchet MS', 'lucida sans';
-    /*padding: 0;*/
-    margin-bottom: 4em;
-    text-shadow: 0 1px 0 rgba(255,255,255,.5);
-}
 
-ol {
-    display: block;
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    -webkit-padding-start: 40px;
-}
 
-li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-}
 
-.rectangle-list a {
-    width: 400px;
-    position: relative;
-    display: block;
-    padding: .4em .4em .4em .8em;
-    margin: .5em 0 .5em 2.5em;
-    background: #ddd;
-    color: #444;
-    text-decoration: none;
-    -webkit-transition: all .3s ease-out;
-    -moz-transition: all .3s ease-out;
-    -ms-transition: all .3s ease-out;
-    -o-transition: all .3s ease-out;
-    transition: all .3s ease-out;
-}
-
-.rectangle-list a:before {
-    content: counter(li);
-    counter-increment: li;
+.videobg {
     position: absolute;
-    left: -2.5em;
+    left: 50%;
     top: 50%;
-    margin-top: -1em;
-    background: #fa8072;
-    height: 2em;
-    width: 2em;
-    line-height: 2em;
-    text-align: center;
-    font-weight: bold;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    height: auto;
+    width: auto;
+    min-height: 100%;
+    min-width: 100%;
+    opacity: .8;
+    z-index: 0;
 }
-
-.rectangle-list a:after {
-    position: absolute;
-    content: '';
-    border: .5em solid transparent;
-    left: -1em;
-    top: 50%;
-    margin-top: -.5em;
-    -webkit-transition: all .3s ease-out;
-    -moz-transition: all .3s ease-out;
-    -ms-transition: all .3s ease-out;
-    -o-transition: all .3s ease-out;
-    transition: all .3s ease-out;
-}
-
-.rectangle-list a:hover {
-    background: #eee;
-}
-
-.rectangle-list a:hover:after {
-    left: -.5em;
-    border-left-color: #fa8072;
-}
-
-.icon {
-    width: 80px;
-    height: 80px;
-    margin-left: 70px;
-    margin-top: 50px;
-}
-
-.bookmarklet {
-    margin-top: 30px;
-    margin-right: 70px;
-    margin-bottom: 40px;
-    /*    width: 100%;*/
-    /*    float: right;*/
-    text-align: right;
-    font-size: 60px;
-}
-
-.userName {
-    margin-top: 10px;
-    width: 80px;
-    height: 20px;
-    text-align: center;
-    float: left;
-    font-size:20px;
-}
-
-.userJob {
-    margin-bottom: 2px;
-}
-.userPhone {
-    margin-bottom: 2px;
-}
-.userInfo {
-    margin-left: 120px;
-    margin-top: 2px;
-    text-align: right;
-    margin-right: 10px;
-}
-
-.test{
-    margin-left: 500px;
-    overflow:scroll;
-    /*border : 1px solid black;*/
-    height: 460px;
-    margin-right: 30px;
-}
-
-.searchBody{
-    margin-left: 63%;
-}
-
-
-.profile {
-    position: absolute;
-    width: 400px;
-    border : 1px solid black;
-    margin-left: 58px;
-    height: 536px;
-}
+*/

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>USS-woolim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
+  <link rel="stylesheet" href="css/profile.css" media="screen" type="text/css"/>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <a href=''><img src='image/create_thumb.png'><a>
+    </div>
+
+    <a href="#" class="toggle_menu">
+      <i class="fa fa-navicon"></i>
+    </a>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="#" data-link="home">My Profile</a></li>
+        <li><a href="#" data-link="list">Card List</a></li>
+        <li><a href="#" data-link="bookmark">Bookmark</a></li>
+        <li><a href="#" data-link="search">Search People</a></li>
+        <li><a href="#" data-link="contact">Contact Us</a></li>
+        <li><a href="#" data-link="logout">Log Out</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<section class="wrapper clearfix" data-section="home">
+<!--   <div id="wrapper">
+    <video class="videobg"
+        src="https://www.youtube.com/watch?v=mI_SHuTntdc"
+        preload="auto" autoplay loop>
+      </video> -->
+  <div id="profileBody">
+    <div id="profileWrapper">
+       <h1><br>김둥둥님, 아직 프로필이 없으시군요. <br><br> 나만의 모바일 명함을 만들어보세요! <br><br><br></h1>
+       <div class="whitebox">
+         <div class="white">
+           <h2>명함 만들기</h2>
+         </div>
+       </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrapper clearfix" data-section="list">
+   Card list contents...
+</section>
+
+<section class="wrapper clearfix" data-section="bookmark">
+   bookmark contents...
+</section>
+
+<section class="wrapper clearfix" data-section="search">
+   Search People contents...
+</section>
+
+<section class="wrapper clearfix" data-section="contact">
+   <div class="inner">
+     <div class="inner_thumb">
+       <img src="https://unsplash.imgix.net/photo-1414541944151-2f3ec1cfd87d?fit=crop&fm=jpg&h=700&q=75&w=1050" class="media" alt=""/>
+     </div>
+     <div class="inner_text">
+       <form action="">
+         <label>
+           Name
+           <input type="text" placeholder="Your name" />
+         </label>
+         <label>
+           Email
+           <input type="email" placeholder="Your email" required />
+         </label>
+         <label>
+           Message
+           <textarea placeholder="Your message"></textarea>
+         </label>
+
+         <label>
+           <input type="submit" value="Send" />
+         </label>
+       </form>
+     </div>
+   </div>
+</section>
+
+<section class="wrapper clearfix" data-section="logout">
+   Log out
+</section>
+
+<script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+<script src="js/index.js"></script>
+  <script src="js/profile.js"></script>
+
+</body>
+
+</html>
