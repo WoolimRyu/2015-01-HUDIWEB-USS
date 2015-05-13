@@ -11,46 +11,49 @@
   <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
   <link rel="stylesheet" href="css/picker.css" media="screen" type="text/css"/>
   <link rel="stylesheet" href="css/input.css" media="screen" type="text/css"/>
+
+  <link rel="stylesheet" href="css/drag.css" media="screen" type="text/css"/>
+
   <link rel="stylesheet" href="css/templateList.css" media="screen" type="text/css"/>
 </head>
 
 <body>
 
-  <header class="header">
-    <div class="logo">
-      <a href=''><img src='image/create_thumb.png'><a>
-      </div>
+<header class="header">
+  <div class="logo">
+    <a href=''><img src='image/create_thumb.png'><a>
+  </div>
 
-      <a href="#" class="toggle_menu">
-        <i class="fa fa-navicon"></i>
-      </a>
+  <a href="#" class="toggle_menu">
+    <i class="fa fa-navicon"></i>
+  </a>
 
-      <nav class="menu">
-        <ul>
-          <li><a href="#" data-link="home">My Profile</a></li>
-          <li><a href="#" data-link="list">Card List</a></li>
-          <li><a href="#" data-link="bookmark">Bookmark</a></li>
-          <li><a href="#" data-link="search">Search People</a></li>
-          <li><a href="#" data-link="contact">Contact Us</a></li>
-          <li><a href="#" data-link="logout">Log Out</a></li>
-        </ul>
-      </nav>
-    </header>
+  <nav class="menu">
+    <ul>
+      <li><a href="#" data-link="home">My Profile</a></li>
+      <li><a href="#" data-link="list">Card List</a></li>
+      <li><a href="#" data-link="bookmark">Bookmark</a></li>
+      <li><a href="#" data-link="search">Search People</a></li>
+      <li><a href="#" data-link="contact">Contact Us</a></li>
+      <li><a href="#" data-link="logout">Log Out</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <section class="wrapper clearfix" data-section="home">
-      <div class="templateList1">
-        <div class="templateListTitle">
-          프로필 컨텐츠를 완성해주세요!<br>
-        </div>
-        <div class="templateListSubTitle">
-          1. 프로필에 회원님의 정보를 입력해주세요. <br> 2. 프로필에 추가하고 싶은 SNS 바로가기 아이콘을 선택 및 배치해주세요.
-        </div>
-      </div>
+<section class="wrapper clearfix" data-section="home">
+  <div class="templateList1">
+    <div class="templateListTitle">
+      프로필 컨텐츠를 완성해주세요!<br>
+    </div>
+    <div class="templateListSubTitle">
+      1. 프로필에 회원님의 정보를 입력해주세요. <br> 2. 프로필에 추가하고 싶은 SNS 바로가기 아이콘을 선택 및 배치해주세요.
+    </div>
+  </div>
 
-      <div class="templateList2">
-        <div class="middle_1"> 
-          <h1>Information</h1>
-          <div class="container">
+  <div class="templateList2">
+    <div class="middle_1">
+      <h1>Information</h1>
+      <div class="container">
             <span class="input input--name">
               <input class="input__field" type="text" id="name" />
               <label class="input__label" for="name">
@@ -60,8 +63,8 @@
                 <span class="input__focuslabel-content" aria-hidden="true">Name</span>
               </span>
             </span>
-          </div>
-          <div class="container">
+      </div>
+      <div class="container">
             <span class="input input--location">
               <input class="input__field" type="text" id="location" />
               <label class="input__label" for="location">
@@ -71,8 +74,8 @@
                 <span class="input__focuslabel-content" aria-hidden="true">Company / Job</span>
               </span>
             </span>
-          </div>
-          <div class="container">
+      </div>
+      <div class="container">
             <span class="input input--phone">
               <input class="input__field" type="text" id="phone" />
               <label class="input__label" for="phone">
@@ -82,8 +85,8 @@
                 <span class="input__focuslabel-content" aria-hidden="true">Phone Number</span>
               </span>
             </span>
-          </div>
-          <div class="container">
+      </div>
+      <div class="container">
             <span class="input input--email">
               <input class="input__field" type="text" id="email" />
               <label class="input__label" for="email">
@@ -93,77 +96,99 @@
                 <span class="input__focuslabel-content" aria-hidden="true">Email</span>
               </span>
             </span>
+      </div>
+    </div>
+    <div class="middle_2">
+      <div class="drag-list">
+        <div draggable="true" class="drag-item">
+          <div class="wrapper">
+            <ul class="social-icons icon-circle list-unstyled list-inline">
+              <li> <a href="#"><i class="fa fa-facebook"></i></a></li>
+            </ul>
           </div>
         </div>
-        <div class="middle_2"> </div>
-      </div>
 
-      <div class="templateList3">
-        <div class="wrapperB">
-          <a class="button" href="#" role="button">
-            <span> 프&nbsp; 로&nbsp; 필&nbsp; 완&nbsp; 성</span>
-            <div class="icon">
-              <i class="fa fa fa-diamond"></i>
-              <i class="fa fa-check"></i>
-            </div>
-          </a>
+        <div draggable="true" class="drag-item">B</div>
+        <div draggable="true" class="drag-item">C</div>
+        <div draggable="true" class="drag-item">D</div>
+        <div draggable="true" class="drag-item">E</div>
+        <div draggable="true" class="drag-item">F</div>
+        <div draggable="true" class="drag-item">G</div>
+        <div draggable="true" class="drag-item">H</div>
+        <div draggable="true" class="drag-item">I</div>
+        <div draggable="true" class="drag-item">J</div>
+        <div draggable="true" class="drag-item">K</div>
+        <div draggable="true" class="drag-item">L</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="templateList3">
+    <div class="wrapperB">
+      <a class="button" href="#" role="button">
+        <span> 프&nbsp; 로&nbsp; 필&nbsp; 완&nbsp; 성</span>
+        <div class="icon">
+          <i class="fa fa fa-diamond"></i>
+          <i class="fa fa-check"></i>
         </div>
-      </div>
-    </section>
+      </a>
+    </div>
+  </div>
+</section>
 
-    <section class="wrapper clearfix" data-section="list">
-     Card list contents...
-   </section>
+<section class="wrapper clearfix" data-section="list">
+  Card list contents...
+</section>
 
-   <section class="wrapper clearfix" data-section="bookmark">
-     bookmark contents...
-   </section>
+<section class="wrapper clearfix" data-section="bookmark">
+  bookmark contents...
+</section>
 
-   <section class="wrapper clearfix" data-section="search">
-     Search People contents...
-   </section>
+<section class="wrapper clearfix" data-section="search">
+  Search People contents...
+</section>
 
-   <section class="wrapper clearfix" data-section="contact">
-     <div class="inner">
-       <div class="inner_thumb">
-         <img src="https://unsplash.imgix.net/photo-1414541944151-2f3ec1cfd87d?fit=crop&fm=jpg&h=700&q=75&w=1050" class="media" alt=""/>
-       </div>
-       <div class="inner_text">
-         <form action="">
-           <label>
-             Name
-             <input type="text" placeholder="Your name" />
-           </label>
-           <label>
-             Email
-             <input type="email" placeholder="Your email" required />
-           </label>
-           <label>
-             Message
-             <textarea placeholder="Your message"></textarea>
-           </label>
+<section class="wrapper clearfix" data-section="contact">
+  <div class="inner">
+    <div class="inner_thumb">
+      <img src="https://unsplash.imgix.net/photo-1414541944151-2f3ec1cfd87d?fit=crop&fm=jpg&h=700&q=75&w=1050" class="media" alt=""/>
+    </div>
+    <div class="inner_text">
+      <form action="">
+        <label>
+          Name
+          <input type="text" placeholder="Your name" />
+        </label>
+        <label>
+          Email
+          <input type="email" placeholder="Your email" required />
+        </label>
+        <label>
+          Message
+          <textarea placeholder="Your message"></textarea>
+        </label>
 
-           <label>
-             <input type="submit" value="Send" />
-           </label>
-         </form>
-       </div>
-     </div>
-   </section>
+        <label>
+          <input type="submit" value="Send" />
+        </label>
+      </form>
+    </div>
+  </div>
+</section>
 
-   <section class="wrapper clearfix" data-section="logout">
-     Log out
-   </section>
+<section class="wrapper clearfix" data-section="logout">
+  Log out
+</section>
 
-   <script src="js/index.js"></script>
-   <script src="js/templateList.js"></script>
+<script src="js/index.js"></script>
+<script src="js/templateList.js"></script>
 
-   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-   <script src="js/picker.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="js/picker.js"></script>
 
-   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-   <script src="js/input.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="js/input.js"></script>
 
- </body>
+</body>
 
- </html>
+</html>

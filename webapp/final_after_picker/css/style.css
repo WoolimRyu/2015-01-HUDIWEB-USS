@@ -171,8 +171,8 @@ nav ul {
     max-height: 200px;
 }
 .inner .inner_thumb img{
-  width:100%;
-  display:block
+    width:100%;
+    display:block
 }
 .inner .inner_text {
     padding: 1em;
@@ -365,7 +365,7 @@ form input[type="submit"]:hover {
 @media (max-width: 550px) {
 
     form,form input,form label{
-      width:100%;
+        width:100%;
     }
     .lightModal .lightModal-inner {
         margin: 10% auto

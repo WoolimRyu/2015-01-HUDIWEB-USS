@@ -6,11 +6,11 @@
 
 .templateList2 {
   height: 64%;
-/*  border: 1px solid black;*/
+  /*  border: 1px solid black;*/
 }
 
 .middle_1{
-  border : 1px solid black;
+  /*  border : 1px solid black;*/
   height: 100%;
   width: 45%;
   float: left;
@@ -71,8 +71,8 @@ html {
 }
 
 body {
-/*  background-color: #ecf0f1;*/
-/*  font-family: 'Open Sans', sans-serif;*/
+  /*  background-color: #ecf0f1;*/
+  /*  font-family: 'Open Sans', sans-serif;*/
 }
 
 .wrapperB {
@@ -89,7 +89,7 @@ body {
   height: 53px;
   line-height: 100px;
   color: #fff;
-/*  position: absolute;*/
+  /*  position: absolute;*/
   position: relative;
   top: 0;
   bottom: 0;
@@ -100,7 +100,7 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
   -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
-          transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
 .button span,
 .button .icon {
@@ -117,7 +117,7 @@ body {
   left: 10px;
   top:-22px;
   -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
-          transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
 
 /*.button span:after {
@@ -135,13 +135,13 @@ body {
   right: 0px;
   top:-25px;
   -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
-          transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
 .button .icon .fa {
   font-size: 30px;
   vertical-align: middle;
   -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease;
-          transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease;
+  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease;
 }
 .button .icon .fa-arrow-right {
   height: 36px;
