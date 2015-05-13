@@ -1,5 +1,9 @@
 /*----- Genral Classes start ------*/
 
+#sp{
+    background-color: silver;
+}
+
 .wrapperSns,.copyright {
     text-align: center;
     margin-top: -40px;
