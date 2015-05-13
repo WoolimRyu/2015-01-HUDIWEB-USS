@@ -16,10 +16,18 @@
   float: left;
 }
 
-.middle_2{
-  /*border : 1px solid black;*/
+.interMiddle {
+  width: 10%;
   height: 100%;
-  width: 55%;
+  float: left;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.middle_2{
+  border : 1px solid black;
+  height: 100%;
+  width: 45%;
   float: left;
 }
 
