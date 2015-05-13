@@ -64,16 +64,24 @@
 .prev {
   -webkit-transform: translate3d(-35%, 0, 0);
   transform: translate3d(-35%, 0, 0);
+
+  opacity:0.5; -moz-opacity:0.5;
 }
 .next {
   -webkit-transform: translate3d(55%, 0, 0);
   transform: translate3d(55%, 0, 0);
+
+  opacity:0.5; -moz-opacity:0.5;
 }
 .prevSmall {
   -webkit-transform: translate3d(-70%, 0, 0);
   transform: translate3d(-70%, 0, 0);
+
+  opacity:0.3; -moz-opacity:0.3;
 }
 .nextSmall {
   -webkit-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
+
+  opacity:0.3; -moz-opacity:0.3;
 }
