@@ -10,7 +10,7 @@
 }
 
 .middle_1{
-/*    border : 1px solid black;*/
+  /*    border : 1px solid black;*/
   height: 100%;
   width: 100%;
   float: left;
@@ -74,6 +74,12 @@ body {
   margin-top: 10px;
 }
 
+.wrapperB {
+  position: relative;
+  margin-left: 40.4%;
+  margin-top: 0px;
+}
+
 .button {
   display: block;
   /*background-color: #c0392b;*/
@@ -107,26 +113,25 @@ body {
   width: 72%;
   font-size: 22px;
   text-transform: uppercase;
-  left: 10px;
+  left: -5px;
   top:-22px;
   -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
   transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
-
-/*.button span:after {
+.button span:after {
   content: '';
+  /*  background-color: #a53125;*/
   background-color: silver;
   width: 2px;
   height: 70%;
   position: absolute;
   top:29px;
   right: -1px;
-}*/
-
+}
 .button .icon {
   width: 28%;
   right: 0px;
-  top:-25px;
+  top:-23px;
   -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
   transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
