@@ -25,6 +25,14 @@
   float: left;
 }
 
+.middle_last{
+  border : 1px solid black;
+  width: 47%;
+  height: 100%;
+  float: left;
+}
+
+
 .templateList3 {
   height: 11%;
   border: 1px solid #f2f2f2;
