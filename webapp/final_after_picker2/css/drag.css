@@ -6,8 +6,10 @@
   }
   .drag-list {
     overflow: hidden;
-    margin: 60px auto;
-    width: 430px;
+    /*margin: 60px auto;*/
+      margin-left: 10px;
+    margin-top: 20px;
+  width: 400px;
     border: 1px solid #ccc;
   }
   .drag-item {
