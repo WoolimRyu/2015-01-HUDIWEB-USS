@@ -414,8 +414,6 @@ form input[type="submit"]:hover {
 }
 */
 
-
-
 .activeIcon {
     margin-top : 60px;
 }
@@ -424,18 +422,29 @@ form input[type="submit"]:hover {
     margin-top : 70px;
 }
 
-.middle_last_left {
-    width: 50%;
+/*.middle_last_left {*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*float: left;*/
+    /*border : 1px solid black;*/
+/*}*/
+
+.snsTitle {
+    width:25%;
     height: 100%;
     float: left;
+    text-align: right;
 }
 
-.middle_last_right {
-    width: 50%;
+.snsTitle2 {
+    width:14%;
     height: 100%;
     float: left;
+    text-align: right;
 }
 
-.snsInput{
-    margin-top: 20px;
+.snsIdInput {
+    width:25%;
+    height: 100%;
+    float: left;
 }

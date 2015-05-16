@@ -1,22 +1,12 @@
-label[for="name"] {
-  display: block;
-  margin: 0.5rem 1rem;
-  color: #888;
-  text-transform: uppercase;
-  font-size: 1.0rem;
-  float: left;
-  margin-right: -5px;
-}
-
 label[for="snsT"] {
   display: block;
   margin: 0.5rem 1rem;
   color: black;
   text-transform: uppercase;
   font-size: 1.5rem;
-  float: left;
   margin-left: 40px;
-  margin-right: -3px;
+  margin-right: 26px;
+  margin-top:22px;
 }
 
 input[type="text"] {
@@ -30,6 +20,7 @@ input[type="text"] {
   transition: all 100ms ease-in;
   height:26px;
   font-size: 1.4rem;
+  margin-top: 19px;
 }
 input[type="text"]:hover {
   background: #eee;
