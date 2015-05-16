@@ -7,28 +7,28 @@ import next.jdbc.mysql.annotation.Table;
 public class Group {
 
 	@Key
-	private Integer gId;
-	private String gName;
-	
-	public Group(Integer gId, String gName){
-		this.gId = gId;
-		this.gName = gName;
+	private Integer id;
+	private String name;
+
+	public Group(Integer id, String name) {
+		this.id = id;
+		this.name = name;
 	}
 
-	public Integer getgId() {
-		return gId;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setgId(Integer gId) {
-		this.gId = gId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
-	public String getgName() {
-		return gName;
+	public String getName() {
+		return name;
 	}
 
-	public void setgName(String gName) {
-		this.gName = gName;
+	public void setName(String name) {
+		this.name = name;
 	}
-	
+
 }
