@@ -66,3 +66,30 @@ function navigation(){
     }
   });
 }
+
+
+function sendupdateReq() {
+	var user = {
+			  name : $('#name').val(),
+			  job : $('#job').val(),
+			  phone : $('#phone').val(),
+			  bizemail: $('#bizemail').val()
+			}
+	
+	$.ajax({
+		url : "/api/user/update",
+		method : "post",
+		dataType : 'json',
+		data : {
+			user : JSON.stringify(user)
+		},
+		success : function(response) {
+			if (response == 'USER_UPDATE_SUCCESS') {
+				location.href = "/final_after_picker2/";
+				return;
+			}
+			alert(response);
+		}
+	});
+}
+

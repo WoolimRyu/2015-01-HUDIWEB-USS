@@ -32,6 +32,12 @@ public class UserService {
 	}
 
 	public Result update(User updatedUser, User session) {
-		return null;
+		if(session == null)
+			return Result.USER_UPDATE_SESSION_EXPIRED;
+		if(updatedUser == null)
+			return Result.USER_UPDATE_USER_NULL;
+		session.update(updatedUser);
+		dao.update(session);
+		return Result.USER_UPDATE_SUCCESS;
 	}
 }

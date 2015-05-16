@@ -3,8 +3,6 @@ package uss.controllers;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.ServletRequestUtils;
@@ -22,7 +20,8 @@ import com.google.gson.Gson;
 @RestController
 @RequestMapping(value = "/api/user", produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserController {
-	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+	// private static final Logger logger =
+	// LoggerFactory.getLogger(UserController.class);
 
 	@Autowired
 	private UserService service;
@@ -42,7 +41,7 @@ public class UserController {
 		User user = gson.fromJson(ServletRequestUtils.getStringParameter(request, "user"), User.class);
 		ResultWithObject response = service.login(user);
 		if (!response.getResult().isError())
-			request.getSession().setAttribute("user", response.getResult());
+			request.getSession().setAttribute("user", response.getObject());
 		return response;
 	}
 
@@ -52,11 +51,11 @@ public class UserController {
 		return "redirect:/";
 	}
 
-	@RequestMapping(method = RequestMethod.PUT)
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public Result update(HttpServletRequest request) throws Exception {
-		User user = gson.fromJson(ServletRequestUtils.getStringParameter(request, "user"), User.class);
+		String userstring = ServletRequestUtils.getStringParameter(request, "user");
+		User user = gson.fromJson(userstring, User.class);
 		Result response = service.update(user, (User) request.getSession().getAttribute("user"));
-		logger.debug("update test result userId : {}", user.getId());
 		return response;
 	}
 

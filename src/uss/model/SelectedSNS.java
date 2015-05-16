@@ -4,7 +4,6 @@ import next.jdbc.mysql.annotation.Exclude;
 import next.jdbc.mysql.annotation.Key;
 import next.jdbc.mysql.annotation.Table;
 
-
 @Table
 public class SelectedSNS {
 
@@ -27,6 +26,7 @@ public class SelectedSNS {
 
 	@Key
 	private int userId;
+	@Key
 	private Integer snsType;
 	private String snsId;
 
