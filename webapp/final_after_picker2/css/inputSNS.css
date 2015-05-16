@@ -1,0 +1,42 @@
+label[for="name"] {
+  display: block;
+  margin: 0.5rem 1rem;
+  color: #888;
+  text-transform: uppercase;
+  font-size: 1.0rem;
+  float: left;
+  margin-right: -5px;
+}
+
+label[for="snsT"] {
+  display: block;
+  margin: 0.5rem 1rem;
+  color: black;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  float: left;
+  margin-left: 40px;
+  margin-right: -3px;
+}
+
+input[type="text"] {
+  margin: 0 1rem;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  border: 1px solid transparent;
+  background: #ddd;
+  color: #aaa;
+  -webkit-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
+  height:26px;
+  font-size: 1.4rem;
+}
+input[type="text"]:hover {
+  background: #eee;
+}
+input[type="text"]:focus {
+  outline: 0;
+  border-color: #bbb;
+  background: white;
+  color: #888;
+}

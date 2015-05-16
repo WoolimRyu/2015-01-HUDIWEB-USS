@@ -424,4 +424,18 @@ form input[type="submit"]:hover {
     margin-top : 70px;
 }
 
+.middle_last_left {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
 
+.middle_last_right {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.snsInput{
+    margin-top: 20px;
+}
