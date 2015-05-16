@@ -5,7 +5,29 @@ app.findScope = function (selector) {
     return angular.element(document.querySelector("[ng-controller='" + selector + "']")).scope();
 };
 
+var test = [
+
+    {url:"api", result:{success:true}}, {url:"api/log", result:{success:true}}, {url:"/g", result:{success:true}}, {url:"api", result:{success:true}},
+];
+
 app.factory('$req', function ($http) {
+
+    var data;
+    if (scope == 'test') {
+        var req = function (url, tempData, method) {
+            switch(url){
+                case "/api/user/login":
+                    tempData = {success:true};
+                    break;
+            }
+        }
+        req.onResponse(function(call){
+            call(tempData);
+        });
+
+        return req;
+    }
+
     var req = function (url, data, method) {
         if (method == undefined)
             method = "GET";
@@ -83,6 +105,7 @@ app.controller('loginController', function ($scope, $user, $req, $timeout) {
             return false;
         if ($user.password == undefined)
             return false;
+
         $req("/api/user/loginCheck", {user: JSON.stringify($user)}, "POST").onResponse(function (user) {
             angular.copy($user, user);
             $user.logged = true;
