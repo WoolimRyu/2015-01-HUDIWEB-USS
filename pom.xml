@@ -9,9 +9,10 @@
 	<repositories>
 		<repository>
 			<id>next-mvn-repo</id>
-			<url>https://raw.github.com/zerohouse/next-database/mvn-repo/</url>
+			<url>https://raw.github.com/zerohouse/next-jdbc-mysql/mvn-repo/</url>
 		</repository>
 	</repositories>
+
 
 	<properties>
 		<tomcat.version>8.0.15</tomcat.version>
@@ -37,8 +38,8 @@
 
 		<dependency>
 			<groupId>at.begin</groupId>
-			<artifactId>next-database</artifactId>
-			<version>0.0.0.1</version>
+			<artifactId>next-jdbc-mysql</artifactId>
+			<version>0.0.1</version>
 		</dependency>
 
 		<!-- DB -->

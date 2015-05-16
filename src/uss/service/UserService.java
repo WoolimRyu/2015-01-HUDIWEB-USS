@@ -8,6 +8,14 @@ import uss.model.User;
 import uss.model.response.Response;
 
 public class UserService {
+
+	public UserService() {
+	}
+
+	public UserService(DAO dao) {
+		this.dao = dao;
+	}
+
 	@Autowired
 	private DAO dao;
 
