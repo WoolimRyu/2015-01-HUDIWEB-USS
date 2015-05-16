@@ -51,66 +51,66 @@
     </div>
 
     <div class="templateList2">
-        <div class="interMiddle">
-            <div class="activeIcon">명함에 반영할 아이콘들</div>
-            <div class="inactiveIcon">나머지 아이콘들</div>
-        </div>
+        <!--<div class="interMiddle">-->
+            <!--<div class="activeIcon">명함에 반영할 아이콘들</div>-->
+            <!--<div class="inactiveIcon">나머지 아이콘들</div>-->
+        <!--</div>-->
 
         <div class="middle_2">
             <div class="drag-list">
                 <div draggable="true" class="drag-item">
                     <div class="wrapperSns">
                         <ul class="social-icons icon-circle list-unstyled list-inline">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li id="fb" style="display: none";><a href="#"><i class="fa fa-facebook"></i></a></li>
                         </ul>
                     </div>
                 </div>
                 <div draggable="true" class="drag-item">
                     <div class="wrapperSns">
                         <ul class="social-icons icon-circle list-unstyled list-inline">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li id="tw" style="display: none";><a href="#"><i class="fa fa-twitter"></i></a></li>
                         </ul>
                     </div>
                 </div>
                 <div draggable="true" class="drag-item">
                     <div class="wrapperSns">
                         <ul class="social-icons icon-circle list-unstyled list-inline">
-                            <li><a href="#"><i class="fa fa-github"></i></a></li>
+                            <li id="git" style="display: none";><a href="#"><i class="fa fa-github"></i></a></li>
                         </ul>
                     </div>
                 </div>
                 <div draggable="true" class="drag-item">
                     <div class="wrapperSns">
                         <ul class="social-icons icon-circle list-unstyled list-inline">
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li id="insta" style="display: none";><a href="#"><i class="fa fa-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>
                 <div draggable="true" class="drag-item">
                     <div class="wrapperSns">
                         <ul class="social-icons icon-circle list-unstyled list-inline">
-                            <li><a href="#"><i class="fa fa-trello"></i></a></li>
+                            <li id="tr" style="display: none";><a href="#"><i class="fa fa-trello"></i></a></li>
                         </ul>
                     </div>
                 </div>
                 <div draggable="true" class="drag-item">
                     <div class="wrapperSns">
                         <ul class="social-icons icon-circle list-unstyled list-inline">
-                            <li><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
+                            <li id="vi" style="display: none";><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
                         </ul>
                     </div>
                 </div>
                 <div draggable="true" class="drag-item">
                     <div class="wrapperSns">
                         <ul class="social-icons icon-circle list-unstyled list-inline">
-                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                            <li id="you" style="display: none";><a href="#"><i class="fa fa-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div>
                 <div draggable="true" class="drag-item">
                     <div class="wrapperSns">
                         <ul class="social-icons icon-circle list-unstyled list-inline">
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li id="link" style="display: none";><a href="#"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -125,10 +125,10 @@
                     <label for="snsT">Instagram</label>
                 </div>
                 <div class="snsIdInput">
-                    <input type="text" name="name">
-                    <input type="text" name="name">
-                    <input type="text" name="name">
-                    <input type="text" name="name">
+                    <input id="i1" type="text" name="name">
+                    <input id="i2" type="text" name="name">
+                    <input id="i3" type="text" name="name">
+                    <input id="i4"type="text" name="name">
                 </div>
                 <div class="snsTitle2">
                     <label for="snsT">Trello</label>
@@ -137,10 +137,10 @@
                     <label for="snsT">LinkedIn</label>
                 </div>
                 <div class="snsIdInput">
-                    <input type="text" name="name">
-                    <input type="text" name="name">
-                    <input type="text" name="name">
-                    <input type="text" name="name">
+                    <input id="i5" type="text" name="name">
+                    <input id="i6" type="text" name="name">
+                    <input id="i7" type="text" name="name">
+                    <input id="i8" type="text" name="name">
                 </div>
             </div>
     </div>
@@ -189,6 +189,8 @@
 <script src="js/input.js"></script>
 
 <script src="js/drag.js"></script>
+
+<script src="js/iconVisible.js"></script>
 </body>
 
 </html>
