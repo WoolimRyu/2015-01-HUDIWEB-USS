@@ -1,15 +1,16 @@
 package uss.service;
 
+import next.database.DAO;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
-import uss.dao.RelationDao;
 import uss.model.User;
 import uss.model.response.Response;
 
 public class RelationService {
 
 	@Autowired
-	RelationDao dao;
+	private DAO dao;
 
 	public Response addRelation(User user, String addUserId) {
 		return null;

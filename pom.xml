@@ -6,6 +6,13 @@
 	<version>1.0</version>
 	<packaging>war</packaging>
 
+	<repositories>
+		<repository>
+			<id>next-mvn-repo</id>
+			<url>https://raw.github.com/zerohouse/next-database/mvn-repo/</url>
+		</repository>
+	</repositories>
+
 	<properties>
 		<tomcat.version>8.0.15</tomcat.version>
 		<tomcat.scope>provided</tomcat.scope>
@@ -19,28 +26,25 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.1.6.RELEASE</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-			<version>4.1.6.RELEASE</version>
-		</dependency>
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-jdbc</artifactId> 
+			<version>4.1.6.RELEASE</version> </dependency> -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>4.1.6.RELEASE</version>
 		</dependency>
 
-		<!-- DB -->	
+
 		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>1.4</version>
+			<groupId>at.begin</groupId>
+			<artifactId>next-database</artifactId>
+			<version>0.0.0.1</version>
 		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>1.4.182</version>
-		</dependency>
+
+		<!-- DB -->
+		<!-- <dependency> <groupId>commons-dbcp</groupId> <artifactId>commons-dbcp</artifactId> 
+			<version>1.4</version> </dependency> <dependency> <groupId>com.h2database</groupId> 
+			<artifactId>h2</artifactId> <version>1.4.182</version> </dependency> -->
 
 		<dependency>
 			<groupId>com.google.code.gson</groupId>

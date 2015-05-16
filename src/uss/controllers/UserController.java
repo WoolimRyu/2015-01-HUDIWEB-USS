@@ -56,7 +56,7 @@ public class UserController {
 	public Response update(HttpServletRequest request) throws Exception {
 		User user = gson.fromJson(ServletRequestUtils.getStringParameter(request, "user"), User.class);
 		Response response = service.update(user, (User) request.getSession().getAttribute("user"));
-		logger.debug("update test result userId : {}", user.getStringId());
+		logger.debug("update test result userId : {}", user.getId());
 		return response;
 	}
 
