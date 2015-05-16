@@ -1,43 +1,6 @@
-
-
-DROP TABLE IF EXISTS TestResult;
-CREATE TABLE TestResult(
-	TestResult_id INTEGER AUTO_INCREMENT NOT NULL,
-	TestResult_stringId VARCHAR(20) NOT NULL DEFAULT '',
-	TestResult_result VARCHAR(20) NOT NULL DEFAULT '',
-	
-	PRIMARY KEY(TestResult_id)
-);
-
-INSERT INTO TestResult(TestResult_stringId, TestResult_result) VALUES('uss', '1234');
-
-DROP TABLE IF EXISTS User;
-
-CREATE TABLE User(
-	User_id INTEGER AUTO_INCREMENT NOT NULL,
-	User_stringId VARCHAR(20) NOT NULL DEFAULT '',
-	User_name VARCHAR(20) NOT NULL DEFAULT '',
-	User_email VARCHAR(255) NOT NULL DEFAULT '',
-	User_password VARCHAR(20) NOT NULL DEFAULT '',
-	User_company VARCHAR(20) NULL DEFAULT '',
-	User_phoneNumber VARCHAR(20) NULL DEFAULT '',
-	User_profile VARCHAR(255) NULL DEFAULT '',
-	User_cover VARCHAR(255) NULL DEFAULT '',
-	PRIMARY KEY(User_id)
-);
-
-INSERT INTO User VALUES(null, 'uss', 'name', 'email', 'password', 'company', 'phoneNumber', 'profile' ,'cover');
-INSERT INTO User VALUES(null, 'uss2', 'name', 'email', 'password', 'company', 'phoneNumber', 'profile' ,'cover');
-INSERT INTO User VALUES(null, 'uss3', 'name', 'email', 'password', 'company', 'phoneNumber', 'profile' ,'cover');
-INSERT INTO User VALUES(null, 'uss4', 'name', 'email', 'password', 'company', 'phoneNumber', 'profile' ,'cover');
-
-DROP TABLE IF EXISTS Relation;
-CREATE TABLE Relation(
-	Relation_id INTEGER NOT NULL,
-	Relation_friendId INTEGER NOT NULL,
-	PRIMARY KEY(Relation_id, Relation_friendId)
-);
-
-INSERT INTO Relation VALUES(1, 2);
-INSERT INTO Relation VALUES(1, 3);
-INSERT INTO Relation VALUES(1, 4);
+DROP TABLE IF EXISTS `Relation`;
+CREATE TABLE IF NOT EXISTS `Relation` (`Relation_id` INTEGER NOT NULL, `Relation_friendId` INTEGER NOT NULL DEFAULT 0, `Relation_favorite` TINYINT(1) NOT NULL DEFAULT 0, PRIMARY KEY(`Relation_id`)) ENGINE = InnoDB DEFAULT CHARACTER SET utf8;
+DROP TABLE IF EXISTS `SelectedSNS`;
+CREATE TABLE IF NOT EXISTS `SelectedSNS` (`SelectedSNS_userId` INTEGER NOT NULL, `SelectedSNS_snsType` VARCHAR(255) NOT NULL, `SelectedSNS_snsId` VARCHAR(255) NOT NULL DEFAULT '', PRIMARY KEY(`SelectedSNS_userId`, `SelectedSNS_snsType`)) ENGINE = InnoDB DEFAULT CHARACTER SET utf8;
+DROP TABLE IF EXISTS `User`;
+CREATE TABLE IF NOT EXISTS `User` (`User_id` INTEGER NOT NULL, `User_name` VARCHAR(255) NOT NULL DEFAULT '', `User_email` VARCHAR(255) NOT NULL DEFAULT '', `User_password` VARCHAR(255) NOT NULL DEFAULT '', `User_template` INTEGER NOT NULL DEFAULT 0, `User_job` VARCHAR(255) NOT NULL DEFAULT '', `User_phoneNumber` VARCHAR(255) NOT NULL DEFAULT '', `User_profile` VARCHAR(255) NOT NULL DEFAULT '', PRIMARY KEY(`User_id`)) ENGINE = InnoDB DEFAULT CHARACTER SET utf8;
