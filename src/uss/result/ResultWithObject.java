@@ -1,4 +1,4 @@
-package uss.model.result;
+package uss.result;
 
 public class ResultWithObject {
 

@@ -11,7 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import uss.model.User;
-import uss.model.result.Result;
+import uss.result.Result;
 
 public class UserServiceTest {
 

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import uss.model.User;
-import uss.model.result.Result;
+import uss.result.Result;
 import uss.service.RelationService;
 
 import com.google.gson.Gson;

@@ -5,8 +5,8 @@ import next.jdbc.mysql.DAO;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import uss.model.User;
-import uss.model.result.Result;
-import uss.model.result.ResultWithObject;
+import uss.result.Result;
+import uss.result.ResultWithObject;
 
 public class UserService {
 

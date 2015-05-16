@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import uss.model.User;
-import uss.model.result.Result;
-import uss.model.result.ResultWithObject;
+import uss.result.Result;
+import uss.result.ResultWithObject;
 import uss.service.UserService;
 
 import com.google.gson.Gson;
