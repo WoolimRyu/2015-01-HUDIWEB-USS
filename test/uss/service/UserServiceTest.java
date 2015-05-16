@@ -1,12 +1,13 @@
 package uss.service;
 
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 import next.jdbc.mysql.DAO;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import uss.model.User;
+import uss.model.result.Result;
 
 public class UserServiceTest {
 
@@ -23,12 +24,15 @@ public class UserServiceTest {
 	}
 
 	@Test
-	public void login() {
-		// case Success
-		assertFalse(service.login(new User(null, "test", "test", "test", 1, "test", "test", "test")).getResult().isError());
-		// assertTrue(service.login(new User(null, "test", "test", "test", 1,
-		// "test", "test", "test")).getResult().isError());
-		// case password wrong
+	public void loginTest() {
+		assertEquals(Result.LOGIN_SUCCESS, service.login(new User(null, "test", "test", "test", 1, "test", "test", "test")).getResult());
+		assertEquals(Result.LOGIN_NOT_EXIST_ID, service.login(new User(null, "test", "te2st", "test", 1, "test", "test", "test")).getResult());
+		assertEquals(Result.LOGIN_PASSWORD_NOT_MATCHED, service.login(new User(null, "test", "test", "te2st", 1, "test", "test", "test")).getResult());
 	}
 
+	@Test
+	public void registerTest() {
+		assertEquals(Result.REGISTER_ALREADY_EXIST_ID, service.register(new User(null, "test", "test", "test", 1, "test", "test", "test")));
+		assertEquals(Result.REGISTER_SUCCESS, service.register(new User(null, "test", "test2", "test", 1, "test", "test", "test")));
+	}
 }

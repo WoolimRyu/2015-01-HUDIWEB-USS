@@ -22,7 +22,7 @@ public class UserService {
 	private DAO dao;
 
 	public Result register(User user) {
-		if (null != dao.find(User.class, user.getId()))
+		if (null != dao.fill(new User(user.getEmail())))
 			return Result.REGISTER_ALREADY_EXIST_ID;
 		dao.insert(user);
 		return Result.REGISTER_SUCCESS;
