@@ -14,7 +14,7 @@ public class User {
 		this.password = password;
 		this.template = template;
 		this.job = job;
-		this.phoneNumber = phoneNumber;
+		this.phone = phoneNumber;
 		this.profile = profile;
 	}
 
@@ -30,8 +30,17 @@ public class User {
 	private String password;
 	private Integer template;
 	private String job;
-	private String phoneNumber;
+	private String phone;
 	private String profile;
+	private String bizemail;
+
+	public String getBizemail() {
+		return bizemail;
+	}
+
+	public void setBizemail(String bizemail) {
+		this.bizemail = bizemail;
+	}
 
 	public Integer getId() {
 		return id;
@@ -81,12 +90,12 @@ public class User {
 		this.job = job;
 	}
 
-	public String getPhoneNumber() {
-		return phoneNumber;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setPhone(String phoneNumber) {
+		this.phone = phoneNumber;
 	}
 
 	public String getProfile() {
@@ -97,12 +106,18 @@ public class User {
 		this.profile = profile;
 	}
 
-	public Object[] getInsertParameters() {
-		return new Object[] { name, email, password, template, job, phoneNumber, profile };
-	}
+	public void update(User updatedUser) {
+		if (updatedUser.name != null)
+			this.name = updatedUser.name;
+		if (updatedUser.template != null)
+			this.template = updatedUser.template;
+		if (updatedUser.job != null)
+			this.job = updatedUser.job;
+		if (updatedUser.phone != null)
+			this.phone = updatedUser.phone;
+		if (updatedUser.profile != null)
+			this.profile = updatedUser.profile;
 
-	public Object[] getUpdateParameters() {
-		return new Object[] { name, email, password, template, job, phoneNumber, profile };
 	}
 
 }

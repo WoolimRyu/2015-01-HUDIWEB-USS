@@ -68,9 +68,9 @@ app.factory('$req', function ($http) {
     return req;
 });
 
-app.controller('loginController', function ($scope, $user, $req, $timeout) {
+app.controller('loginController', function ($scope, $req, $timeout) {
 
-    $scope.user = {};
+    var $user = $scope.user = {};
 
     $scope.$watch(function () {
         return $user.email;
@@ -188,15 +188,15 @@ app.controller('loginController', function ($scope, $user, $req, $timeout) {
     };
 
     $scope.submit = function () {
-        if($scope.user.stringId == undefined){
+        if($scope.user.email == undefined){
             alert("아이디를 입력하세요.");
             return;
         }
-        $req('/api/user/register', {user: JSON.stringify($scope.user)}, "POST").success(
+        $req('/api/user/login', {user: JSON.stringify($scope.user)}, "POST").success(
             function (response) {
-            	if(response.error == 'success')
-            		location.href = "/";
-                alert(response.error);
+            	if(response.result == 'LOGIN_SUCCESS')
+            		location.href = "/final_beforeMyProfile/";
+                alert(response.result);
             }
         )
     };

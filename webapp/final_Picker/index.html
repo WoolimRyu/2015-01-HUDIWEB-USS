@@ -1,131 +1,125 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>USS-woolim</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-  <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans'>
+<meta charset="UTF-8">
+<title>USS-woolim</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link
+	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<link rel='stylesheet prefetch'
+	href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+<link rel='stylesheet prefetch'
+	href='http://fonts.googleapis.com/css?family=Open+Sans'>
 
-  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
-  <link rel="stylesheet" href="css/picker.css" media="screen" type="text/css"/>
-  <link rel="stylesheet" href="css/templateList.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="css/style.css" media="screen"
+	type="text/css" />
+<link rel="stylesheet" href="css/picker.css" media="screen"
+	type="text/css" />
+<link rel="stylesheet" href="css/templateList.css" media="screen"
+	type="text/css" />
 </head>
 
 <body>
 
-  <header class="header">
-    <div class="logo">
-      <a href=''><img src='image/create_thumb.png'><a>
-      </div>
+	<header class="header">
+		<div class="logo">
+			<a href=''><img src='image/create_thumb.png'><a>
+		</div>
 
-      <a href="#" class="toggle_menu">
-        <i class="fa fa-navicon"></i>
-      </a>
+		<a href="#" class="toggle_menu"> <i class="fa fa-navicon"></i>
+		</a>
 
-      <nav class="menu">
-        <ul>
-          <li><a href="#" data-link="home">My Profile</a></li>
-          <li><a href="#" data-link="list">Card List</a></li>
-          <li><a href="#" data-link="bookmark">Bookmark</a></li>
-          <li><a href="#" data-link="search">Search People</a></li>
-          <li><a href="#" data-link="contact">Contact Us</a></li>
-          <li><a href="#" data-link="logout">Log Out</a></li>
-        </ul>
-      </nav>
-    </header>
+		<nav class="menu">
+			<ul>
+				<li><a href="#" data-link="home">My Profile</a></li>
+				<li><a href="#" data-link="list">Card List</a></li>
+				<li><a href="#" data-link="bookmark">Bookmark</a></li>
+				<li><a href="#" data-link="search">Search People</a></li>
+				<li><a href="#" data-link="contact">Contact Us</a></li>
+				<li><a href="#" data-link="logout">Log Out</a></li>
+			</ul>
+		</nav>
+	</header>
 
-    <section class="wrapper clearfix" data-section="home">
-      <div class="templateList1">
-        <div class="templateListTitle">
-          템플릿을 선택해주세요.<br>
-        </div>
-        <div class="templateListSubTitle">
-          각 템플릿마다의 특징이 있습니다. 회원님이 원하는 스타일의 프로필 템플릿을 선택해주십시오. <br>
-        </div>
-      </div>
-      <div class="templateList2">
-        <div class="templatePick">
-          <div class="carousel">
-           <a class="prev-btn" href="#"><</a>
-           <div class="card" style="background: url(http://s10.postimg.org/cv7a0ewop/pic1.png)">
-          </div>
-            <div class="card" style="background: url(http://s30.postimg.org/neica7hep/pic2.png)"></div>
-            <div class="card" style="background: url(http://s30.postimg.org/fjgzmvmjl/pic3.png)"></div>
-            <div class="card"></div>
-            <div class="card"></div>
+	<section class="wrapper clearfix" data-section="home">
+		<div class="templateList1">
+			<div class="templateListTitle">
+				템플릿을 선택해주세요.<br>
+			</div>
+			<div class="templateListSubTitle">
+				각 템플릿마다의 특징이 있습니다. 회원님이 원하는 스타일의 프로필 템플릿을 선택해주십시오. <br>
+			</div>
+		</div>
+		<div class="templateList2">
+			<div class="templatePick">
+				<div class="carousel">
+					<a class="prev-btn" href="#"><</a>
+					<div class="card" id="t1"
+						style="background: url(http://s10.postimg.org/cv7a0ewop/pic1.png)">
+					</div>
+					<div class="card" id="t2"
+						style="background: url(http://s30.postimg.org/neica7hep/pic2.png)"></div>
+					<div class="card" id="t3"
+						style="background: url(http://s30.postimg.org/fjgzmvmjl/pic3.png)"></div>
+					<div class="card" id="t4"></div>
+					<div class="card" id="t5"></div>
 
-            <a class="next-btn" href="#">></a>
-          </div>
-          <div class="nav-elements">
+					<a class="next-btn" href="#">></a>
+				</div>
+				<div class="nav-elements"></div>
+			</div>
+		</div>
+		<div class="templateList3">
+			<div class="wrapperB">
+				<a  onclick='sendTemplateReq()' class="button" href="#" role="button"> <span> N&nbsp;
+						E&nbsp; X&nbsp; T</span>
+					<div class="icon">
+						<i class="fa fa-arrow-right"></i> <i class="fa fa-check"></i>
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
 
+	<section class="wrapper clearfix" data-section="list">Card
+		list contents...</section>
 
-          </div>
-        </div>
-      </div>
-      <div class="templateList3">
-        <div class="wrapperB">
-          <a class="button" href="#" role="button">
-            <span> N&nbsp; E&nbsp; X&nbsp; T</span>
-            <div class="icon">
-              <i class="fa fa-arrow-right"></i>
-              <i class="fa fa-check"></i>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
+	<section class="wrapper clearfix" data-section="bookmark">
+		bookmark contents...</section>
 
-    <section class="wrapper clearfix" data-section="list">
-     Card list contents...
-   </section>
+	<section class="wrapper clearfix" data-section="search">
+		Search People contents...</section>
 
-   <section class="wrapper clearfix" data-section="bookmark">
-     bookmark contents...
-   </section>
+	<section class="wrapper clearfix" data-section="contact">
+		<div class="inner">
+			<div class="inner_thumb">
+				<img
+					src="https://unsplash.imgix.net/photo-1414541944151-2f3ec1cfd87d?fit=crop&fm=jpg&h=700&q=75&w=1050"
+					class="media" alt="" />
+			</div>
+			<div class="inner_text">
+				<form action="">
+					<label> Name <input type="text" placeholder="Your name" />
+					</label> <label> Email <input type="email" placeholder="Your email"
+						required />
+					</label> <label> Message <textarea placeholder="Your message"></textarea>
+					</label> <label> <input type="submit" value="Send" />
+					</label>
+				</form>
+			</div>
+		</div>
+	</section>
 
-   <section class="wrapper clearfix" data-section="search">
-     Search People contents...
-   </section>
+	<section class="wrapper clearfix" data-section="logout">Log
+		out</section>
 
-   <section class="wrapper clearfix" data-section="contact">
-     <div class="inner">
-       <div class="inner_thumb">
-         <img src="https://unsplash.imgix.net/photo-1414541944151-2f3ec1cfd87d?fit=crop&fm=jpg&h=700&q=75&w=1050" class="media" alt=""/>
-       </div>
-       <div class="inner_text">
-         <form action="">
-           <label>
-             Name
-             <input type="text" placeholder="Your name" />
-           </label>
-           <label>
-             Email
-             <input type="email" placeholder="Your email" required />
-           </label>
-           <label>
-             Message
-             <textarea placeholder="Your message"></textarea>
-           </label>
+	<script src="js/index.js"></script>
+	<script src="js/templateList.js"></script>
 
-           <label>
-             <input type="submit" value="Send" />
-           </label>
-         </form>
-       </div>
-     </div>
-   </section>
+	<script
+		src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src="js/picker.js"></script>
+</body>
 
-   <section class="wrapper clearfix" data-section="logout">
-     Log out
-   </section>
-
-   <script src="js/index.js"></script>
-   <script src="js/templateList.js"></script>
-
-   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script src="js/picker.js"></script>
- </body>
-
- </html>
+</html>
