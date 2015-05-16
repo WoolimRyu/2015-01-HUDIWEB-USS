@@ -1,0 +1,82 @@
+button {
+    position: relative;
+    width: 136px;
+    height: 36px;
+    background: ghostwhite;
+    color: #555;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26),
+    0 2px 10px 0 rgba(0, 0, 0, 0.16);
+    -webkit-transition: box-shadow 0.28s ease-in-out;
+    transition: box-shadow 0.28s ease-in-out;
+}
+
+.pressed {
+    box-shadow: 0 8px 11px 0 rgba(0, 0, 0, 0.26),
+    0 8px 16px 0 rgba(0, 0, 0, 0.16);
+    /*transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);*/
+}
+
+.ripple {
+    overflow: hidden;
+    border-radius: 3px;
+    margin-right: 8px;
+}
+
+.rippleEffect {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    /*  background-color: rgba(137,102,155,.4);*/
+    background : url("http://s29.postimg.org/fs4n4dsuf/Screen_Shot_2015_05_16_at_9_09_34_PM.png");
+    border-radius: 50%;
+    -webkit-animation: rippleAnimation 2s;
+    animation: rippleAnimation 2s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes rippleAnimation {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    to {
+        -webkit-transform: scale(80);
+        transform: scale(80);
+    }
+}
+
+@keyframes rippleAnimation {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    to {
+        -webkit-transform: scale(80);
+        transform: scale(80);
+    }
+}
+
+@-webkit-keyframes buttonMovement {
+    from { box-shadow:
+    0 2px 5px 0 rgba(0, 0, 0, 0.26),
+    0 2px 10px 0 rgba(0, 0, 0, 0.16)
+    }
+    to { box-shadow:
+    0 8px 16px 0 rgba(0, 0, 0, 0.26),
+    0 8px 21px 0 rgba(0, 0, 0, 0.16)
+    }
+}
+
+@keyframes buttonMovement {
+    from { box-shadow:
+    0 2px 5px 0 rgba(0, 0, 0, 0.26),
+    0 2px 10px 0 rgba(0, 0, 0, 0.16)
+    }
+    to { box-shadow:
+    0 8px 16px 0 rgba(0, 0, 0, 0.26),
+    0 8px 21px 0 rgba(0, 0, 0, 0.16)
+    }
+}

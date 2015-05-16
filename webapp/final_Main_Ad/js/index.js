@@ -16,7 +16,7 @@ function init(){
   // first time active home
   d('[data-section="home"]').classList.add('show-section');
   d('[data-link="home"]').classList.add('active');
-  
+
   try{
     // loader();
     navigation();
