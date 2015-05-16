@@ -1,7 +1,7 @@
 package uss.model;
 
-import next.database.annotation.Key;
-import next.database.annotation.Table;
+import next.jdbc.mysql.annotation.Key;
+import next.jdbc.mysql.annotation.Table;
 
 @Table
 public class Relation {

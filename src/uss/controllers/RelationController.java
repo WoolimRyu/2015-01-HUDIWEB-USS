@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import uss.model.User;
-import uss.model.response.Response;
+import uss.model.result.Result;
 import uss.service.RelationService;
 
 import com.google.gson.Gson;
@@ -30,21 +30,21 @@ public class RelationController {
 	private Gson gson;
 
 	@RequestMapping(method = RequestMethod.POST)
-	public Response add(HttpServletRequest request) throws Exception {
-		Response response = service.addRelation((User) request.getSession().getAttribute("user"),
+	public Result add(HttpServletRequest request) throws Exception {
+		Result response = service.addRelation((User) request.getSession().getAttribute("user"),
 				ServletRequestUtils.getStringParameter(request, "addId"));
 		logger.debug("id");
 		return response;
 	}
 
 	@RequestMapping(value = "/getList", method = RequestMethod.POST)
-	public Response getList(HttpServletRequest request) throws Exception {
+	public Result getList(HttpServletRequest request) throws Exception {
 		return service.getRelation((User) request.getSession().getAttribute("user"));
 	}
 
 	@RequestMapping(method = RequestMethod.DELETE)
-	public Response delete(HttpServletRequest request) throws Exception {
-		Response response = service.deleteRelation((User) request.getSession().getAttribute("user"),
+	public Result delete(HttpServletRequest request) throws Exception {
+		Result response = service.deleteRelation((User) request.getSession().getAttribute("user"),
 				ServletRequestUtils.getStringParameter(request, "deleteId"));
 		return response;
 	}

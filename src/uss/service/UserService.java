@@ -1,11 +1,13 @@
 package uss.service;
 
-import next.database.DAO;
+
+import next.jdbc.mysql.DAO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import uss.model.User;
-import uss.model.response.Response;
+import uss.model.result.Result;
+import uss.model.result.ResultWithObject;
 
 public class UserService {
 
@@ -19,25 +21,25 @@ public class UserService {
 	@Autowired
 	private DAO dao;
 
-	public Response register(User user) {
+	public Result register(User user) {
 		if (null != dao.find(User.class, user.getId()))
-			return new Response(true, "이미 존재하는 아이디입니다.");
+			return Result.REGISTER_ALREADY_EXIST_ID;
 		dao.insert(user);
-		return new Response(user);
+		return Result.REGISTER_SUCCESS;
 	}
 
-	public Response login(User user) {
-		User fromDB = dao.find(User.class, user.getId());
+	public ResultWithObject login(User user) {
+		User fromDB = dao.fill(new User(user.getEmail()));
 		if (fromDB == null) {
-			return new Response(true, "없는 아이디입니다.");
+			return new ResultWithObject(Result.LOGIN_NOT_EXIST_ID, fromDB);
 		}
 		if (!fromDB.getPassword().equals(user.getPassword())) {
-			return new Response(true, "패스워드가 다릅니다.");
+			return new ResultWithObject(Result.LOGIN_PASSWORD_NOT_MATCHED, null);
 		}
-		return new Response(fromDB);
+		return new ResultWithObject(Result.LOGIN_SUCCESS, fromDB);
 	}
 
-	public Response update(User updatedUser, User session) {
+	public Result update(User updatedUser, User session) {
 		return null;
 	}
 }

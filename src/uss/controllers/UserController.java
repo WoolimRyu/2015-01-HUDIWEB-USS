@@ -11,8 +11,10 @@ import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
 import uss.model.User;
-import uss.model.response.Response;
+import uss.model.result.Result;
+import uss.model.result.ResultWithObject;
 import uss.service.UserService;
 
 import com.google.gson.Gson;
@@ -29,19 +31,17 @@ public class UserController {
 	private Gson gson;
 
 	@RequestMapping(method = RequestMethod.POST)
-	public Response register(HttpServletRequest request) throws Exception {
+	public Result register(HttpServletRequest request) throws Exception {
 		User user = gson.fromJson(ServletRequestUtils.getStringParameter(request, "user"), User.class);
-		Response response = service.register(user);
-		if (!response.isError())
-			request.getSession().setAttribute("user", response.getResult());
-		return response;
+		Result result = service.register(user);
+		return result;
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public Response login(HttpServletRequest request) throws Exception {
+	public ResultWithObject login(HttpServletRequest request) throws Exception {
 		User user = gson.fromJson(ServletRequestUtils.getStringParameter(request, "user"), User.class);
-		Response response = service.login(user);
-		if (!response.isError())
+		ResultWithObject response = service.login(user);
+		if (!response.getResult().isError())
 			request.getSession().setAttribute("user", response.getResult());
 		return response;
 	}
@@ -53,9 +53,9 @@ public class UserController {
 	}
 
 	@RequestMapping(method = RequestMethod.PUT)
-	public Response update(HttpServletRequest request) throws Exception {
+	public Result update(HttpServletRequest request) throws Exception {
 		User user = gson.fromJson(ServletRequestUtils.getStringParameter(request, "user"), User.class);
-		Response response = service.update(user, (User) request.getSession().getAttribute("user"));
+		Result response = service.update(user, (User) request.getSession().getAttribute("user"));
 		logger.debug("update test result userId : {}", user.getId());
 		return response;
 	}

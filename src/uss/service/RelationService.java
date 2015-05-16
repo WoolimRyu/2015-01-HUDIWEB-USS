@@ -1,26 +1,27 @@
 package uss.service;
 
-import next.database.DAO;
+
+import next.jdbc.mysql.DAO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import uss.model.User;
-import uss.model.response.Response;
+import uss.model.result.Result;
 
 public class RelationService {
 
 	@Autowired
 	private DAO dao;
 
-	public Response addRelation(User user, String addUserId) {
+	public Result addRelation(User user, String addUserId) {
 		return null;
 	}
 
-	public Response getRelation(User user) {
+	public Result getRelation(User user) {
 		return null;
 	}
 
-	public Response deleteRelation(User user, String deleteUserId) {
+	public Result deleteRelation(User user, String deleteUserId) {
 		return null;
 	}
 }
