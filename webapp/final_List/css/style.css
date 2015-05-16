@@ -444,6 +444,7 @@ li {
 }
 
 .rectangle-list a:before {
+    border-radius: 50%;
     content: counter(li);
     counter-increment: li;
     position: absolute;
@@ -522,7 +523,8 @@ li {
 
 .test{
     margin-left: 500px;
-    overflow:scroll;
+    /*overflow:scroll;*/
+    overflow:auto;
     /*border : 1px solid black;*/
     height: 460px;
     margin-right: 30px;
