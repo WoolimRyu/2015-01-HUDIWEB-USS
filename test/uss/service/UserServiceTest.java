@@ -1,6 +1,10 @@
 package uss.service;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+
+import java.lang.reflect.Field;
+
 import next.jdbc.mysql.DAO;
 
 import org.junit.Before;
@@ -14,8 +18,12 @@ public class UserServiceTest {
 	UserService service;
 
 	@Before
-	public void setup() {
-		service = new UserService(new DAO());
+	public void setup() throws SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
+		// PackageCreator.reset();
+		service = new UserService();
+		Field f = service.getClass().getDeclaredField("dao");
+		f.setAccessible(true);
+		f.set(service, new DAO());
 	}
 
 	@Test

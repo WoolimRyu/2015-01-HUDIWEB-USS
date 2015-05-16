@@ -1,6 +1,5 @@
 package uss.service;
 
-
 import next.jdbc.mysql.DAO;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,13 +9,6 @@ import uss.model.result.Result;
 import uss.model.result.ResultWithObject;
 
 public class UserService {
-
-	public UserService() {
-	}
-
-	public UserService(DAO dao) {
-		this.dao = dao;
-	}
 
 	@Autowired
 	private DAO dao;
