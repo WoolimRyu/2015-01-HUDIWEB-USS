@@ -13,6 +13,7 @@ import uss.response.user.LoginResult;
 
 public class UserServiceTest {
 
+	
 	UserService service;
 
 	@Before

@@ -1,9 +1,7 @@
 package uss.service;
 
-
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import uss.dao.UserDao;
@@ -16,9 +14,9 @@ import uss.response.user.LoginResult;
 public class UserService {
 
 	UserDao dao;
-	
+
 	public Response register(User user) {
-		if(!dao.insert(user))
+		if (!dao.insert(user))
 			return Result.ERROR_SQL_EXCUTE;
 		return Result.SUCCESS(user);
 	}
@@ -35,10 +33,10 @@ public class UserService {
 	public Response update(User user, User loginUser) {
 		if (!loginUser.getStringId().equals(user.getStringId()))
 			return Result.ERROR_BAD_REQUEST;
-		
-		if(!dao.update(user))
+
+		if (!dao.update(user))
 			return Result.ERROR_SQL_EXCUTE;
-		
+
 		return Result.SUCCESS(user);
 	}
 
@@ -48,6 +46,5 @@ public class UserService {
 			return Result.ERROR_USER_NOT_FOUND;
 		return Result.SUCCESS(userList);
 	}
-
 
 }
