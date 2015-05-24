@@ -28,6 +28,7 @@ public class UserServiceTest {
 		assertEquals(service.login(new User("test", "2")), LoginResult.ERROR_PASSWORD_NOT_MATCHED);
 		assertEquals(service.login(new User("test", "1")), Result.SUCCESS(null));
 	}
+	
 
 }
  
