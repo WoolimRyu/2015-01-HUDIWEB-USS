@@ -38,6 +38,7 @@ public class Response {
 		int result = 1;
 		result = prime * result + ((code == null) ? 0 : code.hashCode());
 		result = prime * result + ((message == null) ? 0 : message.hashCode());
+		result = prime * result + ((object == null) ? 0 : object.hashCode());
 		return result;
 	}
 
@@ -59,6 +60,11 @@ public class Response {
 			if (other.message != null)
 				return false;
 		} else if (!message.equals(other.message))
+			return false;
+		if (object == null) {
+			if (other.object != null)
+				return false;
+		} else if (!object.equals(other.object))
 			return false;
 		return true;
 	}

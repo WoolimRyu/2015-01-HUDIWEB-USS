@@ -38,16 +38,17 @@ public class UserControllerTest {
 	@Test
 	public void registerTest() {
 		User user = new User("id", "pw");
-		assertEquals(Result.SUCCESS, controller.register(user));
+		assertEquals(Result.SUCCESS(user), controller.register(user));
 		assertEquals(Result.ERROR_SQL_EXCUTE, controller.register(user));
 	}
 
 	@Test
 	public void loginTest() {
-		controller.register(new User("id", "pw"));
+		User user = new User("id", "pw");
+		controller.register(user);
 		assertEquals(Result.Login.ERROR_PASSWORD_NOT_MATCHED, controller.login(new User("id", "pw2"), session));
 		assertEquals(Result.Login.ERROR_USER_NULL, controller.login(new User("id3", "pw"), session));
-		assertEquals(Result.SUCCESS, controller.login(new User("id", "pw"), session));
+		assertEquals(Result.SUCCESS(user), controller.login(user, session));
 	}
 
 	@Test
@@ -57,7 +58,7 @@ public class UserControllerTest {
 		Mockito.when(session.getAttribute(UserController.USER)).thenReturn(user);
 		User updateUser = new User("id2", "pw1");
 		assertEquals(Result.ERROR_BAD_REQUEST, controller.update(updateUser, session));
-		assertEquals(Result.SUCCESS, controller.update(user, session));
+		assertEquals(Result.SUCCESS(user), controller.update(user, session));
 	}
 
 }
