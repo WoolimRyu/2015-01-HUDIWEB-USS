@@ -10,7 +10,6 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import sun.util.logging.resources.logging;
 import uss.model.User;
 
 public class SqlSupportTest {
@@ -52,8 +51,19 @@ public class SqlSupportTest {
 		
 		SqlParameter sp2 = ss.getUpdateSql(user2);
 		assertEquals("UPDATE User SET password = ?, email = ?, name = ? WHERE stringId = ?", sp2.getSql());
+	}
+	
+	@Test
+	public void testGetInsertSql() {
+		SqlParameter sp = ss.getInsertSql(user);
+		assertEquals("INSERT User SET stringId = ?, password = ?", sp.getSql());
 		
+		User user2 = new User("user1", "1");
+		user2.setEmail("email");
+		user2.setName("name");
 		
+		SqlParameter sp2 = ss.getInsertSql(user2);
+		assertEquals("INSERT User SET stringId = ?, password = ?, email = ?, name = ?", sp2.getSql());
 	}
 
 }

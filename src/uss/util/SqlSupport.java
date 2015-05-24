@@ -50,6 +50,21 @@ public class SqlSupport {
 
 		return new SqlParameter(sql, setValueList);
 	}
+	public SqlParameter getInsertSql(Object object) {
+		String sql = "INSERT %s SET %s";
+		Map<Field, Object> map = getParameter(object);
+		ArrayList<Object> valueList = new ArrayList<Object>();
+		
+		String parameter = "";
+		for (Field key : map.keySet()) {
+			parameter += key.getName() + " = ?, ";
+			valueList.add(map.get(key));
+		}
+		parameter = parameter.substring(0, parameter.length() - 2);
+		sql = String.format(sql, object.getClass().getSimpleName(), parameter);
+		
+		return new SqlParameter(sql, valueList);
+	}
 
 	public Map<Field, Object> getParameter(Object object) {
 		Class<?> clazz = object.getClass();

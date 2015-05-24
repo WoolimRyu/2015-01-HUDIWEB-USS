@@ -14,27 +14,26 @@ public class UserDao {
 
 	// @Autowired
 	private JdbcTemplate jdbcTemplate;
-
+	private SqlSupport ss = new SqlSupport();
 	
 	public boolean insert(User user) {
-		String sql = "INSERT INTO User values(null, ?, ?, ?, ?)";
-		return jdbcTemplate.update(sql, user.getStringId(), user.getPassword(), user.getEmail(), user.getName()) == 1;
+		SqlParameter sp = ss.getInsertSql(user);
+		return jdbcTemplate.update(sp.getSql(), sp.getParameter()) == 1;
 	}
 
 	public User find(User user) {
-		SqlSupport ss = new SqlSupport();
 		SqlParameter sp = ss.getSelectSql(user);
 		return jdbcTemplate.queryForObject(sp.getSql(), new BeanPropertyRowMapper<User>(User.class), sp.getParameter());
 	}
 
 	public boolean update(User user) {
-		String sql = "UPDATE User SET where stringId = ?";
-		return false;
+		SqlParameter sp = ss.getUpdateSql(user);
+		return jdbcTemplate.update(sp.getSql(), sp.getParameter()) == 1;
 	}
 
 	public List<User> findList(User user) {
-		String sql = "";
-		return null;
+		SqlParameter sp = ss.getSelectSql(user);
+		return jdbcTemplate.query(sp.getSql(), new BeanPropertyRowMapper<User>(User.class), sp.getParameter());
 	}
 
 }
