@@ -13,12 +13,11 @@ import uss.dao.UserDao;
 import uss.model.User;
 import uss.response.Response;
 import uss.response.Result;
-import uss.response.user.LoginResult;
 
 @Controller
 public class UserController {
 
-	private static final String USER = "user";
+	static final String USER = "user";
 
 	@Autowired
 	UserDao dao;
@@ -31,12 +30,13 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public Response login(User user) {
+	public Response login(User user, HttpSession session) {
 		User findedUser = dao.find(user);
 		if (findedUser == null)
-			return LoginResult.ERROR_USER_NULL;
+			return Result.Login.ERROR_USER_NULL;
 		if (!findedUser.getPassword().equals(user.getPassword()))
-			return LoginResult.ERROR_PASSWORD_NOT_MATCHED;
+			return Result.Login.ERROR_PASSWORD_NOT_MATCHED;
+		session.setAttribute(USER, findedUser);
 		return Result.SUCCESS(findedUser);
 	}
 
