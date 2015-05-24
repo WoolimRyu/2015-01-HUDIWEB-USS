@@ -1,6 +1,8 @@
 package uss.dao;
 
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -12,7 +14,7 @@ import uss.util.SqlSupport;
 @Repository
 public class UserDao {
 
-	// @Autowired
+	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	private SqlSupport ss = new SqlSupport();
 	
@@ -23,7 +25,7 @@ public class UserDao {
 
 	public User find(User user) {
 		SqlParameter sp = ss.getSelectSql(user);
-		return jdbcTemplate.queryForObject(sp.getSql(), new BeanPropertyRowMapper<User>(User.class), sp.getParameter());
+		return jdbcTemplate.queryForObject(sp.getSql(), sp.getParameter(), new BeanPropertyRowMapper<User>(User.class));
 	}
 
 	public boolean update(User user) {
@@ -33,7 +35,7 @@ public class UserDao {
 
 	public List<User> findList(User user) {
 		SqlParameter sp = ss.getSelectSql(user);
-		return jdbcTemplate.query(sp.getSql(), new BeanPropertyRowMapper<User>(User.class), sp.getParameter());
+		return jdbcTemplate.query(sp.getSql(), sp.getParameter(), new BeanPropertyRowMapper<User>(User.class));
 	}
 
 }

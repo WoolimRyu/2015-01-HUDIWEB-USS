@@ -37,7 +37,7 @@ public class SqlSupportTest {
 	@Test
 	public void testGetSelectSql() {
 		SqlParameter sp = ss.getSelectSql(user);
-		assertEquals("SELECT * FROM User WHERE stringId = ?, password = ?", sp.getSql());
+		assertEquals("SELECT * FROM User WHERE stringId = ? and password = ?", sp.getSql());
 	}
 	
 	@Test
