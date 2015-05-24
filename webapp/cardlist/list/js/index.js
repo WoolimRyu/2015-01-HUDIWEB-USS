@@ -14,8 +14,8 @@ function d(el){
 
 function init(){
   // first time active home
-  d('[data-section="home"]').classList.add('show-section');
-  d('[data-link="home"]').classList.add('active');
+  d('[data-section="list"]').classList.add('show-section');
+  d('[data-link="list"]').classList.add('active');
   
   try{
     // loader();
@@ -66,4 +66,3 @@ function navigation(){
     }
   });
 }
-
