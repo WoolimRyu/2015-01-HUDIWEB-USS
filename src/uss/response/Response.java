@@ -11,6 +11,11 @@ public class Response {
 	private String message;
 	private Integer code;
 
+	@Override
+	public String toString() {
+		return "Response [object=" + object + ", message=" + message + ", code=" + code + "]";
+	}
+
 	public Response(String message, Integer code) {
 		this.message = message;
 		this.code = code;

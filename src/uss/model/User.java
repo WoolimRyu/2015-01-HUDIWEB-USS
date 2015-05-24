@@ -12,9 +12,9 @@ public class User {
 	private String password;
 	private String email;
 	private String name;
-	
+
 	public User() {
-		
+
 	}
 
 	public User(String stringId, String password) {
@@ -31,8 +31,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", stringId=" + stringId + ", password=" + password + ", email=" + email + ", name="
-				+ name + "]";
+		return "User [userId=" + userId + ", stringId=" + stringId + ", password=" + password + ", email=" + email + ", name=" + name + "]";
 	}
 
 	public void setUserId(Integer id) {
@@ -117,7 +116,5 @@ public class User {
 			return false;
 		return true;
 	}
-	
-	
 
 }

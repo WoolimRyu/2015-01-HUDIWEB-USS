@@ -2,11 +2,13 @@ package uss.controller;
 
 import java.util.List;
 
+import next.jdbc.mysql.DAO;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import uss.dao.GroupDao;
 import uss.model.Group;
 import uss.response.Response;
 import uss.response.Result;
@@ -15,12 +17,12 @@ import uss.response.Result;
 @RequestMapping("/group")
 public class GroupConroller {
 
-	// @Autowired
-	GroupDao dao;
+	@Autowired
+	DAO dao;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public Response get(Group group) {
-		Group g = dao.find(group);
+		Group g = dao.fill(group);
 		if (g == null)
 			return Result.ERROR_SEARCH_NOT_FOUND;
 		return Result.SUCCESS(g);

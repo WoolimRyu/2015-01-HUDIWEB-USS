@@ -2,11 +2,12 @@ package uss.controller;
 
 import java.util.List;
 
+import next.jdbc.mysql.DAO;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import uss.dao.CardDao;
 import uss.model.Card;
 import uss.response.Response;
 import uss.response.Result;
@@ -15,11 +16,11 @@ import uss.response.Result;
 public class CardController {
 
 	@Autowired
-	CardDao dao;
+	DAO dao;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public Response get(Card card) {
-		Card c = dao.find(card);
+		Card c = dao.fill(card);
 		if (c == null)
 			return Result.ERROR_SEARCH_NOT_FOUND;
 		return Result.SUCCESS(c);
