@@ -9,6 +9,7 @@
 	<configs>
 		<config>webapp/WEB-INF/uss-servlet.xml</config>
 		<config>resources/applicationContext.xml</config>
+		<config>resources/test-applicationContext.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
