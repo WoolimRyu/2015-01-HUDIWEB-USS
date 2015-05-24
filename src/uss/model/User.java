@@ -1,5 +1,6 @@
 package uss.model;
 
+import next.jdbc.mysql.annotation.Column;
 import next.jdbc.mysql.annotation.Key;
 import next.jdbc.mysql.annotation.Table;
 
@@ -8,6 +9,7 @@ public class User {
 	@Key(AUTO_INCREMENT = true)
 	private Integer userId;
 
+	@Column(function = { "index", "unique" })
 	private String stringId;
 	private String password;
 	private String email;

@@ -18,6 +18,7 @@
 		p:dataSource-ref="dataSource" />
 
 	<bean id="DAO" class="next.jdbc.mysql.DAO" />
+	<bean id="userController" class="uss.controller.UserController"></bean>
 
 
 	<!-- <bean id="userService" class="uss.service.UserService" /> <bean id="relationService" 
