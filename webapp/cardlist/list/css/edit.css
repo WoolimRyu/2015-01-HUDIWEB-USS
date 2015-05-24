@@ -1,0 +1,64 @@
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,400);*/
+* {
+    box-sizing: border-box;
+    /*font-family: "Open Sans", sans-serif;*/
+}
+
+p {
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 40px;
+}
+
+.createBtn {
+    width:170px;
+    height:40px;
+    display: inline-block;
+    background-color: #de584d;
+    border: 2px solid #d65147;
+    border-radius: 5px;
+    box-shadow: 0px 2px 0px #ceced1;
+    background-image: url("http://i.imgur.com/gAtesxD.png");
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.createBtn i {
+    font-size: 30px;
+    display: none;
+    color: #ffffff;
+    margin-right: 30px;
+    vertical-align: middle;
+}
+.createBtn .button-text, .createBtn input[type="text"], .createBtn .hidden {
+    font-size: 18px;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+.createBtn .button-text {
+    margin-left : 30px;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 0px 2px #cc5147;
+    display: inline-block;
+    z-index: 1;
+    vertical-align: middle;
+    margin-top:1px;
+}
+.createBtn input[type="text"] {
+    margin-top:3px;
+    height: 28px;
+    width: 120px;
+    display: none;
+    padding: 0 8px 0 20px;
+    z-index: 2;
+    outline: none;
+    margin-left: 29px;
+    background-color: ghostwhite;
+}
+.createBtn .hidden {
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
