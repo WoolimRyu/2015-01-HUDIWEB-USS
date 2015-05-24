@@ -12,7 +12,7 @@ public class Result {
 	public static Response SUCCESS(Object object) {
 		return new Response(object, Response.SUCCESS);
 	}
-	
+
 	public static class Login {
 		public static final Response ERROR_PASSWORD_NOT_MATCHED = new Response("패스워드가 일치하지 않습니다.", Response.ERROR);
 		public static final Response ERROR_USER_NULL = new Response("패스워드가 일치하지 않습니다.", Response.ERROR);
