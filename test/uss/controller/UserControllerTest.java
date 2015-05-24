@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import javax.servlet.http.HttpSession;
 
+import next.jdbc.mysql.DAO;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -11,7 +13,6 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-import uss.dao.UserDao;
 import uss.model.User;
 import uss.response.Result;
 
@@ -21,7 +22,7 @@ public class UserControllerTest {
 	UserController controller;
 
 	@Mock
-	UserDao dao;
+	DAO dao;
 
 	@Mock
 	HttpSession session;
