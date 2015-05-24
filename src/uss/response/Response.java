@@ -7,7 +7,7 @@ public class Response {
 	public final static int SUCCESS = 2;
 	public final static int SUCCESS_USER_ALERT = 3;
 
-	private Object object;
+	Object object;
 	private String message;
 	private Integer code;
 

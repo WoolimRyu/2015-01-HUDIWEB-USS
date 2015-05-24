@@ -2,10 +2,10 @@ package uss.service;
 
 import static org.junit.Assert.assertEquals;
 
-
 import org.junit.Before;
 import org.junit.Test;
 
+import uss.controller.UserController;
 import uss.dao.UserDao;
 import uss.model.User;
 import uss.response.Result;
@@ -13,7 +13,8 @@ import uss.response.user.LoginResult;
 
 public class UserServiceTest {
 
-	UserService service;
+	
+	UserController service;
 
 	@Before
 	public void setup() {
