@@ -3,6 +3,9 @@ package uss.dao;
 
 import java.util.List;
 
+import next.jdbc.mysql.DAO;
+
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -15,43 +18,29 @@ public class UserDao {
 	private JdbcTemplate jdbcTemplate;
 
 	public boolean insert(User user) {
-		String sql = "insert into USER values(?, ?, ?, ?, ? ,now(), null, 'F', ?)";
-		return jdbcTemplate.update(sql, user.getId(), user.getPassword(), user.getName())==1;
+		
+		String sql = "INSERT INTO User values(null, ?, ?, ?, ?)";
+		return jdbcTemplate.update(sql, user.getStringId(), user.getPassword(), user.getEmail(), user.getName())==1;
 	}
 
-//
-//	public void updateCustomer(final User user) {
-//		String sql = "update USER set PHONE = ?, ADDRESS = ? where ID = ?";
-//		jdbcTemplate.update(sql, user.getPhone(), user.getAddress(), user.getId());
-//	}
-//
-//
-//	public User selectUserById(final String userId) {
-//		String sql = "select * from USER where ID=?";
-//		try {
-//			return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<Customer>(Customer.class), userId);
-//		} catch (EmptyResultDataAccessException e) {
-//			return null;
-//		}
-//	}
-
-
-	public User find(User user) {
-		// TODO Auto-generated method stub
-		return null;
+	public User findByStringId(User user) {
+		String sql = "SELECT * FROM User WHERE stringId = ?";
+		return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), user.getStringId());
+	}
+	
+	public User findByName(User user) {
+		String sql = "SELECT * FROM User WHERE name = ?";
+		return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), user.getName());
 	}
 
 	public boolean update(User user) {
-		// TODO Auto-generated method stub
+		String sql = "UPDATE User SET where stringId = ?";
 		return false;
 	}
 
 	public List<User> findList(User user) {
-		// TODO Auto-generated method stub
+		String sql = "";
 		return null;
 	}
-
-
-
 
 }
