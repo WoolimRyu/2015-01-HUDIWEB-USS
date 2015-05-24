@@ -14,12 +14,12 @@ public class SqlSupport {
 
 		String parameter = "";
 		for (Field key : map.keySet()) {
-			parameter += key.getName() + " = ?, ";
+			parameter += key.getName() + " = ? and ";
 			valueList.add(map.get(key));
 		}
-		parameter = parameter.substring(0, parameter.length() - 2);
+		parameter = parameter.substring(0, parameter.length() - 5);
 		sql = String.format(sql, object.getClass().getSimpleName(), parameter);
-		return new SqlParameter(sql, valueList);
+		return new SqlParameter(sql, valueList.toArray());
 	}
 
 	public SqlParameter getUpdateSql(Object object) {
@@ -32,7 +32,7 @@ public class SqlSupport {
 		String setParameter = "";
 		for (Field key : map.keySet()) {
 			if(key.getName().endsWith("Id")) {
-				parameter += key.getName() + " = ?, ";
+				parameter += key.getName() + " = ? and ";
 				valueList.add(map.get(key));
 			}
 			else {
@@ -40,7 +40,7 @@ public class SqlSupport {
 				setValueList.add(map.get(key));
 			}
 		}
-		parameter = parameter.substring(0, parameter.length() - 2);
+		parameter = parameter.substring(0, parameter.length() - 5);
 		setParameter = setParameter.substring(0, setParameter.length() - 2);
 		sql = String.format(sql, object.getClass().getSimpleName(), setParameter, parameter);
 		
@@ -48,7 +48,22 @@ public class SqlSupport {
 			setValueList.add(value);
 		}
 
-		return new SqlParameter(sql, setValueList);
+		return new SqlParameter(sql, setValueList.toArray());
+	}
+	public SqlParameter getInsertSql(Object object) {
+		String sql = "INSERT %s SET %s";
+		Map<Field, Object> map = getParameter(object);
+		ArrayList<Object> valueList = new ArrayList<Object>();
+		
+		String parameter = "";
+		for (Field key : map.keySet()) {
+			parameter += key.getName() + " = ?, ";
+			valueList.add(map.get(key));
+		}
+		parameter = parameter.substring(0, parameter.length() - 2);
+		sql = String.format(sql, object.getClass().getSimpleName(), parameter);
+		
+		return new SqlParameter(sql, valueList.toArray());
 	}
 
 	public Map<Field, Object> getParameter(Object object) {
