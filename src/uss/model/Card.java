@@ -6,8 +6,8 @@ import next.jdbc.mysql.annotation.Table;
 @Table
 public class Card {
 
-	@Key(AUTO_INCREMENT=true)
-	private Integer cardId;
+	@Key(AUTO_INCREMENT = true)
+	private Integer id;
 
 	private Integer userId;
 	private String phoneNumber;
