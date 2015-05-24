@@ -16,6 +16,12 @@ public class Card {
 	private Integer template;
 	private String photo;
 	private String message;
+	
+	public void Card() {
+		
+	}
+	
+	
 
 	public String getPhoneNumber() {
 		return phoneNumber;
