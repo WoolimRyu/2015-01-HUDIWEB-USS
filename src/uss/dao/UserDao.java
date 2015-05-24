@@ -4,12 +4,15 @@ package uss.dao;
 import java.util.List;
 
 import next.jdbc.mysql.DAO;
+import next.jdbc.mysql.sql.SqlSupports;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import uss.model.User;
+import uss.util.SqlParameter;
+import uss.util.SqlSupport;
 
 @Repository
 public class UserDao {
@@ -17,14 +20,16 @@ public class UserDao {
 //	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
+	
 	public boolean insert(User user) {
 		String sql = "INSERT INTO User values(null, ?, ?, ?, ?)";
 		return jdbcTemplate.update(sql, user.getStringId(), user.getPassword(), user.getEmail(), user.getName())==1;
 	}
 
 	public User find(User user) {
-		String sql = "SELECT * FROM User WHERE stringId = ?";
-		return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), user.getStringId());
+		SqlSupport ss = new SqlSupport();
+		SqlParameter sp = ss.getSelectSql(user);
+		return jdbcTemplate.queryForObject(sp.getSql(), new BeanPropertyRowMapper<User>(User.class), sp.getParameter());
 	}
 
 	public boolean update(User user) {

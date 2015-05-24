@@ -7,7 +7,7 @@ import next.jdbc.mysql.annotation.Table;
 public class Group {
 	@Key(AUTO_INCREMENT=true)
 	private Integer groupId;
-		private String name;
+	private String name;
 	private String description;
 	
 	public Integer getGroupId() {
