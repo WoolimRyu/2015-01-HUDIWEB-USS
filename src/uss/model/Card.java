@@ -8,7 +8,6 @@ public class Card {
 
 	@Key(AUTO_INCREMENT = true)
 	private Integer cardId;
-
 	private Integer userId;
 	private String phoneNumber;
 	private String company;

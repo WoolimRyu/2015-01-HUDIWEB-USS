@@ -9,19 +9,18 @@
 
 	<context:annotation-config />
 
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
-		p:driverClassName="${database.driverClassName}" 
-		p:url="${database.url}" 
-		p:username="${database.username}" 
-		p:password="${database.password}" />
-		
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		p:driverClassName="${database.driverClassName}" p:url="${database.url}"
+		p:username="${database.username}" p:password="${database.password}" />
+
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"
 		p:dataSource-ref="dataSource" />
 
-	<!-- <bean id="DAO" class="next.jdbc.mysql.DAO" />
+	<bean id="DAO" class="next.jdbc.mysql.DAO" />
 
-	<bean id="userService" class="uss.service.UserService" />
-	<bean id="relationService" class="uss.service.RelationService" />
-	<bean id="groupService" class="uss.service.GroupService" />
-	<bean id="gson" class="com.google.gson.Gson" /> -->
+
+	<!-- <bean id="userService" class="uss.service.UserService" /> <bean id="relationService" 
+		class="uss.service.RelationService" /> <bean id="groupService" class="uss.service.GroupService" 
+		/> <bean id="gson" class="com.google.gson.Gson" /> -->
 </beans>

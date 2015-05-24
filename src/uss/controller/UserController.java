@@ -4,12 +4,13 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import next.jdbc.mysql.DAO;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import uss.dao.UserDao;
 import uss.model.User;
 import uss.response.Response;
 import uss.response.Result;
@@ -20,7 +21,7 @@ public class UserController {
 	static final String USER = "user";
 
 	@Autowired
-	UserDao dao;
+	DAO dao;
 
 	@RequestMapping(value = "/user", method = RequestMethod.POST)
 	public Response register(User user) {
@@ -31,7 +32,7 @@ public class UserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public Response login(User user, HttpSession session) {
-		User findedUser = dao.find(user);
+		User findedUser = dao.fill(user);
 		if (findedUser == null)
 			return Result.Login.ERROR_USER_NULL;
 		if (!findedUser.getPassword().equals(user.getPassword()))
