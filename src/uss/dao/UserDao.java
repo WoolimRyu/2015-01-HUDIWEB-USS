@@ -18,19 +18,13 @@ public class UserDao {
 	private JdbcTemplate jdbcTemplate;
 
 	public boolean insert(User user) {
-		
 		String sql = "INSERT INTO User values(null, ?, ?, ?, ?)";
 		return jdbcTemplate.update(sql, user.getStringId(), user.getPassword(), user.getEmail(), user.getName())==1;
 	}
 
-	public User findByStringId(User user) {
+	public User find(User user) {
 		String sql = "SELECT * FROM User WHERE stringId = ?";
 		return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), user.getStringId());
-	}
-	
-	public User findByName(User user) {
-		String sql = "SELECT * FROM User WHERE name = ?";
-		return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), user.getName());
 	}
 
 	public boolean update(User user) {
