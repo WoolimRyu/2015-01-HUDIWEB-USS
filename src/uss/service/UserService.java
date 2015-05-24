@@ -24,7 +24,7 @@ public class UserService {
 	}
 
 	public Response login(User user) {
-		User findedUser = dao.find(user);
+		User findedUser = dao.findByStringId(user);
 		if (findedUser == null)
 			return LoginResult.ERROR_USER_NULL;
 		if (!findedUser.getPassword().equals(user.getPassword()))

@@ -6,12 +6,12 @@ import next.jdbc.mysql.annotation.Table;
 @Table
 public class Group {
 	@Key(AUTO_INCREMENT=true)
-	private Integer id;
+	private Integer groupId;
 		private String name;
 	private String description;
 	
-	public Integer getId() {
-		return id;
+	public Integer getGroupId() {
+		return groupId;
 	}
 	public String getName() {
 		return name;

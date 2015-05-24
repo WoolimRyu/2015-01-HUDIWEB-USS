@@ -6,7 +6,7 @@ import next.jdbc.mysql.annotation.Table;
 @Table
 public class User {
 	@Key(AUTO_INCREMENT = true)
-	private Integer id;
+	private Integer userId;
 
 	private String stringId;
 	private String password;
@@ -20,12 +20,12 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", stringId=" + stringId + ", password=" + password + ", email=" + email + ", name="
+		return "User [userId=" + userId + ", stringId=" + stringId + ", password=" + password + ", email=" + email + ", name="
 				+ name + "]";
 	}
 
 	public void setId(Integer id) {
-		this.id = id;
+		this.userId = id;
 	}
 
 	public void setStringId(String stringId) {
@@ -44,8 +44,8 @@ public class User {
 		this.name = name;
 	}
 
-	public Integer getId() {
-		return id;
+	public Integer getUserId() {
+		return userId;
 	}
 
 	public String getStringId() {
