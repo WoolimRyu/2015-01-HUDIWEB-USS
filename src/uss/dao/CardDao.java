@@ -21,4 +21,9 @@ public class CardDao {
 		return false;
 	}
 
+	public Card find(Card card) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

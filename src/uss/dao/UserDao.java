@@ -1,11 +1,6 @@
 package uss.dao;
 
-
 import java.util.List;
-
-import next.jdbc.mysql.DAO;
-import next.jdbc.mysql.sql.SqlSupports;
-
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -16,14 +11,14 @@ import uss.util.SqlSupport;
 
 @Repository
 public class UserDao {
-	
-//	@Autowired
+
+	// @Autowired
 	private JdbcTemplate jdbcTemplate;
 
 	
 	public boolean insert(User user) {
 		String sql = "INSERT INTO User values(null, ?, ?, ?, ?)";
-		return jdbcTemplate.update(sql, user.getStringId(), user.getPassword(), user.getEmail(), user.getName())==1;
+		return jdbcTemplate.update(sql, user.getStringId(), user.getPassword(), user.getEmail(), user.getName()) == 1;
 	}
 
 	public User find(User user) {
