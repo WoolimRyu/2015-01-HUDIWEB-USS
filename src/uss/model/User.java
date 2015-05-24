@@ -14,9 +14,9 @@ public class User {
 	private String password;
 	private String email;
 	private String name;
+	private String style;
 
 	public User() {
-
 	}
 
 	public User(String stringId, String password) {
@@ -24,16 +24,25 @@ public class User {
 		this.password = password;
 	}
 
-	public User(String stringId, String password, String email, String name) {
+	public User(String stringId, String password, String email, String name, String style) {
 		this.stringId = stringId;
 		this.password = password;
 		this.email = email;
 		this.name = name;
+		this.style = style;
 	}
 
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", stringId=" + stringId + ", password=" + password + ", email=" + email + ", name=" + name + "]";
+	}
+
+	public String getStyle() {
+		return style;
+	}
+
+	public void setStyle(String style) {
+		this.style = style;
 	}
 
 	public void setUserId(Integer id) {

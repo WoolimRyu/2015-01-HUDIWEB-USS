@@ -8,27 +8,34 @@
           href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css'>
     <link href='http://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/t2Style.css">
+    <link rel="stylesheet" href="/css/t2style.css">
 </head>
 
 <body ng-app="uss" ng-controller="userController">
 <p class="lines-text-after-before"></p>
 
 
-<header class="title">
+<header class="title" ng-controller="userController">
     <section>
         <header>
-            <p> Google CTO </p> <p> 01049302778 <br> abcde@gmail.com</p>
-            <h2>WOOLIM RYU</h2>
-            <p class="lines-text-after-before"> </p>
+            <p> {{user.position}} </p>
+
+            <p> {{user.phone}} <br> {{user.email}}</p>
+
+            <h2>{{user.name}}</h2>
+
+            <p class="lines-text-after-before"></p>
+
             <div class="bottom">~2014.08 Google<br> 2013.01 Naver<br> 2012 the best developer 1st. <br> 등등 자랑거리.</div>
         </header>
     </section>
-</header><br/>
+</header>
+<br/>
 
 <hr/>
 <footer>
     <p><a href="#contactP">CONTACT ME</a></p>
+
     <div id="contactP" class="temp">
         <ul class="icons">
             <li class="icon">
@@ -75,6 +82,9 @@
     </div>
 </footer>
 
+<script src="/library/angular/angular.min.js"></script>
+<script src="/library/angular/angular-route.min.js"></script>
+<script src="/js/profile.js"></script>
 </body>
 
 </html>

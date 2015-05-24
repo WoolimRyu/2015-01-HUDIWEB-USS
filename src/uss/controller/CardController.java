@@ -12,7 +12,7 @@ import uss.model.Card;
 import uss.response.Response;
 import uss.response.Result;
 
-@RequestMapping("/card")
+@RequestMapping("/api/card")
 public class CardController {
 
 	@Autowired
@@ -28,14 +28,14 @@ public class CardController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public Response insert(Card card) {
-		if(!dao.insert(card))
+		if (!dao.insert(card))
 			return Result.ERROR_SQL_EXCUTE;
 		return Result.SUCCESS;
 	}
 
 	@RequestMapping(method = RequestMethod.PUT)
 	public Response update(Card card) {
-		if(!dao.update(card))
+		if (!dao.update(card))
 			return Result.ERROR_SQL_EXCUTE;
 		return Result.SUCCESS;
 	}

@@ -14,7 +14,7 @@ import uss.response.Response;
 import uss.response.Result;
 
 @Controller
-@RequestMapping("/group")
+@RequestMapping("/api/group")
 public class GroupConroller {
 
 	@Autowired

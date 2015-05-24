@@ -7,21 +7,30 @@ import javax.servlet.http.HttpSession;
 import next.jdbc.mysql.DAO;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import uss.model.User;
 import uss.response.Response;
 import uss.response.Result;
 
-@Controller
+@RestController
+@RequestMapping("/api")
 public class UserController {
 
 	static final String USER = "user";
 
 	@Autowired
 	DAO dao;
+
+	@RequestMapping(value = "/user", method = RequestMethod.GET)
+	public Response get(User user) {
+		User found = dao.fill(user);
+		if (found == null)
+			return Result.ERROR_SQL_EXCUTE;
+		return Result.SUCCESS(found);
+	}
 
 	@RequestMapping(value = "/user", method = RequestMethod.POST)
 	public Response register(User user) {
