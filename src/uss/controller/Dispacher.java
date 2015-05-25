@@ -12,7 +12,7 @@ import uss.constants.UriPath;
 import uss.model.User;
 
 @Controller
-public class IdMacherController {
+public class Dispacher {
 
 	@Autowired
 	DAO dao;

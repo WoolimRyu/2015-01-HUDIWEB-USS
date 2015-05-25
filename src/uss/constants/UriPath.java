@@ -2,7 +2,7 @@ package uss.constants;
 
 public class UriPath {
 
-	public static final String HOME = "/home/index.html";
+	public static final String HOME = "/main/index.html";
 	public static final String REGISTER = "/home/register.html";
 	public static final String LOGIN = "/home/login.html";
 	

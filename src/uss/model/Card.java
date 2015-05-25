@@ -15,12 +15,18 @@ public class Card {
 	private Integer template;
 	private String photo;
 	private String message;
-	
-	public void Card() {
-		
+
+	public Card() {
+
 	}
-	
-	
+
+	public Integer getCardId() {
+		return cardId;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
 
 	public String getPhoneNumber() {
 		return phoneNumber;
