@@ -10,8 +10,9 @@
 	<entry key="database.password"></entry>
 	
 	<!-- Mail -->
-	<entry key="mail.host">localhost</entry>
+	<entry key="mail.host">smtp.gmail.com</entry>
 	<entry key="mail.port">25</entry>
-	<entry key="mailMessage.from">uss@uss.com</entry>
+	<entry key="mail.username">usstestmail@gmail.com</entry>
+	<entry key="mail.password">uss123!@</entry>
 
 </properties>
