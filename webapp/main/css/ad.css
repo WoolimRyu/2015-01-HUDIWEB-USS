@@ -19,7 +19,7 @@
 }
 */
 
-.tochange {/*font-family: 'Open Sans', sans-serif;*/ text-transform: uppercase; color: #002147; height: 60px; position: absolute; top: 220px; margin-top: -30px; text-align:center; width: 80%;left: 20%; font-size: 28px;}
+.tochange {/*font-family: 'Open Sans', sans-serif;*/ text-transform: uppercase; color: #002147; height: 60px; position: absolute; top: 180px; margin-top: -30px; text-align:center; width: 80%;left: 20%; font-size: 28px;}
 
 
 
@@ -28,7 +28,7 @@
   /*border:1px solid black;*/
   position : relative;
   text-align: center;
-  bottom: 170px;
+  bottom: 230px;
 }
 
 .container {
@@ -37,7 +37,7 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   left: 60%;
-  top: 50%;
+  top: 43%;
 	max-wisth: 100%;
 
   /*border:1px solid black;*/
