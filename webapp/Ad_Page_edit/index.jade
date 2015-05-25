@@ -1,0 +1,74 @@
+mixin user(name, hospital, city, type)
+  .user
+    a(href="#").user__avatar
+      img(src="https://cdn0.iconfinder.com/data/icons/customicondesign-office6-shadow/128/#{type}.png").avatar
+    .user__content
+      .user__name
+        a(href="#")= name
+      .user__hospital= hospital
+      .user__city= city
+    .user__cv
+      a(href="#") <i class="fa fa-graduation-cap"></i> <br/> c.v.
+      
+mixin post(title, letter)
+  .post
+    .circle-icon&attributes(attributes)= letter
+    h3.post__title
+      a(href="#")= title
+
+section.intro
+  .small-title
+    | By <a href class="text-red">Xagena</a> Network
+    span
+  .logo
+    img(src="https://cdn0.iconfinder.com/data/icons/customicondesign-office6-shadow/128/doctor.png")
+  h1 MediExpert<small class="text-red">.it</small>
+    span  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias itaque officia odio consequatur. Dignissimos omnis, suscipit possimus eveniet. Quidem, ipsa!
+  .see-community
+    a(href="/") Esplora la nostra community
+    
+section.medical-community
+  .section-wrap
+    .medic-icons
+      img(src="https://cdn0.iconfinder.com/data/icons/customicondesign-office6-shadow/128/doctor.png")
+      img(src="https://cdn0.iconfinder.com/data/icons/customicondesign-office6-shadow/128/nurse.png")
+      img(src="https://cdn0.iconfinder.com/data/icons/customicondesign-office6-shadow/128/surgeon.png")
+    h2 Medical Community
+    p
+      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa illo exercitationem, facilis nesciunt dignissimos molestias maiores expedita! Doloribus recusandae quaerat magni dolorum neque tempora animi, modi atque, blanditiis ab esse.
+    
+section.section-wrap
+
+  .community-members
+    .medium-title Medici in evidenza
+      span
+      
+    .users
+      +user('Dott. Alessandra Trezzo', 'Policlinico di Modena', 'Modena', 'nurse')
+      +user('Dott. Andrea Conti', 'Policlinico di Modena', 'Modena', 'doctor')
+      +user('Dott. Anna Maria Carrozzo', 'Università Tor Vergata', 'Roma', 'nurse')
+      +user('Dott. Cristina Mordenti', 'Policlinico Tor Vergata', 'Roma', 'nurse')
+      +user('Dott. Enrico Colosso', 'Ospedale Misericordia', 'Grosset', 'doctor')
+      +user('Dott. Flavia Salassu', 'Clinica S.Carlo', 'Paderno Dugnano', 'nurse')
+    
+    .see-more
+      a(href="/") Gurada tutti i medici della Community &rarr;
+    
+section.adv
+  .banner 
+    a(href="/") Metti la tua pubblicità su mediexpert.it
+    
+section.section-wrap
+  .medical-news
+    .medium-title Medicina News
+      span
+      
+    .posts
+      +post('Humira, approvato in Europa per i bambini e gli adolescenti da 4 anni di età con forma grave di psoriasi a placche cronica', 'H').red
+      +post('Approvato in Europa Xadago nel trattamento della malattia di Parkinson moderata-grave con fluttuazioni motorie', 'A')
+      +post('Psoriasi a placche moderata-grave: BI 655066, un inibitore Il-23, superiore a Ustekinumab, un inibitore IL-12/23', 'P').violet
+      +post('Aducanumab riduce le placche amiloidi e rallenta la compromissione clinica nei pazienti con malattia di Alzheimer prodromica o lieve', 'A').blue
+      +post('Enalapril associato a Acido Folico riduce il rischio di ictus nei pazienti con ipertensione', 'E')
+      
+    .see-more
+      a(href="/") Gurada tutte le news Xagena &rarr;
