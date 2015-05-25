@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import next.jdbc.mysql.maker.PackageCreator;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -30,11 +31,15 @@ public class UserControllerTest {
 	@Mock
 	HttpSession session;
 
-	@Before
-	public void setup() throws NoSuchFieldException, SecurityException {
-		MockitoAnnotations.initMocks(this);
+	@BeforeClass
+	public static void setup() {
 		PackageCreator.reset();
 		DBLauncher.insertTestData();
+	}
+
+	@Before
+	public void init() throws NoSuchFieldException, SecurityException {
+		MockitoAnnotations.initMocks(this);
 	}
 
 	@Test
@@ -56,7 +61,7 @@ public class UserControllerTest {
 	@Test
 	public void updateTest() {
 		User user = new User("id", "pw");
-		user.setUserId(1);
+		user.setUserId(6);
 		Mockito.when(session.getAttribute(UserController.USER)).thenReturn(user);
 		User updateUser = new User("id2", "pw1");
 		assertEquals(Result.ERROR_BAD_REQUEST, controller.update(updateUser, session));
