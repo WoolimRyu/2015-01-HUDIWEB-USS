@@ -14,7 +14,7 @@ public class Result {
 	}
 
 	public static class Login {
-		public static final Response ERROR_PASSWORD_NOT_MATCHED = new Response("패스워드가 일치하지 않습니다.", Response.ERROR);
-		public static final Response ERROR_USER_NULL = new Response("패스워드가 일치하지 않습니다.", Response.ERROR);
+		public static final Response ERROR_PASSWORD_NOT_MATCHED = new Response("패스워드가 일치하지 않습니다.", Response.ERROR_USER_ALERT);
+		public static final Response ERROR_USER_NULL = new Response("없는 아이디 입니다.", Response.ERROR_USER_ALERT);
 	}
 }
