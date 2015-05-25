@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import uss.launcher.DBLauncher;
 import uss.model.User;
 import uss.response.Result;
 
@@ -33,11 +34,12 @@ public class UserControllerTest {
 	public void setup() throws NoSuchFieldException, SecurityException {
 		MockitoAnnotations.initMocks(this);
 		PackageCreator.reset();
+		DBLauncher.insertTestData();
 	}
 
 	@Test
 	public void registerTest() {
-		User user = new User("id", "pw");
+		User user = new User("test", "pass1");
 		assertEquals(Result.SUCCESS(user), controller.register(user));
 		assertEquals(Result.ERROR_SQL_EXCUTE, controller.register(user));
 	}
