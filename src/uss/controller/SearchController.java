@@ -10,15 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 import uss.response.Response;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/search")
 public class SearchController {
 	
 	@Autowired
 	DAO dao;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public Response search(Object object) {
-		
+	public Response search(String query) {
 		
 		return null;
 	}
