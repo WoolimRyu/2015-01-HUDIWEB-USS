@@ -22,29 +22,29 @@ public class CardController {
 	public Response get(Card card) {
 		Card c = dao.fill(card);
 		if (c == null)
-			return Result.ERROR_SEARCH_NOT_FOUND;
-		return Result.SUCCESS(c);
+			return Result.getErrorSearchNotFound();
+		return Result.getSuccess(c);
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	public Response insert(Card card) {
 		if (!dao.insert(card))
-			return Result.ERROR_SQL_EXCUTE;
-		return Result.SUCCESS;
+			return Result.getErrorSqlExcute();
+		return Result.getSuccess();
 	}
 
 	@RequestMapping(method = RequestMethod.PUT)
 	public Response update(Card card) {
 		if (!dao.update(card))
-			return Result.ERROR_SQL_EXCUTE;
-		return Result.SUCCESS;
+			return Result.getErrorSqlExcute();
+		return Result.getSuccess();
 	}
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public Response getList(Card card) {
 		List<Card> cardList = dao.findList(card);
 		if (cardList == null)
-			return Result.ERROR_SEARCH_NOT_FOUND;
-		return Result.SUCCESS(cardList);
+			return Result.getErrorSearchNotFound();
+		return Result.getSuccess(cardList);
 	}
 }

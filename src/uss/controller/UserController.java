@@ -28,44 +28,44 @@ public class UserController {
 	public Response get(User user) {
 		User found = dao.fill(user);
 		if (found == null)
-			return Result.ERROR_SQL_EXCUTE;
-		return Result.SUCCESS(found);
+			return Result.getErrorSqlExcute();
+		return Result.getSuccess(found);
 	}
 
 	@RequestMapping(value = "/user", method = RequestMethod.POST)
 	public Response register(User user) {
 		if (!dao.insert(user))
-			return Result.ERROR_SQL_EXCUTE;
-		return Result.SUCCESS(user);
+			return Result.getErrorSqlExcute();
+		return Result.getSuccess(user);
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public Response login(User user, HttpSession session) {
 		User findedUser = dao.fill(user);
 		if (findedUser == null)
-			return Result.Login.ERROR_USER_NULL;
+			return Result.Login.getErrorUserNull();
 		if (!findedUser.getPassword().equals(user.getPassword()))
-			return Result.Login.ERROR_PASSWORD_NOT_MATCHED;
+			return Result.Login.getErrorPasswordNotMatched();
 		session.setAttribute(USER, findedUser);
-		return Result.SUCCESS(findedUser);
+		return Result.getSuccess(findedUser);
 	}
 
 	@RequestMapping(value = "/user", method = RequestMethod.PUT)
 	public Response update(User user, HttpSession session) {
 		User sessionUser = (User) session.getAttribute(USER);
 		if (!sessionUser.getStringId().equals(user.getStringId()))
-			return Result.ERROR_BAD_REQUEST;
+			return Result.getErrorBadRequest();
 		if (!dao.update(user))
-			return Result.ERROR_SQL_EXCUTE;
-		return Result.SUCCESS(user);
+			return Result.getErrorSqlExcute();
+		return Result.getSuccess(user);
 	}
 
 	@RequestMapping(value = "/user/list", method = RequestMethod.GET)
 	public Response search(User user) {
 		List<User> userList = dao.findList(user);
 		if (userList == null)
-			return Result.ERROR_SEARCH_NOT_FOUND;
-		return Result.SUCCESS(userList);
+			return Result.getErrorSearchNotFound();
+		return Result.getSuccess(userList);
 	}
 
 }

@@ -24,29 +24,29 @@ public class GroupConroller {
 	public Response get(Group group) {
 		Group g = dao.fill(group);
 		if (g == null)
-			return Result.ERROR_SEARCH_NOT_FOUND;
-		return Result.SUCCESS(g);
+			return Result.getErrorSearchNotFound();
+		return Result.getSuccess(g);
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	public Response insert(Group group) {
 		if (!dao.insert(group))
-			return Result.ERROR_SQL_EXCUTE;
-		return Result.SUCCESS;
+			return Result.getErrorSqlExcute();
+		return Result.getSuccess();
 	}
 
 	@RequestMapping(method = RequestMethod.PUT)
 	public Response update(Group group) {
 		if (!dao.update(group))
-			return Result.ERROR_SQL_EXCUTE;
-		return Result.SUCCESS;
+			return Result.getErrorSqlExcute();
+		return Result.getSuccess();
 	}
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public Response getList(Group group) {
 		List<Group> groupList = dao.findList(group);
 		if (groupList == null)
-			return Result.ERROR_SEARCH_NOT_FOUND;
-		return Result.SUCCESS(groupList);
+			return Result.getErrorSearchNotFound();
+		return Result.getSuccess(groupList);
 	}
 }
