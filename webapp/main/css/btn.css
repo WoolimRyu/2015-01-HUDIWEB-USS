@@ -19,6 +19,7 @@ button {
 }
 
 .ripple {
+    margin-top:44px;
     overflow: hidden;
     border-radius: 3px;
     margin-right: 8px;

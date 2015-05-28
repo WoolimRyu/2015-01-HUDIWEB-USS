@@ -1,9 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
-/** VARIABLES */
-/* BASE */
-body {
-  font-family: "Lato", sans-serif;
-}
 
 h1, h2 {
   margin: 0;
@@ -31,7 +25,7 @@ h2 {
 
 p {
   color: rgba(0, 0, 0, 0.6);
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6em;
   font-weight: 300;
 }
@@ -39,7 +33,7 @@ p {
 /* MAIN */
 .section-wrap {
   padding: 80px 40px;
-  max-width: 600px;
+/*  max-width: 600px;*/
   margin: 0 auto;
 }
 
@@ -68,6 +62,7 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #95a5a6;
+  margin-top : -20px;
 }
 .medium-title span {
   display: block;
@@ -115,25 +110,27 @@ p {
 }
 
 /** MEDICAL COMMUNITY */
-.medical-community {
-  background-color: #16a085;
+.communityABC {
+/*  background-color: rgba(22,160,133,0.9);*/
+  background: url(http://i.imgur.com/1DRTAiD.jpg) no-repeat center center fixed;
+  background-size: cover;
   text-align: center;
   height:650px;
 }
-.medical-community .medic-icons {
-  margin-bottom: 45px;
+.communityABC .medic-icons {
+/*  margin-bottom: 45px;*/
 }
-.medical-community .medic-icons img {
+.communityABC .medic-icons img {
   height: 96px;
   width: 96px;
   margin: 0 10px;
 }
-.medical-community h2 {
-  color: white;
+.communityABC h2 {
+/*  color: white;*/
   font-weight: 400;
 }
-.medical-community p {
-  color: rgba(255, 255, 255, 0.6);
+.communityABC p {
+  color: rgba(255, 255, 255, 0.91);
   margin: 1.25em 0 0;
 }
 
@@ -148,8 +145,21 @@ p {
   text-align: left;
 }
 
-/** MEDICAL NEWS */
-.medical-news .see-more {
+
+.lastSection {
+  text-align: center;
+}
+
+.lastSection span{
+  margin-left: 48%;
+}
+
+.lastSection .posts .post{
+  width:560px;
+  margin-left: 27%;
+}
+
+.lastSection .see-more {
   text-align: center;
 }
 
@@ -157,7 +167,7 @@ p {
 .adv {
   color: white;
   background-color: #9b59b6;
-  background-image: url(http://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Fingerprint_picture.svg/170px-Fingerprint_picture.svg.png);
+/*  background-image: url(http://s30.postimg.org/lcnk4gh9d/Screen_Shot_2015_05_26_at_2_31_22_AM.png);*/
   background-size: contain;
   background-blend-mode: overlay;
   box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.4);
@@ -320,4 +330,76 @@ a.btn.green, .btn.green {
 }
 a.btn.green:hover, .btn.green:hover {
   background-color: #107360;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+img {
+  border:0;
+  width:100%;
+  height:100%;
+}
+#team {
+  margin-top : 30px;
+  max-width:96rem;
+  width:100%;
+  min-height:200px;
+  height:auto;
+  margin:0 auto;
+  background-color:white;
+  box-sizing:border-box;
+  padding:0;
+  display:-webkit-flex;
+  display:flex;
+  -webkit-align-items:center;
+  align-items:center;
+  -webkit-justify-content:center;
+  justify-content:center;
+  -webkit-flex-direction:row;
+  flex-direction:row;
+  -webkit-flex-wrap:wrap;
+  flex-wrap:wrap;
+  -webkit-align-content:flex-end;
+  align-content:flex-end;
+}
+figure {
+  width:12.5rem;
+  height:12.5rem;
+  display:block;
+  margin:0.5rem 1rem 4rem 0.5rem;
+  padding:0;
+  box-sizing:content-box;
+  color:black;
+}
+figure img {
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;  
+  border-radius:50%; 
+}
+#team figure img {
+  -webkit-transition:opacity 0.26s ease-out;   
+  -moz-transition:opacity 0.26s ease-out;   
+  -ms-transition:opacity 0.26s ease-out;   
+  -o-transition:opacity 0.26s ease-out;   
+  transition:opacity 0.26s ease-out;    
+}
+/*#team:hover img, #team:active img {
+  opacity:0.3;
+}*/
+/*#team:hover img:hover, #team:active img:active {
+  opacity:1;
+}*/
+figcaption {
+  font-size:1.2rem;
+  margin-top:20px;
+  text-align:center;
 }
