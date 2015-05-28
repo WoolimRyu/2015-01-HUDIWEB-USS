@@ -38,7 +38,10 @@ public class EmailSenderTest {
 	
 	@Test
 	public void testSendAuthEmail() throws MessagingException {
-		emailSender.sendAuthEmail("buyongjo@gmail.com");
+		User user = new User();
+		user.setStringId("test");
+		user.setEmail("buyongjo@gmail.com");
+		emailSender.sendEmail(new AuthMail(user));
 	}
 	
 	
@@ -49,7 +52,7 @@ public class EmailSenderTest {
 		
 		User user = new User();
 		user.setEmail("dd@dd.net");
-		emailSender.sendAuthEmail(user.getEmail());
+		emailSender.sendEmail(new Email());
 		
 		List<Email> request = mockMailSender.getRequests();
 		assertEquals(request.get(0).getTo(), user.getEmail());

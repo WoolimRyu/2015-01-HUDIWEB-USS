@@ -1,12 +1,14 @@
 package uss.mail;
 
 public class Email {
-	private String to;
-	private String subject;
-	private String content;
+	protected String to;
+	protected String subject;
+	protected String content;
 	
-	
+	public Email() {
 		
+	}
+	
 	public Email(String to, String subject, String content) {
 		this.to = to;
 		this.subject = subject;
