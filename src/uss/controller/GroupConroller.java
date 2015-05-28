@@ -22,7 +22,7 @@ public class GroupConroller {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public Response get(Group group) {
-		Group g = dao.fill(group);
+		Group g = dao.find(group);
 		if (g == null)
 			return Result.getErrorSearchNotFound();
 		return Result.getSuccess(g);

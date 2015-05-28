@@ -20,6 +20,16 @@ public class Card {
 
 	}
 
+	@Override
+	public String toString() {
+		return "Card [cardId=" + cardId + ", userId=" + userId + ", phoneNumber=" + phoneNumber + ", company=" + company + ", position=" + position
+				+ ", template=" + template + ", photo=" + photo + ", message=" + message + "]";
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
 	public Integer getCardId() {
 		return cardId;
 	}
