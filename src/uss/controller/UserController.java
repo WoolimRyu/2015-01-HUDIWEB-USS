@@ -26,7 +26,7 @@ public class UserController {
 
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	public Response get(User user) {
-		User found = dao.fill(user);
+		User found = dao.find(user);
 		if (found == null)
 			return Result.getErrorSqlExcute();
 		return Result.getSuccess(found);
@@ -41,7 +41,7 @@ public class UserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public Response login(User user, HttpSession session) {
-		User findedUser = dao.fill(user);
+		User findedUser = dao.find(user);
 		if (findedUser == null)
 			return Result.Login.getErrorUserNull();
 		if (!findedUser.getPassword().equals(user.getPassword()))

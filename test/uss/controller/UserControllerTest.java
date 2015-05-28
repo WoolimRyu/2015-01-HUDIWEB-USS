@@ -13,7 +13,9 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
+import uss.model.Card;
 import uss.model.User;
+import uss.model.join.UserCard;
 import uss.response.Result;
 
 public class UserControllerTest {
@@ -56,4 +58,18 @@ public class UserControllerTest {
 		assertEquals(Result.getSuccess(), controller.register(user2));
 	}
 
+	@Test
+	public void test() {
+		DAO dao = new DAO();
+		Card card = new Card();
+		card.setUserId(1);
+		dao.insert(card);
+		User user = new User();
+		user.setUserId(1);
+		System.out.println(dao.find(new UserCard(user, new Card())));
+	}
+
+	public void tm(String abc) {
+
+	}
 }

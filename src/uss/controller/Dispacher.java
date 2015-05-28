@@ -19,7 +19,7 @@ public class Dispacher {
 
 	@RequestMapping(value = "/{userId}", method = RequestMethod.GET)
 	public String search(@PathVariable String userId) {
-		User user = dao.fill(new User(userId, null));
+		User user = dao.find(new User(userId, null));
 		if (user == null)
 			return UriPath.HOME;
 		if (user.getStyle() == null)

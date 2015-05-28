@@ -1,6 +1,9 @@
 package uss.model;
 
+import java.util.List;
+
 import next.jdbc.mysql.annotation.Column;
+import next.jdbc.mysql.annotation.Exclude;
 import next.jdbc.mysql.annotation.Key;
 import next.jdbc.mysql.annotation.Table;
 
@@ -15,6 +18,9 @@ public class User {
 	private String email;
 	private String name;
 	private String style;
+	
+	@Exclude
+	private List<Group> groups;
 
 	public User() {
 	}

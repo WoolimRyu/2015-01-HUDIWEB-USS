@@ -20,7 +20,7 @@ public class CardController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public Response get(Card card) {
-		Card c = dao.fill(card);
+		Card c = dao.find(card);
 		if (c == null)
 			return Result.getErrorSearchNotFound();
 		return Result.getSuccess(c);
