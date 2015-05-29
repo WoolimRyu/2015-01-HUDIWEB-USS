@@ -23,4 +23,7 @@
 
 	<bean id="gsonHttpMessageConverter"
 		class="org.springframework.http.converter.json.GsonHttpMessageConverter" />
+		
+	<bean id="multipartResolver"  
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 </beans>
