@@ -13,6 +13,10 @@
 <body ng-app="uss">
 <div ng-controller="userController">
     <article>
+    	<input ng-change="ffff" ng-model="query">
+    	{{query}}
+    	검색결과 갯수 : {{results.length}}
+    	<div ng-repeat="result in results">{{result.name}} {{result.time}}</div>
         <figure class="responsive-fonts">
             <img src="http://a.fod4.com/images/user_photos/1335039/b892600c3e15fb4dd218c3fe081d8b52_fullsize.jpg">
             <figcaption>{{user.name1}}<br>{{user.name2}}</figcaption>

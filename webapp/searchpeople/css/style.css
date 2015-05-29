@@ -537,3 +537,28 @@ font-size: 60px;
     height: 536px;
 }
 
+.suggestion-box {
+    position : absolute;
+    width : 600px;
+    top : 200px;
+    left : 500px;
+}
+
+.suggestions {
+    /*position: absolute; 
+    width: 600px; 
+    top: 245px; 
+    left: 209px;*/ 
+    max-height: 300px; 
+    z-index: 9999; 
+    display: block;
+}
+
+.suggestion { 
+    padding: 10px 5px; 
+    font-size: 1.2em; 
+    white-space: nowrap; 
+    overflow: hidden; 
+}
+
+

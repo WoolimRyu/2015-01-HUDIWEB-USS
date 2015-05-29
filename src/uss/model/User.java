@@ -5,6 +5,7 @@ import java.util.List;
 import next.jdbc.mysql.annotation.Column;
 import next.jdbc.mysql.annotation.Exclude;
 import next.jdbc.mysql.annotation.Key;
+import next.jdbc.mysql.annotation.RegularExpression;
 import next.jdbc.mysql.annotation.Table;
 
 @Table
@@ -15,10 +16,11 @@ public class User {
 	@Column(function = { "index", "unique" })
 	private String stringId;
 	private String password;
+	@RegularExpression("@")
 	private String email;
 	private String name;
 	private String style;
-	
+
 	@Exclude
 	private List<Group> groups;
 
@@ -38,9 +40,11 @@ public class User {
 		this.style = style;
 	}
 
+
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", stringId=" + stringId + ", password=" + password + ", email=" + email + ", name=" + name + "]";
+		return "User [userId=" + userId + ", stringId=" + stringId + ", password=" + password + ", email=" + email + ", name=" + name + ", style="
+				+ style + ", groups=" + groups + "]";
 	}
 
 	public String getStyle() {
@@ -132,6 +136,15 @@ public class User {
 		} else if (!stringId.equals(other.stringId))
 			return false;
 		return true;
+	}
+	
+	
+
+	public void update(User usersended) {
+		if (usersended.name != null)
+			this.name = usersended.name;
+		if (usersended.style != null)
+			this.style = usersended.style;
 	}
 
 }
