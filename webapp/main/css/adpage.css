@@ -24,7 +24,8 @@ h2 {
 }
 
 p {
-  color: rgba(0, 0, 0, 0.6);
+/*   color: rgba(0, 0, 0, 0.6); */
+	font-color:grey;
   font-size: 16px;
   line-height: 1.6em;
   font-weight: 300;
@@ -90,7 +91,8 @@ p {
   margin: 0 auto 45px;
 }
 .logo img {
-  width: 100%;
+	width:54px;
+	height:57px;
 }
 
 .see-community {
@@ -130,8 +132,9 @@ p {
   font-weight: 400;
 }
 .communityABC p {
-  color: rgba(255, 255, 255, 0.91);
-  margin: 1.25em 0 0;
+	font-size:17px;
+	font-color:black;
+  margin: 1.5em 0 0;
 }
 
 .community-members {
