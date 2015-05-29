@@ -53,7 +53,7 @@
          C134.004,10.987,133.084,13.042,131.597,14.529c0,0,9.554,9.554,9.554,9.554H0"/>
      </svg>
      <label for="search" class="search-label"></label>
-     <input type="text" id="search" class="input-search" ng-change=autocomplete() ng-model="query"/>
+     <input type="text" id="search" class="input-search" ng-change=autocomplete() ng-submit=submit() ng-model="query"/>
     
     <div class="suggestion-box">
       <div ng-repeat="suggestion in suggestions" class="suggestions">
@@ -107,13 +107,12 @@
 <section class="wrapper clearfix" data-section="logout">
    Log out
 </section>
-<script src="./../library/angular/angular.min.js"></script>
-<script src="./../library/angular/angular-route.min.js"></script>
+<script src="/library/angular/angular.minf+.js"></script>
+<script src="/library/angular/angular-route.min.js"></script>
 <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
 <script src="js/index.js"></script>
 <script src="js/searchsvg.js"></script>
 <script src="js/search.js"></script>
-<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js"></script> -->
 </body>
 
 </html>

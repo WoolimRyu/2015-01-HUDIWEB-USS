@@ -68,6 +68,13 @@ app.controller('searchController', function($scope, $req) {
        		$scope.suggestions = response;
         });
     };
+
+    $scope.submit = function () {
+        $req('/api/search?query=' + $scope.query, {}).onResponse(
+       	function(response) {
+       		$scope.results = response;
+        });
+    };
 });
 
 

@@ -540,15 +540,15 @@ font-size: 60px;
 .suggestion-box {
     position : absolute;
     width : 600px;
-    top : 0;
-    left : 0;
+    top : 200px;
+    left : 500px;
 }
 
 .suggestions {
-/*    position: absolute; 
+    /*position: absolute; 
     width: 600px; 
     top: 245px; 
-    left: 209px; */
+    left: 209px;*/ 
     max-height: 300px; 
     z-index: 9999; 
     display: block;
