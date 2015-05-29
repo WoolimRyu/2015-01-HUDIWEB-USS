@@ -70,20 +70,31 @@ function navigation() {
 
 function sendTemplateReq() {
 	$.ajax({
-		url : "/api/user/update",
-		method : "post",
-		dataType : 'json',
-		data : {
-			user : JSON.stringify({
-				template : parseInt($('.active-img').attr('id').substring(1))
-			})
-		},
+		url : "/api/user?style=" + $('.active-img').attr('id'),
+		method : "PUT",
 		success : function(response) {
-			if (response == 'USER_UPDATE_SUCCESS') {
-				location.href = "/myprofile/phase2/";
+
+			var reponseType = {
+				ERROR : 0,
+				ERROR_USER_ALERT : 1,
+				SUCCESS : 2,
+				SUCCESS_USER_ALERT : 3
+			};
+
+			switch (response.code) {
+			case reponseType.ERROR:
 				return;
+			case reponseType.ERROR_USER_ALERT:
+				alert(response.message);
+				return;
+			case reponseType.SUCCESS:
+				break;
+			case reponseType.SUCCESS_USER_ALERT:
+				alert(response.message);
+				break;
 			}
-			alert(response);
+			location.href = "/myprofile/phase2/";
+			return;
 		}
 	});
 }

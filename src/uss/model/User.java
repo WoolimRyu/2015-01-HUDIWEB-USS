@@ -18,7 +18,7 @@ public class User {
 	private String email;
 	private String name;
 	private String style;
-	
+
 	@Exclude
 	private List<Group> groups;
 
@@ -38,9 +38,11 @@ public class User {
 		this.style = style;
 	}
 
+
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", stringId=" + stringId + ", password=" + password + ", email=" + email + ", name=" + name + "]";
+		return "User [userId=" + userId + ", stringId=" + stringId + ", password=" + password + ", email=" + email + ", name=" + name + ", style="
+				+ style + ", groups=" + groups + "]";
 	}
 
 	public String getStyle() {
@@ -132,6 +134,15 @@ public class User {
 		} else if (!stringId.equals(other.stringId))
 			return false;
 		return true;
+	}
+	
+	
+
+	public void update(User usersended) {
+		if (usersended.name != null)
+			this.name = usersended.name;
+		if (usersended.style != null)
+			this.style = usersended.style;
 	}
 
 }

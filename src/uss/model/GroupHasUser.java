@@ -21,7 +21,13 @@ public class GroupHasUser {
 	public String toString() {
 		return "GroupHasUser [groupId=" + groupId + ", userId=" + userId + "]";
 	}
-	
-	
+
+	public Integer getGroupId() {
+		return groupId;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
 
 }
