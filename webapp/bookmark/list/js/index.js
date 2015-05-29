@@ -14,8 +14,8 @@ function d(el){
 
 function init(){
   // first time active home
-  d('[data-section="home"]').classList.add('show-section');
-  d('[data-link="home"]').classList.add('active');
+  d('[data-section="bookmark"]').classList.add('show-section');
+  d('[data-link="bookmark"]').classList.add('active');
 
   try{
     // loader();
