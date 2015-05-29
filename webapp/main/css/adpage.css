@@ -112,7 +112,7 @@ p {
 /** MEDICAL COMMUNITY */
 .communityABC {
 /*  background-color: rgba(22,160,133,0.9);*/
-  background: url(http://i.imgur.com/1DRTAiD.jpg) no-repeat center center fixed;
+  background: url(http://s28.postimg.org/3lnbuybx9/blurred_background_1.jpg) no-repeat center center fixed;
   background-size: cover;
   text-align: center;
   height:650px;
@@ -166,7 +166,10 @@ p {
 /** ADV */
 .adv {
   color: white;
-  background-color: #9b59b6;
+/*   background-color: #9b59b6; */
+/* background-color : rgba(231,76,60,0.9); */
+background : url(http://s28.postimg.org/3lnbuybx9/blurred_background_1.jpg) no-repeat center center fixed;
+background-size : cover;
 /*  background-image: url(http://s30.postimg.org/lcnk4gh9d/Screen_Shot_2015_05_26_at_2_31_22_AM.png);*/
   background-size: contain;
   background-blend-mode: overlay;
