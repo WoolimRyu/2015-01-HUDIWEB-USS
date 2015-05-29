@@ -176,7 +176,8 @@ nav ul {
     padding: 1em;
 }
 form {
-    width: calc(100% / 2);
+    display: inline;
+    width: calc(100% / 3);
     margin: 0;
 }
 form label {
@@ -186,7 +187,7 @@ form label {
 form input[type="text"],
 form input[type="email"],
 form textarea {
-    display: block;
+    display: inline;
     width: 90%;
     padding: 0.5em;
     border: 1px solid #E8E8E8;
@@ -196,7 +197,6 @@ form textarea {
     width: 100%;
 }
 form input[type="submit"] {
-    display: block;
     padding: 0.5em 0.2em;
     background: #FFF;
     border: 1px solid #1C1C1C;
@@ -384,6 +384,7 @@ form input[type="submit"]:hover {
     transition: all .8s ease
 }
 .show-section {
+    height: 100%;
     display: block;
     opacity: 1;
     -webkit-animation: fade 1s 1 ease;
@@ -427,6 +428,7 @@ text-align: -webkit-match-parent;
 }
 
 .rectangle-list a {
+min-height: 52px;
 width: 400px;
 position: relative;
 display: block;
@@ -539,19 +541,26 @@ font-size: 60px;
 
 .suggestion-box {
     position : absolute;
-    width : 600px;
-    top : 200px;
+    top : 225px;
     left : 500px;
+    border: 1px solid #999;
+    background: #fff;
+    overflow: auto;
+}
+
+.result-box {
+    z-index: -1;
+    position : absolute;
+    top : 225px;
+    left : 500px;
+    padding-top: 30px;
 }
 
 .suggestions {
-    /*position: absolute; 
-    width: 600px; 
-    top: 245px; 
-    left: 209px;*/ 
+    width: 500px;
     max-height: 300px; 
-    z-index: 9999; 
     display: block;
+
 }
 
 .suggestion { 
@@ -560,5 +569,7 @@ font-size: 60px;
     white-space: nowrap; 
     overflow: hidden; 
 }
+
+
 
 

@@ -1,118 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>USS-woolim</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
-  <link rel="stylesheet" href="css/searchsvg.css" media="screen" type="text/css"/>
+<meta charset="UTF-8">
+<title>USS-woolim</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link
+	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" media="screen"
+	type="text/css" />
+<link rel="stylesheet" href="css/searchsvg.css" media="screen"
+	type="text/css" />
 </head>
 
 <body ng-app="uss">
 
-  <header class="header">
-    <div class="logo">
-      <a href=''><img src='image/create_thumb.png'><a>
-    </div>
+	<header class="header">
+		<div class="logo">
+			<a href=''><img src='image/create_thumb.png'><a>
+		</div>
 
-    <a href="#" class="toggle_menu">
-      <i class="fa fa-navicon"></i>
-    </a>
+		<a href="#" class="toggle_menu"> <i class="fa fa-navicon"></i>
+		</a>
 
-    <nav class="menu">
-      <ul>
-        <li><a href="#" data-link="home">My Profile</a></li>
-        <li><a href="#" data-link="list">Card List</a></li>
-        <li><a href="#" data-link="bookmark">Bookmark</a></li>
-        <li><a href="#" data-link="search">Search People</a></li>
-        <li><a href="#" data-link="contact">Contact Us</a></li>
-        <li><a href="#" data-link="logout">Log Out</a></li>
-      </ul>
-    </nav>
-  </header>
+		<nav class="menu">
+			<ul>
+				<li><a href="#" data-link="home">My Profile</a></li>
+				<li><a href="#" data-link="list">Card List</a></li>
+				<li><a href="#" data-link="bookmark">Bookmark</a></li>
+				<li><a href="#" data-link="search">Search People</a></li>
+				<li><a href="#" data-link="contact">Contact Us</a></li>
+				<li><a href="#" data-link="logout">Log Out</a></li>
+			</ul>
+		</nav>
+	</header>
 
-<section class="wrapper clearfix" data-section="home">
-  Home contents...
-</section>
+	<section class="wrapper clearfix" data-section="home">Home
+		contents...</section>
 
-<section class="wrapper clearfix" data-section="list">
-   Card list contents...
-</section>
+	<section class="wrapper clearfix" data-section="list">Card
+		list contents...</section>
 
-<section class="wrapper clearfix" data-section="bookmark">
-   bookmark contents...
-</section>
+	<section class="wrapper clearfix" data-section="bookmark">
+		bookmark contents...</section>
 
-<section class="wrapper clearfix" data-section="search">
-  <div class="bookmarklet">___________________     SEARCH</div>
-  <div ng-controller="searchController" class="searchBody">
-     <svg version="1.1" viewBox="0 0 142.358 24.582">
-     <path id="search-path" fill="none" d="M131.597,14.529c-1.487,1.487-3.542,2.407-5.811,2.407
-         c-4.539,0-8.218-3.679-8.218-8.218s3.679-8.218,8.218-8.218c4.539,0,8.218,3.679,8.218,8.218
-         C134.004,10.987,133.084,13.042,131.597,14.529c0,0,9.554,9.554,9.554,9.554H0"/>
-     </svg>
-     <label for="search" class="search-label"></label>
-     <input type="text" id="search" class="input-search" ng-change=autocomplete() ng-submit=submit() ng-model="query"/>
-    
-    <div class="suggestion-box">
-      <div ng-repeat="suggestion in suggestions" class="suggestions">
-        <div class="suggestion">{{suggestion.left.name}}</div>
-      </div>
-    </div>
+	<section class="wrapper clearfix" data-section="search">
+		<div class="bookmarklet">___________________ SEARCH</div>
+		<div ng-controller="searchController" class="searchBody">
+			<form ng-submit="submit()">
+				<input type="text" id="search" class="input-search" ng-change="autocomplete()" ng-model="query"> 
+				<input type="submit" value="submit">
+			</form>
+			<div class="suggestion-box">
+				<div ng-repeat="suggestion in suggestions" class="suggestions">
+					<div class="suggestion"> <a ng-model="query" ng-click="submit()">{{suggestion.left.name}}</a></div>
+				</div>
+			</div>
 
-    <div ng-repeat="result in results">
-      <ol class="rectangle-list">
-       <li><a href=""><div class="userName">{{result.left.name}}</div>
-        <div class="userInfo">
-          <div class="userJob">{{result.right.company}}</div>
-          <div class="userPhone">{{result.right.phoneNumber}}</div>
+      <div class="result-box">
+  			<div ng-repeat="result in results">
+  				<ol class="rectangle-list">
+  					<li><a href=""><div class="userName">{{result.left.name}}</div>
+  							<div class="userInfo">
+  								<div class="userJob">{{result.right.company}}</div>
+  								<div class="userPhone">{{result.right.phoneNumber}}</div>
+  							</div> </a></li>
+  				</ol>
         </div>
-        </a>
-       </li>
-      </ol>
-    </div>
-  </div>
-  </div>
-</section>
+			</div>
+		</div>
+		</div>
+	</section>
 
-<section class="wrapper clearfix" data-section="contact">
-   <div class="inner">
-     <div class="inner_thumb">
-       <img src="https://unsplash.imgix.net/photo-1414541944151-2f3ec1cfd87d?fit=crop&fm=jpg&h=700&q=75&w=1050" class="media" alt=""/>
-     </div>
-     <div class="inner_text">
-       <form action="">
-         <label>
-           Name
-           <input type="text" placeholder="Your name" />
-         </label>
-         <label>
-           Email
-           <input type="email" placeholder="Your email" required />
-         </label>
-         <label>
-           Message
-           <textarea placeholder="Your message"></textarea>
-         </label>
+	<section class="wrapper clearfix" data-section="contact">
+		<div class="inner">
+			<div class="inner_thumb">
+				<img
+					src="https://unsplash.imgix.net/photo-1414541944151-2f3ec1cfd87d?fit=crop&fm=jpg&h=700&q=75&w=1050"
+					class="media" alt="" />
+			</div>
+			<div class="inner_text">
+				<form action="">
+					<label> Name <input type="text" placeholder="Your name" />
+					</label> <label> Email <input type="email" placeholder="Your email"
+						required />
+					</label> <label> Message <textarea placeholder="Your message"></textarea>
+					</label> <label> <input type="submit" value="Send" />
+					</label>
+				</form>
+			</div>
+		</div>
+	</section>
 
-         <label>
-           <input type="submit" value="Send" />
-         </label>
-       </form>
-     </div>
-   </div>
-</section>
-
-<section class="wrapper clearfix" data-section="logout">
-   Log out
-</section>
-<script src="/library/angular/angular.minf+.js"></script>
-<script src="/library/angular/angular-route.min.js"></script>
-<script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
-<script src="js/index.js"></script>
-<script src="js/searchsvg.js"></script>
-<script src="js/search.js"></script>
+	<section class="wrapper clearfix" data-section="logout">Log
+		out</section>
+	<script src="/library/angular/angular.min.js"></script>
+	<script src="/library/angular/angular-route.min.js"></script>
+	<script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+	<script src="js/index.js"></script>
+	<script src="js/searchsvg.js"></script>
+	<script src="js/search.js"></script>
 </body>
 
 </html>
