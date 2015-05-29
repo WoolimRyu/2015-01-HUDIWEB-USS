@@ -1,5 +1,6 @@
 package uss.launcher;
 
+import uss.model.Card;
 import uss.model.User;
 import next.jdbc.mysql.DAO;
 import next.jdbc.mysql.maker.PackageCreator;
@@ -18,6 +19,9 @@ public class DBLauncher {
 		dao.insert(new User("test3", "pass1", "pass1@tea.com", "name", "t3"));
 		dao.insert(new User("test4", "pass1", "pass1@tea.com", "name", "t4"));
 		dao.insert(new User("test5", "pass1", "pass1@tea.com", "name", "t5"));
+		Card card = new Card();
+		card.setUserId(1);
+		dao.insert(card);
 	}
 
 }
