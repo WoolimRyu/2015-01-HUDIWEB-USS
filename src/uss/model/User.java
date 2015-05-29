@@ -5,6 +5,7 @@ import java.util.List;
 import next.jdbc.mysql.annotation.Column;
 import next.jdbc.mysql.annotation.Exclude;
 import next.jdbc.mysql.annotation.Key;
+import next.jdbc.mysql.annotation.RegularExpression;
 import next.jdbc.mysql.annotation.Table;
 
 @Table
@@ -15,6 +16,7 @@ public class User {
 	@Column(function = { "index", "unique" })
 	private String stringId;
 	private String password;
+	@RegularExpression("@")
 	private String email;
 	private String name;
 	private String style;
