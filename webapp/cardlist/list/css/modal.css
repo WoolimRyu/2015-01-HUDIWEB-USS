@@ -61,6 +61,7 @@
 }
 
 .fancy-btn2 {
+	cursor : pointer;
     width: 90px;
     height : 30px;
     text-align: center;
@@ -424,15 +425,24 @@
 }
 
 .right-bottom{
+	position : absolute;
     height:326px;
-    overflow-y: scroll;
-    display: none;
+    overflow-y: hidden;
+    /* display: none; */
+}
+
+.right-bottom1{
+		position : absolute;
+    height:326px;
+    overflow-y: hidden;
+    /* display: none; */
 }
 
 .right-bottom2{
+		position : absolute;
     height:326px;
-    overflow-y: scroll;
-    display: none;
+    overflow-y: hidden;
+    /* display: none; */
 }
 
 .right-top {
@@ -440,19 +450,26 @@
 }
 
 .right-top-plusBtn {
+	cursor : pointer;
     float: left;
     width:70px;
     height:29px;
-    background-color:  rgba(1,139,211,0.5);
-    border : 1px solid rgba(1,139,211,0.5);
+/*     background-color:  rgba(1,139,211,0.5);
+    border : 1px solid rgba(1,139,211,0.5); */
     margin-left: 200px;
 }
 
 .right-top-minusBtn{
+	cursor : pointer;
     margin-left: 20px;
     float: left;
     width:70px;
     height:29px;
-    background-color: rgba(204,81,71,0.7);
-    border : 1px solid  rgba(204,81,71,0.7);
+/*     background-color: rgba(204,81,71,0.7);
+    border : 1px solid  rgba(204,81,71,0.7); */
+}
+
+
+.modalLi {
+	height : 40px;
 }

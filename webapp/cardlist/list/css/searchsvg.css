@@ -43,6 +43,7 @@ position: relative;
 }
 
 .search-label {
+	cursor : pointer;
   position: relative;
 /*  position: absolute;*/
   display: block;
