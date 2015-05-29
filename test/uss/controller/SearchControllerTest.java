@@ -2,6 +2,7 @@ package uss.controller;
 
 import java.lang.reflect.Field;
 
+
 import next.jdbc.mysql.DAO;
 
 import org.junit.Before;
@@ -24,6 +25,6 @@ public class SearchControllerTest {
 
 	@Test
 	public void test() {
-		System.out.println(controller.search("test"));
+		System.out.println(controller.search("test", null));
 	}
 }
