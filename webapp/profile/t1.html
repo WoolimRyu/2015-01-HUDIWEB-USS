@@ -2,68 +2,78 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
-    <link rel='stylesheet prefetch'
-          href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css'>
-    <link rel="stylesheet" href="/css/t1Style.css">
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<link rel='stylesheet prefetch'
+	href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="/css/t1Style.css">
 </head>
 
 <body ng-app="uss">
-<div ng-controller="userController">
-    <article>
-    	<!-- <input ng-change="ffff" ng-model="query">
+	<div ng-controller="userController">
+		<article>
+			<!-- <input ng-change="ffff" ng-model="query">
     	{{query}}
     	검색결과 갯수 : {{results.length}}
     	<div ng-repeat="result in results">{{result.name}} {{result.time}}</div> -->
-        
-        <div class="wrapperThis" style="margin-top:-40px;">
-        <figure class="responsive-fonts">
-            <img src="http://a.fod4.com/images/user_photos/1335039/b892600c3e15fb4dd218c3fe081d8b52_fullsize.jpg">
-            <figcaption>{{user.name1}}<br>{{user.name2}}</figcaption>
-        </figure>
-        <fieldset class="responsive-fonts">
-            <br>
 
-            <h2>Name || {{user.name}}</h2>
+			<!-- <div class="wrapperThis" style="margin-top: 10px;">
+				<figure class="responsive-fonts">
+					<div id="team">
+						<figure>
+							<img src="http://500px.com/graphics/pages/team/squares/oleg.jpg">
+						</figure>
+					</div>
+			</div> -->
+			
+			<div class="thisthis" style="height:270px; width:100%;">
+			<div id="team">
+						<figure>
+							<img src="http://500px.com/graphics/pages/team/squares/oleg.jpg">
+						</figure>
+					</div>
+			</div>
+					<figcaption>
+						{{user.name1}}<br>{{user.name2}}
+					</figcaption>
+				</figure>
+				<fieldset class="responsive-fonts" style="text-align:center;">
+					<br>
 
-            <h2>email || {{user.email}}</h2>
+					<h2>{{user.name}}</h2>
 
-            <h2>phoneNumber || {{user.phoneNumber}}</h2>
+					<h2>{{user.email}}</h2>
 
-            <h2>company || {{user.company}}</h2>
-            <button><h2>Save Number / Call Me</h2></button>
-        </fieldset>
+					<h2>{{user.phoneNumber}}</h2>
+
+					<h2>{{user.company}}</h2>
+					<button class="phoneCallBtn" style="margin-left:29%; display:none;">
+						<h2>Save Number / Call Me</h2>
+					</button>
+				</fieldset>
 
 
-        <div class="temp">
-            <ul class="icons">
-                <li class="icon">
-                    <a href="/https://github.com">
-                        <i class="fa fa-github fa-lg"></i>
-                    </a>
-                </li>
-                <li class="icon">
-                    <a href="https://facebook.com">
-                        <i class="fa fa-facebook fa-lg"></i>
-                    </a>
-                </li>
-                <li class="icon">
-                    <a href="https://twitter.com">
-                        <i class="fa fa-twitter fa-lg"></i>
-                    </a>
-                </li>
-                <li class="icon">
-                    <a href="https://dribbble.com">
-                        <i class="fa fa-dribbble fa-lg"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        </div>
-    </article>
-</div>
+				<div class="temp">
+					<ul class="icons">
+						<li class="icon"><a href="/https://github.com"> <i
+								class="fa fa-github fa-lg"></i>
+						</a></li>
+						<li class="icon"><a href="https://facebook.com"> <i
+								class="fa fa-facebook fa-lg"></i>
+						</a></li>
+						<li class="icon"><a href="https://twitter.com"> <i
+								class="fa fa-twitter fa-lg"></i>
+						</a></li>
+						<li class="icon"><a href="https://dribbble.com"> <i
+								class="fa fa-dribbble fa-lg"></i>
+						</a></li>
+					</ul>
+				</div>
+			</div>
+		</article>
+	</div>
 </body>
 
 <script src="/library/angular/angular.min.js"></script>
