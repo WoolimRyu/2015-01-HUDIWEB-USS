@@ -13,6 +13,12 @@ function d(el){
 }
 
 function init(){
+
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) 
+	{
+		document.querySelector('.phoneCallBtn').style.display = 'block'; 
+	}
+	
   // first time active home
   d('[data-section="home"]').classList.add('show-section');
   d('[data-link="home"]').classList.add('active');
