@@ -1,140 +1,69 @@
 <!DOCTYPE html>
-
 <html>
-
-
 
 <head>
 
-
-
   <meta charset="UTF-8">
 
-
-
-  <title>AboutMe - LogIn</title>
-
-
+  <title>CodePen - Login/Logout animation concept</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 
-
-
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans'>
-
-
 
     <link rel="stylesheet" href="/css/loginStyle.css">
 
-
-
 </head>
 
-
-
 <body ng-app="login" ng-controller="loginController">
-
   <div class="cont">
-
     <div class="demo">
-
       <div class="login">
-
         <div class="login__check"></div>
-
-<<<<<<< HEAD
-
         
-
         <form class="login__form" name="userForm" ng-submit="submitForm()" novalidate>
-
-        <!-- ID -->
-
-            <div class="login__row" ng-class="{ 'has-error' : userForm.id.$invalid}">
-
-                <svg class="login__icon name svg-icon">
-
-                    <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8"/>
-
-                </svg>
-
-                <input type="text" name="id" class="login__input name" ng-model="user.stringId" ng-minlength="3" ng-maxlength="10" placeholder="User ID"/>
-
-                <p ng-show="userForm.id.$invalid">아이디는 3글자에서 10글자까지 허용됩니다. </p>
-
-            </div>
-
           
+          <!-- ID -->
 
-            <!-- password -->
+          <div class="login__row" ng-class="{ 'has-error' : userForm.id.$invalid}">
 
-            <div class="login__row" ng-class="{ 'has-error' : userForm.password.$invalid}">
+              <svg class="login__icon name svg-icon">
 
-                <svg class="login__icon pass svg-icon">
+                  <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8"/>
 
-                    <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0"/>
+              </svg>
 
-                </svg>
+              <input type="text" name="id" class="login__input name" ng-model="user.stringId" ng-minlength="3" ng-maxlength="10" placeholder="User ID"/>
 
-                <input type="password" name="password" class="login__input pass" ng-model="user.password" ng-minlength="8" placeholder="Password"/>
-
-                <p ng-show="userForm.password.$invalid">패스워드는 최소 8글자 이상이어야 합니다. </p>
-
-            </div>
-
-=======
-
-        <div class="login__form">
-
-          <div class="login__row">
-
-            <svg class="login__icon name svg-icon">
-
-              <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
-
-            </svg>
-
-            <input type="text" ng-model="user.stringId" class="login__input name" placeholder="email"/>
-
-            <span>이메일 형식이 맞지않습니다.</span>
+              <p ng-show="userForm.id.$invalid">아이디는 3글자에서 10글자까지 허용됩니다. </p>
 
           </div>
+          
+          <!-- password -->
 
-          <div class="login__row">
+          <div class="login__row" ng-class="{ 'has-error' : userForm.password.$invalid}">
 
-            <svg class="login__icon pass svg-icon">
+              <svg class="login__icon pass svg-icon">
 
-              <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
+                  <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0"/>
 
-            </svg>
+              </svg>
 
-            <input type="password" ng-model="user.password" class="login__input pass" placeholder="Password"/>
+              <input type="password" name="password" class="login__input pass" ng-model="user.password" ng-minlength="8" placeholder="Password"/>
+
+              <p ng-show="userForm.password.$invalid">패스워드는 최소 8글자 이상이어야 합니다. </p>
 
           </div>
-
->>>>>>> branch 'master' of https://github.com/NHNNEXT/2015-01-HUDIWEB-USS
-
+          
           <button type="button" class="login__submit" ng-click="submit()">Log in</button>
-
           <p class="login__signup">Don't have an account? &nbsp;<a href="/home/register.html">Sign up</a></p>
-
         </form>
-
-        
-
+      
       </div>
-
     </div>
-
   </div>
-
   <script src="/library/angular/angular.min.js"></script>
-
   <script src="/js/login.js"></script>
-
 </body>
 
-
-
 </html>
-
