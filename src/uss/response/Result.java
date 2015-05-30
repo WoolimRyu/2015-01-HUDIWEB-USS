@@ -9,16 +9,25 @@ public class Result {
 
 	private static final Logger logger = LoggerFactory.getLogger(Result.class);
 
-	private static final Response ERROR_SQL_EXCUTE = new Response("SQL실행중 오류가 발생했습니다", Response.ERROR);
+	private static final Response ERROR_SQL_EXCUTE = new Response(
+			"SQL실행중 오류가 발생했습니다", Response.ERROR);
 
-	private static final Response ERROR_BAD_REQUEST = new Response("비정상적인 접근 입니다", Response.ERROR_USER_ALERT);
+	private static final Response ERROR_BAD_REQUEST = new Response(
+			"비정상적인 접근 입니다", Response.ERROR_USER_ALERT);
 
-	private static final Response ERROR_SEARCH_NOT_FOUND = new Response("검색결과가 없습니다.", Response.ERROR_USER_ALERT);
+	private static final Response ERROR_SEARCH_NOT_FOUND = new Response(
+			"검색결과가 없습니다.", Response.ERROR_USER_ALERT);
 
 	private static final Response SUCCESS = getSuccess(null);
 
 	public static Response getSuccess(Object object) {
 		Response response = new Response(object, Response.SUCCESS);
+		logger.debug(LOG, response.toString());
+		return response;
+	}
+
+	public static Response getErrorRegexNotMatched(String message) {
+		Response response = new Response(message, Response.ERROR_USER_ALERT);
 		logger.debug(LOG, response.toString());
 		return response;
 	}
@@ -44,8 +53,10 @@ public class Result {
 	}
 
 	public static class Login {
-		private static final Response ERROR_PASSWORD_NOT_MATCHED = new Response("패스워드가 일치하지 않습니다.", Response.ERROR_USER_ALERT);
-		private static final Response ERROR_USER_NULL = new Response("없는 아이디 입니다.", Response.ERROR_USER_ALERT);
+		private static final Response ERROR_PASSWORD_NOT_MATCHED = new Response(
+				"패스워드가 일치하지 않습니다.", Response.ERROR_USER_ALERT);
+		private static final Response ERROR_USER_NULL = new Response(
+				"없는 아이디 입니다.", Response.ERROR_USER_ALERT);
 
 		public static Response getErrorPasswordNotMatched() {
 			logger.debug(LOG, ERROR_PASSWORD_NOT_MATCHED.toString());
@@ -58,4 +69,5 @@ public class Result {
 		}
 
 	}
+
 }

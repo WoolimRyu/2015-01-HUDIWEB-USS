@@ -23,8 +23,7 @@ public class UsersGroupTest {
 
 	@Test
 	public void testss() {
-		DAO dao = new DAO();
-		dao.insert(new GroupHasUser(1, 1));
+		System.out.println("pass1@tea.com".matches("@"));
 	}
 
 	@Test

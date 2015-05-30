@@ -16,7 +16,7 @@ public class User {
 	@Column(function = { "index", "unique" })
 	private String stringId;
 	private String password;
-	@RegularExpression("@")
+	@RegularExpression("\\w+@\\w+\\.\\w+")
 	private String email;
 	private String name;
 	private String style;
