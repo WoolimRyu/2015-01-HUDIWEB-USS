@@ -18,22 +18,27 @@
 <header class="title" ng-controller="userController">
     <section>
         <header>
-            <p> {{user.position}} </p>
-
-            <p> {{user.phone}} <br> {{user.email}}</p>
-
-            <h2>{{user.name}}</h2>
-
+            <p> {{user.name}} name
+            <br> {{user.company}} company</p>
+            
+            <div id="team" style="display:block;">
+						<figure>
+							<img id="testTh" src="http://500px.com/graphics/pages/team/squares/oleg.jpg">
+					
+						</figure>
+					</div>
+			</div>
+			
+            <h2>{{user.message}}message</h2>
             <p class="lines-text-after-before"></p>
-
-            <div class="bottom">~2014.08 Google<br> 2013.01 Naver<br> 2012 the best developer 1st. <br> 등등 자랑거리.</div>
+            <div class="bottom">{{user.phoneNumber}} <br> {{user.email}}</div>
         </header>
     </section>
 </header>
 <br/>
 
 <hr/>
-<footer>
+<footer id="footerT">
     <p><a href="#contactP">CONTACT ME</a></p>
 
     <div id="contactP" class="temp">

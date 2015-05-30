@@ -20,6 +20,17 @@ input, button {
   border: none;
 }
 
+
+p {
+
+font-size: 13px;
+
+color:red;
+
+}
+
+
+
 .cont {
   position: relative;
   height: 100%;
