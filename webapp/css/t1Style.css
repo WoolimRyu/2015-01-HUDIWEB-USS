@@ -46,11 +46,10 @@ pre {
 }
 
 html {
-    background: #ffce00;
+
 }
 
 article {
-    padding: 23% 6%;
     margin: 0 auto;
     min-width: 320px;
     max-width: 1200px;
@@ -699,7 +698,7 @@ fieldset, pre {
     border : 1;
     border-color: #231f20;
     padding: 3% 5%;
-    background: #ffc200;
+    background: #f8f8f8;
 }
 
 label, a, button {
