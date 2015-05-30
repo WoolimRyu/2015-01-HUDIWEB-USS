@@ -159,9 +159,12 @@ nav ul {
     color: #333
 }
 .inner {
-    background: #FFF;
+	box-shadow : 10px 10px 10px silver;
+    background: default;
+    margin-top : 76px;
+    margin-left : 150px;
+    width:62%;
     border: 1px solid #E7E7E7;
-    margin: 1em;
     padding: 0;
     display: block;
 }

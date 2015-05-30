@@ -19,14 +19,14 @@
 }
 */
 
-.tochange {/*font-family: 'Open Sans', sans-serif;*/ text-transform: uppercase; color: #002147; height: 60px; position: absolute; top: 220px; margin-top: -80px; text-align:center; width: 80%;left: 20%; font-size: 28px;}
+.tochange {/*font-family: 'Open Sans', sans-serif;*/ text-transform: uppercase; color: #002147; height: 60px; position: absolute; top: 220px; margin-top: -80px; text-align:center; width: 80%;left: 16%; font-size: 28px;}
 
 
 
 .btnPlace {
   position : relative;
   text-align: center;
-  bottom: 240px;
+  bottom: 210px;
 }
 button {
     position: relative;
@@ -51,7 +51,7 @@ button {
 .ripple {
     overflow: hidden;
     border-radius: 3px;
-    margin-right: 8px;
+    margin-left : -116px;
 }
 
 .rippleEffect {
@@ -117,7 +117,7 @@ button {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  left: 60%;
+  left: 56%;
   top: 40%;
 	max-wisth: 100%;
 }

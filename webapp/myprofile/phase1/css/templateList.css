@@ -70,11 +70,10 @@ body {
 .button {
   display: block;
   /*background-color: #c0392b;*/
-  background-color: grey;
+  background-color: #f8f8f8;
   width: 230px;
   height: 53px;
   line-height: 100px;
-  color: #fff;
 /*  position: absolute;*/
   position: relative;
   top: 0;
