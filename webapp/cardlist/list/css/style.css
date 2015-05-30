@@ -1,8 +1,13 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800&subset=latin,cyrillic);
+
 *,
 :after,
 :before {
     -moz-box-sizing: border-box;
     box-sizing: border-box
+}
+.text-red {
+  color: #e74c3c;
 }
 
 .clearfix:after,
@@ -23,7 +28,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background: #fff;
+    background: #f8f8f8;
     font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5;
@@ -63,7 +68,7 @@ nav ul {
     padding-left: 250px;
     position: relative;
     z-index: 55;
-    background: #f2f2f2;
+    background: #f8f8f8;
     clear: both;
     display: none
 }
@@ -219,7 +224,7 @@ form input[type="submit"]:hover {
         width: 250px;
         min-height: 100%;
         padding: 0 0 0 50px;
-        background: #fff;
+        background: #f8f8f8;
         float: left;
         overflow: hidden;
         z-index: 9999
@@ -521,7 +526,7 @@ font-size: 60px;
 
 .test{
     margin-left: 500px;
-    overflow:scroll;
+    overflow:hidden;
     /*border : 1px solid black;*/
     height: 460px;
     margin-right: 30px;
@@ -842,3 +847,109 @@ display: block;
     left: -.5em;
     border-left-color: #fa8072;
 }
+
+
+
+
+.titleThis {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  margin-top: -20px;
+  font-size: 46px;
+  white-space: nowrap;
+  line-height: 100vh;
+  letter-spacing: 11px;
+  text-transform: uppercase;
+  text-shadow:
+    1px 1px 0 rgba(0,0,0,0.08),
+    2px 2px 0 rgba(0,0,0,0.08),
+    3px 3px 0 rgba(0,0,0,0.08),
+    4px 4px 0 rgba(0,0,0,0.08),
+    5px 5px 0 rgba(0,0,0,0.08),
+    6px 6px 0 rgba(0,0,0,0.08),
+    7px 7px 0 rgba(0,0,0,0.08),
+    8px 8px 0 rgba(0,0,0,0.08),
+    9px 9px 0 rgba(0,0,0,0.08),
+    10px 10px 0 rgba(0,0,0,0.08),
+    11px 11px 0 rgba(0,0,0,0.08),
+    12px 12px 0 rgba(0,0,0,0.087),
+    13px 13px 0 rgba(0,0,0,0.07),
+    14px 14px 0 rgba(0,0,0,0.07),
+    15px 15px 0 rgba(0,0,0,0.06),
+    16px 16px 0 rgba(0,0,0,0.06),
+    17px 17px 0 rgba(0,0,0,0.06),
+    18px 18px 0 rgba(0,0,0,0.06),
+    19px 19px 0 rgba(0,0,0,0.05),
+    20px 20px 0 rgba(0,0,0,0.05),
+    21px 21px 0 rgba(0,0,0,0.05),
+    22px 22px 0 rgba(0,0,0,0.05),
+    22px 22px 0 rgba(0,0,0,0.04),
+    23px 23px 0 rgba(0,0,0,0.04),
+    24px 24px 0 rgba(0,0,0,0.04),
+    25px 25px 0 rgba(0,0,0,0.03),
+    26px 26px 0 rgba(0,0,0,0.03),
+    27px 27px 0 rgba(0,0,0,0.03),
+    28px 28px 0 rgba(0,0,0,0.02),
+    29px 29px 0 rgba(0,0,0,0.02),
+    30px 30px 0 rgba(0,0,0,0.02),
+    31px 31px 0 rgba(0,0,0,0.02),
+    32px 32px 0 rgba(0,0,0,0.02),
+    33px 33px 0 rgba(0,0,0,0.02),
+    34px 34px 0 rgba(0,0,0,0.02),
+    35px 35px 0 rgba(0,0,0,0.01),
+    36px 36px 0 rgba(0,0,0,0.01),
+    37px 37px 0 rgba(0,0,0,0.01),
+    38px 38px 0 rgba(0,0,0,0.01),
+    39px 39px 0 rgba(0,0,0,0.01);
+  transition: text-shadow 1s cubic-bezier(0.76, -0.44, 0, 1.38);
+}
+
+
+.titleThis:hover {
+text-shadow:
+    1px  -1px 0 rgba(0,0,0,0.10),
+    2px  -2px 0 rgba(0,0,0,0.10),
+    3px  -3px 0 rgba(0,0,0,0.10),
+    4px  -4px 0 rgba(0,0,0,0.10),
+    5px  -5px 0 rgba(0,0,0,0.10),
+    6px  -6px 0 rgba(0,0,0,0.10),
+    7px  -7px 0 rgba(0,0,0,0.10),
+    8px  -8px 0 rgba(0,0,0,0.10),
+    9px  -9px 0 rgba(0,0,0,0.10),
+    10px -10px 0 rgba(0,0,0,0.10),
+    11px -11px 0 rgba(0,0,0,0.10),
+    12px -12px 0 rgba(0,0,0,0.07),
+    13px -13px 0 rgba(0,0,0,0.07),
+    14px -14px 0 rgba(0,0,0,0.07),
+    15px -15px 0 rgba(0,0,0,0.06),
+    16px -16px 0 rgba(0,0,0,0.06),
+    17px -17px 0 rgba(0,0,0,0.06),
+    18px -18px 0 rgba(0,0,0,0.06),
+    19px -19px 0 rgba(0,0,0,0.05),
+    20px -20px 0 rgba(0,0,0,0.05),
+    21px -21px 0 rgba(0,0,0,0.05),
+    22px -22px 0 rgba(0,0,0,0.05),
+    22px -22px 0 rgba(0,0,0,0.04),
+    23px -23px 0 rgba(0,0,0,0.04),
+    24px -24px 0 rgba(0,0,0,0.04),
+    25px -25px 0 rgba(0,0,0,0.03),
+    26px -26px 0 rgba(0,0,0,0.03),
+    27px -27px 0 rgba(0,0,0,0.03),
+    28px -28px 0 rgba(0,0,0,0.02),
+    29px -29px 0 rgba(0,0,0,0.02),
+    30px -30px 0 rgba(0,0,0,0.02),
+    31px -31px 0 rgba(0,0,0,0.02),
+    32px -32px 0 rgba(0,0,0,0.02),
+    33px -33px 0 rgba(0,0,0,0.02),
+    34px -34px 0 rgba(0,0,0,0.02),
+    35px -35px 0 rgba(0,0,0,0.01),
+    36px -36px 0 rgba(0,0,0,0.01),
+    37px -37px 0 rgba(0,0,0,0.01),
+    38px -38px 0 rgba(0,0,0,0.01),
+    39px -39px 0 rgba(0,0,0,0.01);
+}
+
+
+

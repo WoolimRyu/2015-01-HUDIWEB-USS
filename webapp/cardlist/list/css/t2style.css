@@ -14,10 +14,12 @@
 }
 */
 .profile {
+	box-shadow:14px 14px 20px grey;
     text-rendering: optimizeLegibility;
 }
 
 .profile {
+	margin-top:60px;
     background-color: ghostwhite;
     font-size: 62.5%;
     -webkit-font-smoothing: antialiased;

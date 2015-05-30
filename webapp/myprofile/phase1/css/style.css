@@ -27,7 +27,8 @@ body {
     font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5;
-    color: #555
+    color: #555;
+    background-color:#f8f8f8;
 }
 
 a {
@@ -64,7 +65,7 @@ nav ul {
     position: relative;
     z-index: 55;
     /*background: #f2f2f2;*/
-    background: #fafafa;
+    background: #f8f8f8;
     clear: both;
     display: none
 }
@@ -220,7 +221,7 @@ form input[type="submit"]:hover {
         width: 250px;
         min-height: 100%;
         padding: 0 0 0 50px;
-        background: #fff;
+        background: #f8f8f8;
         float: left;
         overflow: hidden;
         z-index: 9999
