@@ -24,7 +24,7 @@
 	<!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load --> 
 	<script src="js/modernizr.custom.25376.js"></script>
 </head>
-<body>
+<body ng-app="uss">
 	<div id="perspective" class="perspective effect-laydown">
 		<div class="container" style="height:100%;">
 			<div class="wrapper" style="height:100%;"><!-- wrapper needed for scroll -->
@@ -36,173 +36,87 @@
 				</div><!-- /main -->
 
 				<div class="bottom" style="height:85%; border:1px solid black;">
-					<div class="bookmarklet">
-							<!-- 
-							<div class="titleThis" style="position:absolute; ">CARD LIST</div> -->
-							</div>
-							
-							<div class="profile">
-								<header class="title">
-									<div class="sectionS">
-										<header>
-											<p>Google CTO</p>
+					<div class="bookmarklet"></div>
+					<div class="cs-wrapper">
+						<div class="profile">
+							<header class="title">
+								<div class="sectionS">
+									<header>
+										<p>Google CTO</p>
 
-											<p>
-												01049302778 <br> abcde@gmail.com
-											</p>
+										<p>
+											01049302778 <br> abcde@gmail.com
+										</p>
 
-											<h2>WOOLIM RYU</h2>
+										<h2>WOOLIM RYU</h2>
 
-											<div class="bottom">
-												~2014.08 Google<br> 2013.01 Naver
-											</div>
-										</header>
-									</div>
-								</header>
-								<footer>
-									<p>
-										<a href="#0">CONTACT ME</a>
-									</p>
-
-									<div id="contactP" class="temp">
-										<ul class="icons">
-											<li class="icon"><a href="/https://github.com"> <i
-													class="fa fa-github fa-lg"></i>
-											</a></li>
-											<li class="icon"><a href="https://facebook.com"> <i
-													class="fa fa-facebook fa-lg"></i>
-											</a></li>
-											<li class="icon"><a href="https://twitter.com"> <i
-													class="fa fa-twitter fa-lg"></i>
-											</a></li>
-											<li class="icon"><a href="https://dribbble.com"> <i
-													class="fa fa-dribbble fa-lg"></i>
-											</a></li>
-											<li class="icon"><a href="https://dribbble.com"> <i
-													class="fa fa-dribbble fa-lg"></i>
-											</a></li>
-											<li class="icon"><a href="/https://github.com"> <i
-													class="fa fa-github fa-lg"></i>
-											</a></li>
-											<li class="icon"><a href="https://twitter.com"> <i
-													class="fa fa-twitter fa-lg"></i>
-											</a></li>
-											<li class="icon"><a href="https://facebook.com"> <i
-													class="fa fa-facebook fa-lg"></i>
-											</a></li>
-										</ul>
-									</div>
-								</footer>
-							</div>
-
-
-							<div class="searchBody">
-								<div class="search">
-									<svg version="1.1" viewBox="0 0 142.358 24.582">
-					                <path id="search-path" fill="none"
-											d="M131.597,14.529c-1.487,1.487-3.542,2.407-5.811,2.407
-					             c-4.539,0-8.218-3.679-8.218-8.218s3.679-8.218,8.218-8.218c4.539,0,8.218,3.679,8.218,8.218
-					             C134.004,10.987,133.084,13.042,131.597,14.529c0,0,9.554,9.554,9.554,9.554H0" />
-					            </svg>
-									<label for="search" class="search-label"></label> <input
-										type="search" id="search" autocomplete="off" class="input-search" />
-								</div>
-							</div>
-
-							<div class="modal-frame">
-								<div class="modal">
-									<div class="modal-inset">
-										<div class="button close">
-											<i class="fa fa-close"></i>
+										<div class="bottom">
+											~2014.08 Google<br> 2013.01 Naver
 										</div>
-										<div class="modal-body" style="height: 360px">
-											<div class="modal-left" style="width: 200px; height: 360px;">
-												<div class="createBtn">
-													<i class="fa fa-folder"></i> <span class="button-text">new
-														group</span> <input id="project-name" class="hidden" type="text"
-														placeholder="그룹명">
-												</div>
-												<div class="temping" style="margin-top:40px;">
-													<ol style="list-style-type: none; margin-left:-20px;">
-														<li class="modalLi" ng-click="modalSelect(g); rightView(0)" ng-repeat="g in group">{{g}}</li>
-													</ol>
-												</div>
-											</div>
-											<div class="modal-right"
-												style=" width: 375px; height: 360px;">
-												<div class="right-top">
-													<span class="right-top-plusBtn" ng-click="rightView(1)"> ┿ </span> 
-													<span
-														class="right-top-minusBtn" ng-click="rightView(2)"> ━ </span>
-												</div>
-												<div class="right-bottom" ng-show="viewNum1">
-													<ol class="rectangle-list1">
-														<li ng-repeat="friend in friends | filter:modalSelected"><a href="">
-																<div class="userName2">{{friend.name}}</div>
-																<div class="userInfo2">
-																	<div class="userJob2">{{friend.job}}</div>
-																	<div class="userPhone2">{{friend.phoneNumber}}</div>
-																</div>
-														</a></li>
-													</ol>
-												</div>
-												<div class="right-bottom1" ng-show="viewNum2">
-													<ol class="rectangle-list2">
-														<li ng-repeat="friend in friends"><a
-															href="">
-																<div class="userName2">{{friend.name}}</div>
-																<div class="userInfo2">
-																	<div class="userJob2">{{friend.job}}</div>
-																	<div class="userPhone2">{{friend.phoneNumber}}</div>
-																</div>
-														</a></li>
-													</ol>
-												</div>
-												<div class="right-bottom2" ng-show="viewNum3">
-													<ol class="rectangle-list3">
-														<li ng-repeat="friend in friends | filter:modalSelected"><a
-															href="">
-																<div class="userName2">{{friend.name}}</div>
-																<div class="userInfo2">
-																	<div class="userJob2">{{friend.job}}</div>
-																	<div class="userPhone2">{{friend.phoneNumber}}</div>
-																</div>
-														</a></li>
-													</ol>
-												</div>
-											</div>
-										</div>
-									</div>
+									</header>
 								</div>
-							</div>
-							<div class="modal-overlay"></div>
+							</header>
+							<footer>
+								<p>
+									<a href="#0">CONTACT ME</a>
+								</p>
 
-							<div class="btnPlace">
-
-								<div class="bb">
-
-									<div class="dropdown">
-										<select ng-model="selected.group" name="one"
-											class="dropdown-select">
-											<option ng-repeat="g in group">{{g}}</option>
-										</select>
-									</div>
+								<div id="contactP" class="temp">
+									<ul class="icons">
+										<li class="icon"><a href="/https://github.com"> <i
+												class="fa fa-github fa-lg"></i>
+										</a></li>
+										<li class="icon"><a href="https://facebook.com"> <i
+												class="fa fa-facebook fa-lg"></i>
+										</a></li>
+										<li class="icon"><a href="https://twitter.com"> <i
+												class="fa fa-twitter fa-lg"></i>
+										</a></li>
+										<li class="icon"><a href="https://dribbble.com"> <i
+												class="fa fa-dribbble fa-lg"></i>
+										</a></li>
+										<li class="icon"><a href="https://dribbble.com"> <i
+												class="fa fa-dribbble fa-lg"></i>
+										</a></li>
+										<li class="icon"><a href="/https://github.com"> <i
+												class="fa fa-github fa-lg"></i>
+										</a></li>
+										<li class="icon"><a href="https://twitter.com"> <i
+												class="fa fa-twitter fa-lg"></i>
+										</a></li>
+										<li class="icon"><a href="https://facebook.com"> <i
+												class="fa fa-facebook fa-lg"></i>
+										</a></li>
+									</ul>
 								</div>
+							</footer>
+						</div>
 
-								<div class="fancy-btn2 open">그룹 관리</div>
-							</div>
+						<div ng-controller="searchController" class="test">
+					      <form class="search">
+					        <input type="text" id="search" class="input-search" ng-change="autocomplete()">
+					        <input type="submit" ng-submit="submit()" ng-model="query">
+					      </form>
+					      
+					      <div class="suggestion-box">
+					        <div ng-repeat="suggestion in suggestions" class="suggestions">
+					          <div class="suggestion">{{suggestion.left.name}}</div>
+					        </div>
+					      </div>
 
-							<div class="test">
-								<ol class="rectangle-list">
-									<li ng-repeat="card in cards | filter:selected"><a href="">
-											<div class="userName">{{card.name}}</div>
-											<div class="userInfo">
-												<div class="userJob">{{card.company}}</div>
-												<div class="userPhone">{{card.phoneNumber}}</div>
-											</div>
-									</a></li>
-								</ol>
-							</div>
+					      <div ng-repeat="result in results">
+					        <ol class="rectangle-list">
+					         <li><a href=""><div class="userName">{{result.left.name}}</div>
+					          <div class="userInfo">
+					            <div class="userJob">{{result.right.company}}</div>
+					            <div class="userPhone">{{result.right.phoneNumber}}</div>
+					          </div>
+					          </a>
+					         </li>
+					        </ol>
+					      </div>
+					    </div>
+					</div>
 				</div>
 			</div><!-- wrapper -->
 		</div><!-- /container -->
@@ -217,11 +131,12 @@
 
 	<script
 		src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src="/library/angular/angular.min.js"></script>
+	<script src="/library/angular/angular-route.min.js"></script>
+	<script src="js/search.js"></script>
 	<script src="js/classie.js"></script>
 	<script src="js/menu.js"></script>
-	<script src="js/index.js"></script>
 	<script src="js/modal.js"></script>
-	<script src="js/searchsvg.js"></script>
 	<script src="js/edit.js"></script>
 	<script src="js/templateList.js"></script>
 </body>

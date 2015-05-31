@@ -65,28 +65,24 @@ app.controller('searchController', function($scope, $req) {
     var suggestionBox = document.querySelector('.suggestion-box');
 
     $scope.autocomplete = function () {
-        if ($scope.query === '') {
-            suggestionBox.style.display = 'none';
-            return;
-        }
+    	if ($scope.query === '') {
+    		suggestionBox.style.display = 'none';
+    		return;
+    	}
         $req('/api/search?query=' + $scope.query, {}).onResponse(
-        function(response) {
-            suggestionBox.style.display = 'block';
-            $scope.suggestions = response;
+       	function(response) {
+       		suggestionBox.style.display = 'block';
+       		$scope.suggestions = response;
         });
 
     };
 
     $scope.submit = function () {
         $req('/api/search?query=' + $scope.query, {}).onResponse(
-        function(response) {
-            suggestionBox.style.display = 'none';
-            $scope.query.value = '';
-            $scope.results = response;
+       	function(response) {
+       		suggestionBox.style.display = 'none';
+       		$scope.query.value = '';
+       		$scope.results = response;
         });
     };
 });
-
-
-
-
