@@ -6,6 +6,7 @@ public class Response {
 	public final static int ERROR_USER_ALERT = 1;
 	public final static int SUCCESS = 2;
 	public final static int SUCCESS_USER_ALERT = 3;
+	public static final Integer ERROR_SESSION_REQUIRE = 4;
 
 	Object object;
 	private String message;

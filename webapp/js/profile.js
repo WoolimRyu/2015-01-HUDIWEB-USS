@@ -12,7 +12,7 @@ app.factory('$req', function ($http) {
             var str = [];
             for (var p in obj)
                 str.push(encodeURIComponent(p) + "="
-                + encodeURIComponent(obj[p]));
+                    + encodeURIComponent(obj[p]));
             return str.join("&");
         }
 
@@ -28,7 +28,8 @@ app.factory('$req', function ($http) {
             ERROR: 0,
             ERROR_USER_ALERT: 1,
             SUCCESS: 2,
-            SUCCESS_USER_ALERT: 3
+            SUCCESS_USER_ALERT: 3,
+            SUCCESS_SESSION_NULL: 4
         };
 
         var success = http.success;
@@ -45,6 +46,10 @@ app.factory('$req', function ($http) {
                     case reponseType.SUCCESS_USER_ALERT:
                         alert(response.message);
                         break;
+                    case reponseType.SUCCESS_SESSION_NULL:
+                        alert("Login Session Not Exist or Expired, Please Login");
+                        location.href = "/";
+                        break;
                 }
                 call(response.object);
             });
@@ -56,7 +61,6 @@ app.factory('$req', function ($http) {
 });
 
 
-
 app.controller('cardController', function ($scope, $req, $routeParams, $timeout) {
     $scope.user = {};
 
@@ -65,8 +69,10 @@ app.controller('cardController', function ($scope, $req, $routeParams, $timeout)
         location.href = "/";
     };
 
-    $scope.sendCardId = function(){
-    	
+    $scope.addCard = function () {
+        $req('/api/addcard/add', {cardId: $scope.card.cardId}).onResponse(function (response) {
+            alert($scope.card.name + "is added in my cards");
+        });
     }
 
     $req('/api/user/getRepresentiveCard', {stringId: location.pathname.substring(1)}).onResponse(

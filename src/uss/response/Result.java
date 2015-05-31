@@ -18,6 +18,9 @@ public class Result {
 	private static final Response ERROR_SEARCH_NOT_FOUND = new Response(
 			"검색결과가 없습니다.", Response.ERROR_USER_ALERT);
 
+	private static final Response ERROR_SESSION_EXPIRED = new Response(
+			"세션이 만료되었습니다.", Response.ERROR_SESSION_REQUIRE);
+
 	private static final Response SUCCESS = getSuccess(null);
 
 	public static Response getSuccess(Object object) {
@@ -50,6 +53,10 @@ public class Result {
 	public static Response getSuccess() {
 		logger.debug(LOG, SUCCESS.toString());
 		return SUCCESS;
+	}
+
+	public static Response getErrorSessionExpired() {
+		return ERROR_SESSION_EXPIRED;
 	}
 
 	public static class Login {

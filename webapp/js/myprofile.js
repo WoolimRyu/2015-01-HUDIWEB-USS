@@ -1,19 +1,19 @@
 var app = angular.module("uss", ['ngRoute']);
 
-app.directive('updatable', function(){
-        return{
-            restrict:"A",
-            template : "<div ng-show='!update'><div>{{updatable}}</div><div ng-click='updateMode()'>update</div></div>" +
-            "<div ng-show='update'><input ng-model='updatable'><div ng-click='done()'>done</div></div>",
-            scope : {
-                updatable : '='
+app.directive('updatable', function () {
+        return {
+            restrict: "A",
+            template: "<div ng-show='!update'><div>{{updatable}} <i ng-click='updateMode()' class='fa fa-pencil-square-o'></i></div></div>" +
+            "<div ng-show='update'><input ng-model='updatable'/><i ng-click='done()' class='fa fa-check'></i></div>",
+            scope: {
+                updatable: '='
             },
-            controller : function($scope){
+            controller: function ($scope) {
                 $scope.update = false;
-                $scope.updateMode = function(){
+                $scope.updateMode = function () {
                     $scope.update = true;
                 };
-                $scope.done = function(){
+                $scope.done = function () {
                     $scope.update = false;
                 };
             }
@@ -33,7 +33,7 @@ app.factory('$req', function ($http) {
             var str = [];
             for (var p in obj)
                 str.push(encodeURIComponent(p) + "="
-                + encodeURIComponent(obj[p]));
+                    + encodeURIComponent(obj[p]));
             return str.join("&");
         }
 
@@ -49,7 +49,8 @@ app.factory('$req', function ($http) {
             ERROR: 0,
             ERROR_USER_ALERT: 1,
             SUCCESS: 2,
-            SUCCESS_USER_ALERT: 3
+            SUCCESS_USER_ALERT: 3,
+            SUCCESS_SESSION_NULL: 4
         };
 
         var success = http.success;
@@ -65,6 +66,10 @@ app.factory('$req', function ($http) {
                         break;
                     case reponseType.SUCCESS_USER_ALERT:
                         alert(response.message);
+                        break;
+                    case reponseType.SUCCESS_SESSION_NULL:
+                        alert("Login Session Not Exist or Expired, Please Login");
+                        location.href = "/";
                         break;
                 }
                 call(response.object);
@@ -86,10 +91,10 @@ app.controller('cardController', function ($scope, $req, $routeParams, $timeout)
         location.href = "/";
     };
 
-    $scope.$watch('card', function(){
+    $scope.$watch('card', function () {
         $req('/api/card', $scope.card, "PUT").onResponse(
             function (response) {
-              //  $scope.user = response;
+                //  $scope.user = response;
             }
         );
     }, true);
