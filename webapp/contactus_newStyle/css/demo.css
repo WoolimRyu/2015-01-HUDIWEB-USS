@@ -241,9 +241,9 @@ button:active {
 .inner {
   box-shadow : 10px 10px 10px silver;
     background: default;
-    margin-top : 76px;
-    margin-left : 150px;
-    width:62%;
+    margin-top : 10px;
+    margin-left : 29.4%;
+    width:47%;
     border: 1px solid #E7E7E7;
     padding: 0;
     display: block;

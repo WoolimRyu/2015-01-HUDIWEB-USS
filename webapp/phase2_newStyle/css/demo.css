@@ -351,13 +351,13 @@ h1 {
 
 
 .templateList1 {
-  height: 25%;
+
   border: 1px solid #fafafa;
   text-align: center;
 }
 
 .templateList2 {
-  height: 64%;
+
   /*  border: 1px solid black;*/
 }
 
@@ -369,7 +369,7 @@ h1 {
 }
 
 .templateList3 {
-  height: 11%;
+  margin-top:100px;
   border: 1px solid #fafafa;
 }
 
@@ -646,4 +646,10 @@ body {
 
 .bottom{
 	overflow-y:scroll;
+}
+
+
+.listSide{
+  position:absolute;
+  margin-left:73%;
 }

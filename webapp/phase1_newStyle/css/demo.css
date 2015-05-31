@@ -125,7 +125,7 @@ a:hover, a:focus {
 }
 
 .column {
-	width:30%;
+	width:28%;
 /*	width: 50%;*/
 	margin: 0 auto;
 	padding: 0 2em;
@@ -274,7 +274,7 @@ button:active {
   text-align: center;
   bottom: 210px;
 }
-button {
+.button3 {
     position: relative;
     width: 136px;
     height: 36px;
@@ -425,20 +425,26 @@ h1 {
 
 
 
-
+.bottom{
+  overflow-y:scroll;
+}
 .templateList1 {
-	height: 25%;
+  margin-left:2%;
+
 	border: 1px solid #fafafa;
 	text-align: center;
 }
 
 .templateList2 {
-	height: 64%;
+  margin-left: 5%;
+  margin-top:20px;
 /*	border: 1px solid black;*/
 }
 
 .templateList3 {
-	height: 11%;
+  margin-top:100px;
+  margin-left:1%;
+  width:300px;
 	border: 1px solid #fafafa;
 }
 
@@ -515,7 +521,7 @@ body {
   -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
           transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
-.button span,
+.button3 span,
 .button .icon {
   display: block;
   height: 100%;
@@ -523,7 +529,7 @@ body {
   position: absolute;
   top: 0;
 }
-.button span {
+.button3 span {
   width: 72%;
   font-size: 22px;
   text-transform: uppercase;
@@ -532,7 +538,7 @@ body {
   -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
           transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
-.button span:after {
+.button3 span:after {
   content: '';
 /*  background-color: #a53125;*/
 background-color: silver;
@@ -595,7 +601,8 @@ background-color: silver;
 
 .carousel {
   position: relative;
-  width: 30%;
+/*  width: 30%;*/
+width:28%;
   padding-bottom: 30%;
   margin: auto;
 }

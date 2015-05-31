@@ -495,7 +495,6 @@ p {
     display: block;
     vertical-align: middle;
     text-align: center;
-    margin-left: 270px;
 }
 
 .modal-inset {
@@ -1262,7 +1261,7 @@ font-size: 60px;
 }
 
 .test{
-    margin-left: 500px;
+    margin-left: 52%;
     overflow:hidden;
     /*border : 1px solid black;*/
     height: 460px;
@@ -1270,15 +1269,17 @@ font-size: 60px;
 }
 
 .searchBody{
+    margin-top:35px;
     margin-left: 63%;
 }
 
 
 .profile {
+    margin-top:22px;
     position: absolute;
     width: 400px;
 /*    border : 1px solid black;*/
-    margin-left: 57px;
+    margin-left: 12.4%;
     height: 536px;
 }
 
@@ -1289,7 +1290,7 @@ font-size: 60px;
     text-align: right;
     margin-right: 50px;
     width:50%;
-    margin-left:50%;
+    margin-left:54%;
     margin-bottom: 5px;
 }
 
