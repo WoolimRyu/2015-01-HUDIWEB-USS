@@ -1,7 +1,8 @@
 package uss.controller;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpSession;
 
 import next.jdbc.mysql.DAO;
@@ -51,11 +52,17 @@ public class UserControllerTest {
 	}
 
 	@Test
-	public void register() {
+	public void register() throws MessagingException {
 		User user1 = new User("id", "pw");
 		User user2 = new User("id2", "pw1");
 		assertEquals(Result.getErrorBadRequest(), controller.register(user1));
 		assertEquals(Result.getSuccess(), controller.register(user2));
+	}
+	
+	@Test
+	public void registerMail() throws Exception {
+		User user1 = new User("emailtest", "pw");
+		user1.setEmail("buyongjo@gmail.com");
 	}
 
 	@Test

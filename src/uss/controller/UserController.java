@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import uss.mail.AuthMail;
+import uss.mail.EmailSender;
 import uss.model.User;
 import uss.model.cards.Card;
 import uss.response.Response;
@@ -27,6 +29,9 @@ public class UserController {
 
 	@Autowired
 	DAO dao;
+	
+	@Autowired
+	EmailSender mailSender;
 
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	public Response get(User user) {
@@ -40,6 +45,7 @@ public class UserController {
 	public Response register(User user) throws MessagingException {
 		if (!dao.insert(user))
 			return Result.getErrorSqlExcute();
+		mailSender.sendEmail(new AuthMail(user));
 		return Result.getSuccess(user);
 	}
 
