@@ -68,6 +68,9 @@ function navigation() {
 	});
 }
 
+
+
+
 function sendupdateReq() {
 	var user = {
 		name : $('#name').val(),

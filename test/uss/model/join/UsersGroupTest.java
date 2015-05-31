@@ -1,5 +1,7 @@
 package uss.model.join;
 
+import java.net.HttpURLConnection;
+
 import next.jdbc.mysql.DAO;
 
 import org.junit.Test;
@@ -7,6 +9,7 @@ import org.junit.Test;
 import uss.model.Group;
 import uss.model.GroupHasUser;
 import uss.model.User;
+import uss.util.HttpReq;
 
 public class UsersGroupTest {
 
@@ -23,7 +26,8 @@ public class UsersGroupTest {
 
 	@Test
 	public void testss() {
-		System.out.println("pass1@tea.com".matches("@"));
+		
+		System.out.println("wear@awer.com".matches("\\w+@\\w+\\.\\w+"));
 	}
 
 	@Test

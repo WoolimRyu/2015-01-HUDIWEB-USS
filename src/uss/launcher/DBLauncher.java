@@ -14,7 +14,7 @@ public class DBLauncher {
 
 	public static void insertTestData() {
 		DAO dao = new DAO();
-		dao.insert(new User("test1", "pass1", "pass1tea.com", "name", "t1"));
+		dao.insert(new User("test1", "pass1", "pass1@tea.com", "name", "t1"));
 		dao.insert(new User("test2", "pass1", "pass1@tea.com", "name", "t2"));
 		dao.insert(new User("test3", "pass1", "pass1@tea.com", "name", "t3"));
 		dao.insert(new User("test4", "pass1", "pass1@tea.com", "name", "t4"));
