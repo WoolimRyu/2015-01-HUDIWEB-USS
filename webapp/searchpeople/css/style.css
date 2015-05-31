@@ -59,11 +59,7 @@ section {
 
 
 form {
-<<<<<<< HEAD
-=======
-    display: inline;
-    width: calc(100% / 3);
->>>>>>> f333f1e446a56c6b122e2478ecdc1e678a17db4c
+
     margin: 0;
 }
 
@@ -71,19 +67,12 @@ form input[type="text"],
 form input[type="email"],
 form textarea {
     display: inline;
-<<<<<<< HEAD
-=======
-    width: 90%;
->>>>>>> f333f1e446a56c6b122e2478ecdc1e678a17db4c
     padding: 0.5em;
     border: 1px solid #E8E8E8;
 }
 
 form input[type="submit"] {
-<<<<<<< HEAD
     display: inline;
-=======
->>>>>>> f333f1e446a56c6b122e2478ecdc1e678a17db4c
     padding: 0.5em 0.2em;
     background: #FFF;
     border: 1px solid #1C1C1C;
@@ -96,203 +85,6 @@ form input[type="submit"]:hover {
     color: #F00;
     transition: border 0.5s ease, color 1s ease;
 }
-<<<<<<< HEAD
-=======
-@media (min-width: 1000px) {
-    .header {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 250px;
-        min-height: 100%;
-        padding: 0 0 0 50px;
-        background: #fff;
-        float: left;
-        overflow: hidden;
-        z-index: 9999
-    }
-    .header .logo {
-        margin-top: 50px;
-        margin-left:-35px;
-        width: 100%
-    }
-    .header .logo a {
-        height: 100px;
-        display: block;
-        text-align: center;
-        line-height: 100px;
-        color: #333
-    }
-    .header nav ul {
-        margin: 60px 0 0;
-        padding: 0;
-        display: block;
-        overflow: hidden;
-        list-style: none
-    }
-    .header nav ul li {
-        display: block;
-        margin-bottom: 30px
-    }
-    .header nav ul li a.active,
-    .header nav ul li a:hover {
-        color: #969595
-    }
-    .header .footer {
-        position: absolute;
-        bottom: 1em
-    }
-    .header ul.social {
-        list-style: none;
-        margin: 0 0 5px;
-        padding: 0
-    }
-    .header ul.social li {
-        display: inline-block;
-        position: relative;
-        margin: 0 .5em .5em 0
-    }
-    .header ul.social li a {
-        display: inline-block;
-        padding: .1em .5em;
-        border: 1px solid #000;
-        color: #000
-    }
-    .header ul.social li a:hover {
-        border-color: #f55;
-        color: #f55
-    }
-    .toggle_menu {
-        display: none
-    }
-    .lightModal,.preloader_inner {
-        left: 250px;
-        width: calc(100% - 250px)
-    }
-}
-@media (max-width: 1023px) {
-    .header {
-        display: block;
-        width: 100%;
-        min-height: 100px;
-        padding: 0;
-        position: relative
-    }
-    .header .logo {
-        width: calc(100% /2);
-        min-height: 100px;
-        line-height: 100px
-    }
-    .header .logo a {
-        display: block;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        height: auto;
-        text-align: center;
-        color: #333
-    }
-    .header .footer {
-        display: none
-    }
-    .header .toggle_menu {
-        margin: 0;
-        display: block;
-        padding: 1em;
-        position: absolute;
-        top: 2em;
-        right: 3em;
-        background: #F2F2F2;
-        color: #A8A8A8
-    }
-    .header .toggle_menu:hover {
-        background: #1B1B1B
-    }
-    .header nav ul {
-        list-style: none;
-        display: none;
-        margin-top: 35px;
-        position: relative
-    }
-    .header nav ul li a {
-        display: block;
-        width: 100%;
-        padding: 30px 0;
-        text-align: center;
-        color: #ADABAB;
-        font-size: 1.2em;
-        text-decoration: none;
-        border-top: 1px solid #E5E5E5;
-        background: #F4F4F4
-    }
-    .header nav ul li a:active {
-        background: #f7f5f5
-    }
-    .toggle_menu {
-        display: block
-    }
-    .wrapper .box {
-        width: calc(100% / 2);
-        max-height: 200px;
-    }
-    .wrapper {
-        width: 100%;
-        position: relative;
-        padding-left: 0
-    }
-    .lightModal {
-        left: 0;
-        width: 100%
-    }
-    .lightModal .lightModal-inner {
-        margin: 10% auto
-    }
-}
-@media (max-width: 550px) {
-
-    form,form input,form label{
-      width:100%;
-    }
-    .lightModal .lightModal-inner {
-        margin: 10% auto
-    }
-    .wrapper .box {
-        width: 100%
-    }
-}
-.show_menu {
-    display: block!important;
-    -webkit-transition: all .8s ease;
-    transition: all .8s ease
-}
-.show {
-    opacity: 1;
-    visibility: visible;
-    -webkit-transition: all .8s ease;
-    transition: all .8s ease
-}
-.show-section {
-    height: 100%;
-    display: block;
-    opacity: 1;
-    -webkit-animation: fade 1s 1 ease;
-    animation: fade 1s 1 ease
-}
-@-webkit-keyframes fade {
-    0% {
-        opacity: 0
-    }
-}
-@keyframes fade {
-    0% {
-        opacity: 0
-    }
-}
-
-
-
->>>>>>> f333f1e446a56c6b122e2478ecdc1e678a17db4c
 
 ol {
 counter-reset: li;
@@ -429,10 +221,6 @@ border-left-color: #fa8072;
 }
 
 .suggestions {
-<<<<<<< HEAD
-=======
-    width: 500px;
->>>>>>> f333f1e446a56c6b122e2478ecdc1e678a17db4c
     max-height: 300px; 
     display: block;
 
