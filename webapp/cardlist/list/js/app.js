@@ -82,6 +82,15 @@ app.controller('listController', function ($scope, $req, $timeout) {
     $scope.modalSelect =function(g){
     	$scope.modalSelected = g;
     }
+
+    $scope.friends = [];
+
+    $req('/api/addcard/list').onResponse(function(response){
+        response.forEach(function(each){
+           $scope.friends.push(each.right);
+        });
+    });
+
     
     $scope.rightView = function(viewNum){
     	if(viewNum == 0){

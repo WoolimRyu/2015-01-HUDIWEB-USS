@@ -31,7 +31,7 @@ public class AddedCardController {
 		User user = SessionUtil.getUser(session);
 		AddedCards cards = new AddedCards(user.getUserId(),
 				Integer.parseInt(cardId), null);
-		if (dao.insert(cards))
+		if (!dao.insert(cards))
 			return Result.getErrorSqlExcute();
 		return Result.getSuccess();
 	}
@@ -39,6 +39,8 @@ public class AddedCardController {
 	@RequestMapping("/list")
 	public Response cardList(HttpSession session) {
 		User user = SessionUtil.getUser(session);
+		if(user == null)
+			return Result.getErrorBadRequest();
 		AddCardJoin join = new AddCardJoin(new AddedCards(user.getUserId(),
 				null, null), new Card());
 		List<AddCardJoin> result = dao.findList(join);
