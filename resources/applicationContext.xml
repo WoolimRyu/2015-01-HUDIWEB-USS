@@ -18,9 +18,9 @@
 		p:dataSource-ref="dataSource" />
 
 	<bean id="DAO" class="next.jdbc.mysql.DAO" />
-	<bean id="userController" class="uss.controller.UserController"></bean>
+	<bean id="userController" class="uss.controller.UserController"/>
 
-
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver"/>
 	<!-- <bean id="userService" class="uss.service.UserService" /> <bean id="relationService" 
 		class="uss.service.RelationService" /> <bean id="groupService" class="uss.service.GroupService" 
 		/> <bean id="gson" class="com.google.gson.Gson" /> -->

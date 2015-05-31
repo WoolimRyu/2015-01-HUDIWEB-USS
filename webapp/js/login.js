@@ -72,7 +72,7 @@ app.controller('loginController', function($scope, $req, $timeout) {
 		}
 
 		$req('/api/login', $scope.user, "POST").onResponse(function(response) {
-			location.href = "/main/";
+			location.href = "/";
 		})
 	};
 });
