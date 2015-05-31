@@ -161,3 +161,14 @@ h1 {
   font-size: 40px;
 }
 */
+
+
+.subscription{
+	text-align: center; margin-left:-100px; position: relative; bottom: 240px; font-size: 20px;
+}
+
+@media (max-width: 1023px) {
+   .subscription{
+   		margin-left:11%;
+   }
+}
