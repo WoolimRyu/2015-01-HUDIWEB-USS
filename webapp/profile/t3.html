@@ -14,14 +14,16 @@
 
 </head>
 
-<body ng-app="uss" ng-controller="userController">
+<body ng-app="uss" ng-controller="cardController">
 <header>
     <h1>W<span>oo</span>L<span>i</span>m<span>R</span>YU</h1>
-    <button><i class="fa fa-bars"></i></button>
+    <button><i class="fa fa-map-marker fa-2x"></i>
+    <!-- <i class="fa fa-bars"></i> -->
+    </button>
 </header>
 <nav>
     <ul>
-    	<li>지도 들어가는 자리!!!</li>
+    	<li><img src="{{card.mapSrc}}"></img></li>
         <!-- <li><a href="#"> web</a></li>
         <li><a href="#"> videos</a></li>
         <li><a href="#"> photos</a></li> -->
@@ -29,9 +31,8 @@
 </nav>
 <main>
     <article>
-        <p>{{user.name}}<br>{{user.email}}<br>{{user.phoneNumber}}<br>{{user.company}}<br>{{user.message}}</p>
+        <p>{{card.name}}<br>{{card.email}}<br>{{card.phoneNumber}}<br>{{card.company}}<br>{{card.message}}</p>
     </article>
-
 
     <div id="contactP" class="temp">
         <ul class="social-networks bounce">

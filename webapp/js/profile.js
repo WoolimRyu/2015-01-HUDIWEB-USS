@@ -1,6 +1,5 @@
 var app = angular.module("uss", ['ngRoute']);
 
-
 app.factory('$req', function ($http) {
     var req = function (url, data, method) {
         if (method == undefined)
@@ -57,6 +56,7 @@ app.factory('$req', function ($http) {
 });
 
 
+
 app.controller('userController', function ($scope, $req, $routeParams, $timeout) {
     $scope.user = {};
 
@@ -65,10 +65,15 @@ app.controller('userController', function ($scope, $req, $routeParams, $timeout)
         location.href = "/";
     };
 
+    $scope.sendCardId = function(){
+    	
+    }
 
-    $req('/api/user', {stringId: location.pathname.substring(1)}).onResponse(
+    $req('/api/user/getRepresentiveCard', {stringId: location.pathname.substring(1)}).onResponse(
         function (response) {
-            $scope.user = response;
+            $scope.card = response;
         }
-    );
+    )
 });
+
+

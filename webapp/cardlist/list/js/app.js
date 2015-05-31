@@ -58,25 +58,26 @@ app.factory('$req', function ($http) {
 });
 
 
-function friend(name, job, n, group){
+function card(name, company, phoneNumber, groupId){
 	this.name = name;
-	this.job = job;
-	this.phoneNumber = n;
-	this.group = group;
+	this.company = company;
+	this.phoneNumber = phoneNumber;
+	this.groupId = groupId;
 }
+//
+//function friend(name, job, n, group){
+//	this.name = name;
+//	this.job = job;
+//	this.phoneNumber = n;
+//	this.group = group;
+//}
 
 
 app.controller('listController', function ($scope, $req, $timeout) {
-    var friends = $scope.friends =  [];
+    var cards = $scope.cards =  [];
     scope = $scope;
     
-    friends.push(new friend("abc","asdf", "asdf",1))
-    friends.push(new friend("abc","g2", "asdf",2))
-    friends.push(new friend("2","g3", "asdf",3))
-    friends.push(new friend("abc","g4", "asdf",4))
-    friends.push(new friend("2","asdf", "asdf",5))
-
-    $scope.group = [1,2,3,4];
+    $scope.group = [1];
     
     $scope.modalSelect =function(g){
     	$scope.modalSelected = g;
@@ -100,3 +101,38 @@ app.controller('listController', function ($scope, $req, $timeout) {
     	}
     }
 });
+//    
+//app.controller('listController', function ($scope, $req, $timeout) {
+//    var friends = $scope.friends =  [];
+//    scope = $scope;
+//    
+//    friends.push(new friend("abc","asdf", "asdf",1))
+//    friends.push(new friend("abc","g2", "asdf",2))
+//    friends.push(new friend("2","g3", "asdf",3))
+//    friends.push(new friend("abc","g4", "asdf",4))
+//    friends.push(new friend("2","asdf", "asdf",5))
+//
+//    $scope.group = [1,2,3,4];
+//    
+//    $scope.modalSelect =function(g){
+//    	$scope.modalSelected = g;
+//    }
+//    
+//    $scope.rightView = function(viewNum){
+//    	if(viewNum == 0){
+//    		$scope.viewNum1 = true;
+//    		$scope.viewNum2 = false;
+//    		$scope.viewNum3 = false;
+//    	}
+//    	if(viewNum == 1){
+//    		$scope.viewNum1 = false;
+//    		$scope.viewNum2 = true;
+//    		$scope.viewNum3 = false;
+//    	}
+//    	if(viewNum == 2){
+//    		$scope.viewNum1 = false;
+//    		$scope.viewNum2 = false;
+//    		$scope.viewNum3 = true;
+//    	}
+//    }
+//});
