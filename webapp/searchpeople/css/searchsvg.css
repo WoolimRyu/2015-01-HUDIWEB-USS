@@ -28,7 +28,6 @@ position: relative;
 
 .input-search {
 /*  position: absolute;*/
-position: relative;
   width: calc(100% - 10px);
   height: 64px;
   top: -180px;

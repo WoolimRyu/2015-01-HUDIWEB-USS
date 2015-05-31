@@ -8,6 +8,7 @@
 	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
 	rel="stylesheet">
 <link rel="stylesheet" href="css/style.css" media="screen"
+<<<<<<< HEAD
 	type="text/css">
   <link rel="stylesheet" href="css/nav.css" media="screen"
   type="text/css">
@@ -95,6 +96,100 @@
 <script src="/library/angular/angular-route.min.js"></script>
 <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
 <script src="js/search.js"></script>
+=======
+	type="text/css" />
+<link rel="stylesheet" href="css/searchsvg.css" media="screen"
+	type="text/css" />
+</head>
+
+<body ng-app="uss">
+
+	<header class="header">
+		<div class="logo">
+			<a href=''><img src='image/create_thumb.png'><a>
+		</div>
+
+		<a href="#" class="toggle_menu"> <i class="fa fa-navicon"></i>
+		</a>
+
+		<nav class="menu">
+			<ul>
+				<li><a href="#" data-link="home">My Profile</a></li>
+				<li><a href="#" data-link="list">Card List</a></li>
+				<li><a href="#" data-link="bookmark">Bookmark</a></li>
+				<li><a href="#" data-link="search">Search People</a></li>
+				<li><a href="#" data-link="contact">Contact Us</a></li>
+				<li><a href="#" data-link="logout">Log Out</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<section class="wrapper clearfix" data-section="home">Home
+		contents...</section>
+
+	<section class="wrapper clearfix" data-section="list">Card
+		list contents...</section>
+
+	<section class="wrapper clearfix" data-section="bookmark">
+		bookmark contents...</section>
+
+	<section class="wrapper clearfix" data-section="search">
+		<div class="bookmarklet">___________________ SEARCH</div>
+		<div ng-controller="searchController" class="searchBody">
+			<form ng-submit="submit()">
+				<input type="text" id="search" class="input-search" ng-change="autocomplete()" ng-model="query"> 
+				<input type="submit" value="submit">
+			</form>
+			<div class="suggestion-box">
+				<div ng-repeat="suggestion in suggestions" class="suggestions">
+					<div class="suggestion"> <a ng-model="query" ng-click="submit()">{{suggestion.left.name}}</a></div>
+				</div>
+			</div>
+
+      <div class="result-box">
+  			<div ng-repeat="result in results">
+  				<ol class="rectangle-list">
+  					<li><a href=""><div class="userName">{{result.left.name}}</div>
+  							<div class="userInfo">
+  								<div class="userJob">{{result.right.company}}</div>
+  								<div class="userPhone">{{result.right.phoneNumber}}</div>
+  							</div> </a></li>
+  				</ol>
+        </div>
+			</div>
+		</div>
+		</div>
+	</section>
+
+	<section class="wrapper clearfix" data-section="contact">
+		<div class="inner">
+			<div class="inner_thumb">
+				<img
+					src="https://unsplash.imgix.net/photo-1414541944151-2f3ec1cfd87d?fit=crop&fm=jpg&h=700&q=75&w=1050"
+					class="media" alt="" />
+			</div>
+			<div class="inner_text">
+				<form action="">
+					<label> Name <input type="text" placeholder="Your name" />
+					</label> <label> Email <input type="email" placeholder="Your email"
+						required />
+					</label> <label> Message <textarea placeholder="Your message"></textarea>
+					</label> <label> <input type="submit" value="Send" />
+					</label>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<section class="wrapper clearfix" data-section="logout">Log
+		out</section>
+	<script src="/library/angular/angular.min.js"></script>
+	<script src="/library/angular/angular-route.min.js"></script>
+	<script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+	<script src="js/index.js"></script>
+	<script src="js/searchsvg.js"></script>
+	<script src="js/search.js"></script>
+>>>>>>> f333f1e446a56c6b122e2478ecdc1e678a17db4c
 </body>
 
 </html>
