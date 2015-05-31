@@ -3,11 +3,13 @@ package uss.controller;
 import next.jdbc.mysql.DAO;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import uss.model.User;
 import uss.response.Result;
 
+@Controller
 public class AuthController {
 	
 	@Autowired
@@ -24,7 +26,7 @@ public class AuthController {
 		
 		if (!dao.update(user))
 			return Result.getErrorSqlExcute();
-		return Result.getSuccess();
+		return "redirect:/";
 	}
 
 }
