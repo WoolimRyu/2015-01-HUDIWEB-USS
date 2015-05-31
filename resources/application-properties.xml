@@ -8,5 +8,11 @@
 	<entry key="database.url">jdbc:mysql://localhost:3306/mydb</entry> 
 	<entry key="database.username">root</entry> 
 	<entry key="database.password"></entry>
+	
+	<!-- Mail -->
+	<entry key="mail.host">smtp.gmail.com</entry>
+	<entry key="mail.port">25</entry>
+	<entry key="mail.username">usstestmail@gmail.com</entry>
+	<entry key="mail.password">uss123!@</entry>
 
 </properties>

@@ -2,6 +2,7 @@ package uss.controller;
 
 import java.util.List;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpSession;
 
 import next.jdbc.mysql.DAO;
@@ -36,7 +37,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/user", method = RequestMethod.POST)
-	public Response register(User user) {
+	public Response register(User user) throws MessagingException {
 		if (!dao.insert(user))
 			return Result.getErrorSqlExcute();
 		return Result.getSuccess(user);
