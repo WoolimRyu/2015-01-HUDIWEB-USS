@@ -60,35 +60,48 @@ app.factory('$req', function ($http) {
 app.controller('controller', function ($scope, $req) {
     $scope.address = "";
     $scope.reqAddress = function () {
-        if ($scope.address == "")
+        if ($scope.card.companyAddress == "")
             return;
-        $.ajax({url: "/api/cross/search?query=" + $scope.address}).done(function (res) {
+        $.ajax({url: "/api/cross/search?query=" + $scope.card.companyAddress}).done(function (res) {
             var parser = new DOMParser();
             var xmlDoc = parser.parseFromString(res, "text/xml");
-            try {
-                var obj = XML2jsobj(xmlDoc.children[0]);
-                $scope.items = obj.channel.item;
-            } catch (e) {
+            var obj = XML2jsobj(xmlDoc.children[0]);
+            $scope.items = obj.channel.item;
+            $scope.items.forEach(function (item) {
 
-            }
+                item.src = mapSRC(item.mapx, item.mapy);
+                function mapSRC(mapx, mapy) {
+                    var tm = new nhn.api.map.TM128(mapx, mapy);
+                    var value = tm.toLatLng();
+                    var img = "http://openapi.naver.com/map/getStaticMap?version=1.0&crs=EPSG:4326&center=" +
+                        value.x +
+                        "," +
+                        value.y +
+                        "&level=10&w=300&h=300&maptype=default&markers=" +
+                        value.x +
+                        "," +
+                        value.y +
+                        "%20&key=c3eac894954fc7af3605dea2a332d0ca&uri=10.73.45.136"
+                    return img;
+                };
+                $scope.$apply();
+            });
         });
     };
 
-    $scope.showMap = function (mapx, mapy) {
-        var tm = new nhn.api.map.TM128(mapx, mapy);
-        var value = tm.toLatLng();
-        var img = "http://openapi.naver.com/map/getStaticMap?version=1.0&crs=EPSG:4326&center=" +
-            value.x +
-            "," +
-            value.y +
-            "&level=10&w=300&h=300&maptype=default&markers=" +
-            value.x +
-            "," +
-            value.y +
-            "%20&key=c3eac894954fc7af3605dea2a332d0ca&uri=10.73.45.136"
-        $scope.imgSrc = img;
+    $scope.setAdress = function (item) {
+        $scope.card.companyAddress = item.address;
+        $scope.card.mapSrc = item.src;
+        $scope.items = [];
+    };
 
-    }
+    $scope.card = {};
+
+    $scope.sendUpdateReq = function () {
+        $req('/api/card', $scope.card, "PUT").onResponse(function (response) {
+            location.href = "/myprofile/phase3/";
+        });
+    };
 
 });
 /**

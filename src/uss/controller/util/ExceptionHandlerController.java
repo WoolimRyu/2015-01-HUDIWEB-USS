@@ -1,4 +1,4 @@
-package uss.controller;
+package uss.controller.util;
 
 import next.jdbc.mysql.exception.RegexNotMatchedException;
 

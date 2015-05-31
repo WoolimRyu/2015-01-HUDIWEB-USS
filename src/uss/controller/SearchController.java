@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import uss.model.join.UserCard;
+import uss.model.zoin.UserCard;
 import uss.response.Response;
 import uss.response.Result;
 

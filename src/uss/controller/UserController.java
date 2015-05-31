@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import uss.model.User;
+import uss.model.cards.Card;
 import uss.response.Response;
 import uss.response.Result;
 import uss.util.SessionUtil;
@@ -43,7 +44,7 @@ public class UserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public Response login(User user, HttpSession session) {
-		User findedUser = dao.find(user);
+		User findedUser = dao.find(user, "stringId");
 		if (findedUser == null)
 			return Result.Login.getErrorUserNull();
 		if (!findedUser.getPassword().equals(user.getPassword()))
@@ -69,6 +70,16 @@ public class UserController {
 		if (userList == null)
 			return Result.getErrorSearchNotFound();
 		return Result.getSuccess(userList);
+	}
+
+	@RequestMapping(value = "/user/getRepresentiveCard")
+	public Response getCard(User user) {
+		User userfind = dao.find(user);
+		if (userfind == null)
+			return null;
+		Card card = new Card();
+		card.setCardId(userfind.getRepresentiveCardId());
+		return Result.getSuccess(dao.find(card));
 	}
 
 }
