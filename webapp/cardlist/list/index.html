@@ -123,7 +123,16 @@
                                                                      class="input-search"/>
         </div>
         <ol class="rectangle-list1">
-            <li ng-repeat="friend in friends | filter:search">{{friend}}</li>
+            <li ng-repeat="friend in friends | filter:search">
+
+                <span>{{friend.name}}</span>
+                <span>{{friend.phoneNumber}}</span>
+                <span>{{friend.company}}</span>
+                <span>{{friend.companyAddress}}</span>
+
+
+
+            </li>
         </ol>
 
     </div>

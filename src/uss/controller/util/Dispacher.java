@@ -47,7 +47,7 @@ public class Dispacher {
 			return "redirect:main/";
 		if(user.getRepresentiveCardId() == null || user.getRepresentiveCardId().equals(0))
 			return "redirect:myprofile/first/";
-		return "redirect:myprofile/list/";
+		return "redirect:cardlist/list/";
 	}
 
 	@ExceptionHandler(SessionNullException.class)
