@@ -29,7 +29,13 @@ color:red;
 
 }
 
-
+.alert {
+  background-color: rgba(255, 255, 255, 0.61);
+  border: 1px solid;
+  padding: 5px;
+  position: absolute;
+  border-radius: 10px;
+}
 
 .cont {
   position: relative;

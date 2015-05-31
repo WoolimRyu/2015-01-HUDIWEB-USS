@@ -13,7 +13,7 @@ public class Result {
 			"SQL실행중 오류가 발생했습니다", Response.ERROR);
 
 	private static final Response ERROR_BAD_REQUEST = new Response(
-			"비정상적인 접근 입니다", Response.ERROR_USER_ALERT);
+			"비정상적인 접근 입니다", Response.ERROR_SESSION_REQUIRE);
 
 	private static final Response ERROR_SEARCH_NOT_FOUND = new Response(
 			"검색결과가 없습니다.", Response.ERROR_USER_ALERT);

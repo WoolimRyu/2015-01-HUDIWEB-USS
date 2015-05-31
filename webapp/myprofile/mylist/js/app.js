@@ -49,7 +49,7 @@ app.factory('$req', function ($http) {
                         alert(response.message);
                         break;
                     case reponseType.SUCCESS_SESSION_NULL:
-                        alert("Login Session Not Exist or Expired, Please Login");
+                        alert(response.message);
                         location.href="/";
                         break;
                 }
