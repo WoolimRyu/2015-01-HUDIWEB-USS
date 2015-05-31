@@ -82,6 +82,9 @@ app.controller('searchController', function($scope, $req) {
        	function(response) {
        		suggestionBox.style.display = 'none';
        		$scope.query.value = '';
+
+            // if (response.object == null)
+            //     alert("검색 결과가 없습니다.");
        		$scope.results = response;
         });
     };
