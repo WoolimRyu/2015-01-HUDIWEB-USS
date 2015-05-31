@@ -1,4 +1,4 @@
-package uss.model;
+package uss.model.cards;
 
 import next.jdbc.mysql.annotation.Key;
 import next.jdbc.mysql.annotation.Table;
@@ -9,8 +9,11 @@ public class Card {
 	@Key(AUTO_INCREMENT = true)
 	private Integer cardId;
 	private Integer userId;
+	private String name;
 	private String phoneNumber;
+	private String email;
 	private String company;
+	private String companyAdress;
 	private String position;
 	private Integer template;
 	private String photo;
@@ -61,5 +64,18 @@ public class Card {
 	public String getMessage() {
 		return message;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getCompanyAdress() {
+		return companyAdress;
+	}
+	
 
 }

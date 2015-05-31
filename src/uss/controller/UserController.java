@@ -43,7 +43,7 @@ public class UserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public Response login(User user, HttpSession session) {
-		User findedUser = dao.find(user);
+		User findedUser = dao.find(user, "stringId");
 		if (findedUser == null)
 			return Result.Login.getErrorUserNull();
 		if (!findedUser.getPassword().equals(user.getPassword()))

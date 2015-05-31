@@ -1,7 +1,7 @@
 package uss.launcher;
 
-import uss.model.Card;
 import uss.model.User;
+import uss.model.cards.Card;
 import next.jdbc.mysql.DAO;
 import next.jdbc.mysql.maker.PackageCreator;
 

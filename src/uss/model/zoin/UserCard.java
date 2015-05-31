@@ -1,8 +1,8 @@
-package uss.model.join;
+package uss.model.zoin;
 
 import next.jdbc.mysql.join.Join;
-import uss.model.Card;
 import uss.model.User;
+import uss.model.cards.Card;
 
 public class UserCard extends Join<User, Card> {
 

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import uss.model.Card;
+import uss.model.cards.Card;
 import uss.response.Response;
 import uss.response.Result;
 

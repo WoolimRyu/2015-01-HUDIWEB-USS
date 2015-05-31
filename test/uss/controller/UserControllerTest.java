@@ -13,9 +13,9 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-import uss.model.Card;
 import uss.model.User;
-import uss.model.join.UserCard;
+import uss.model.cards.Card;
+import uss.model.zoin.UserCard;
 import uss.response.Result;
 
 public class UserControllerTest {

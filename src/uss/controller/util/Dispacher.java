@@ -1,4 +1,4 @@
-package uss.controller;
+package uss.controller.util;
 
 import javax.servlet.http.HttpSession;
 
