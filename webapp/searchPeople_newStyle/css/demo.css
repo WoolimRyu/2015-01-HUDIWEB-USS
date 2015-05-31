@@ -1671,7 +1671,7 @@ text-shadow:
   position: relative;
   background-color: transparent;
   outline: none;
-  width: 370px;
+  width: 330px;
 }
 
 .search .input-search input[type="submit"]{
@@ -1682,5 +1682,9 @@ text-shadow:
 .cs-wrapper {
     max-width: 900px;
     margin: auto;
+}
+
+.suggestion-box {
+    width: 330px;
 }
 
