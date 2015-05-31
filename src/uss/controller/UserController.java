@@ -31,8 +31,8 @@ public class UserController {
 	DAO dao;
 	
 	@Autowired
-	EmailSender mailSender;
-
+	private EmailSender emailSender;
+	
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	public Response get(User user) {
 		User found = dao.find(user);
@@ -45,7 +45,7 @@ public class UserController {
 	public Response register(User user) throws MessagingException {
 		if (!dao.insert(user))
 			return Result.getErrorSqlExcute();
-		mailSender.sendEmail(new AuthMail(user));
+		emailSender.sendEmail(new AuthMail(user));
 		return Result.getSuccess(user);
 	}
 
