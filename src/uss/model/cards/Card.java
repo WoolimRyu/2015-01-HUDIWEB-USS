@@ -1,5 +1,6 @@
 package uss.model.cards;
 
+import next.jdbc.mysql.annotation.Column;
 import next.jdbc.mysql.annotation.Key;
 import next.jdbc.mysql.annotation.Table;
 
@@ -13,11 +14,20 @@ public class Card {
 	private String phoneNumber;
 	private String email;
 	private String company;
-	private String companyAdress;
+	private String companyAddress;
+	private String mapSrc;
 	private String position;
+	@Column(DEFAULT="1")
 	private Integer template;
 	private String photo;
 	private String message;
+	public String getMapSrc() {
+		return mapSrc;
+	}
+
+	public void setMapSrc(String mapSrc) {
+		this.mapSrc = mapSrc;
+	}
 
 	public void setCardId(Integer cardId) {
 		this.cardId = cardId;
@@ -25,6 +35,38 @@ public class Card {
 
 	public Card() {
 
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
+	public void setTemplate(Integer template) {
+		this.template = template;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Card(Integer cardId) {
@@ -83,8 +125,12 @@ public class Card {
 		return name;
 	}
 
-	public String getCompanyAdress() {
-		return companyAdress;
+	public String getCompanyAddress() {
+		return companyAddress;
+	}
+
+	public void setCompanyAddress(String companyAddress) {
+		this.companyAddress = companyAddress;
 	}
 
 }

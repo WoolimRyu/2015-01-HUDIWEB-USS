@@ -20,7 +20,7 @@ import uss.response.Result;
 import uss.util.SessionUtil;
 
 @RestController
-@RequestMapping("/api/card")
+@RequestMapping("/api/addcard")
 public class AddedCardController {
 
 	@Autowired

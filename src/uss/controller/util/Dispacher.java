@@ -24,6 +24,8 @@ public class Dispacher {
 	@RequestMapping(value = "/{userId}", method = RequestMethod.GET)
 	public String search(@PathVariable String userId, HttpSession session) {
 		User user = dao.find(new User(userId, null));
+		if (user == null)
+			return UriPath.HOME;
 		Card card = new Card(user.getRepresentiveCardId());
 		card = dao.find(card);
 		if (card == null)

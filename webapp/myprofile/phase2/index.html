@@ -66,7 +66,7 @@
             <h1>Information</h1>
 
             <div class="container">
-					<span class="input input--name"> <input class="input__field"
+					<span class="input input--name"> <input class="input__field" ng-model="card.name"
                                                             type="text" id="name"/> <label class="input__label"
                                                                                            for="name">
                         <span class="input__label-content">Name</span>
@@ -76,8 +76,8 @@
 					</span>
             </div>
             <div class="container">
-					<span class="input input--location"> <input
-                            class="input__field" type="text" id="job"/> <label
+					<span class="input input--location"> <input ng-model="card.company"
+                                                                class="input__field" type="text" id="job"/> <label
                             class="input__label" for="job"> <span
                             class="input__label-content">Company / Job</span>
                     </label> <span class="input__focuslabel"> <span
@@ -87,8 +87,21 @@
 					</span>
             </div>
             <div class="container">
-					<span class="input input--phone"> <input
-                            class="input__field" type="text" id="phone"/> <label
+					<span class="input input--email"> <input ng-change="reqAddress()" ng-model="card.companyAddress"
+                                                             class="input__field" type="text" id="address"/> <label
+                            class="input__label" for="address"> <span
+                            class="input__label-content">Company Address</span>
+                    </label> <span class="input__focuslabel"> <span
+                            class="input__focuslabel-content" aria-hidden="true">Company Address</span>
+					</span>
+					</span>
+            </div>
+            <div ng-repeat="item in items" ng-click="setAdress(item)">{{item.title}}<span>{{item.address}}</span><img src="{{item.src}}"/></div>
+
+
+            <div class="container">
+					<span class="input input--phone"> <input ng-model="card.phoneNumber"
+                                                             class="input__field" type="text" id="phone"/> <label
                             class="input__label" for="phone"> <span
                             class="input__label-content">Phone Number</span>
                     </label> <span class="input__focuslabel"> <span
@@ -98,8 +111,8 @@
 					</span>
             </div>
             <div class="container">
-					<span class="input input--email"> <input
-                            class="input__field" type="text" id="bizemail"/> <label
+					<span class="input input--email"> <input ng-model="card.email"
+                                                             class="input__field" type="text" id="bizemail"/> <label
                             class="input__label" for="bizemail"> <span
                             class="input__label-content">Email</span>
                     </label> <span class="input__focuslabel"> <span
@@ -107,18 +120,6 @@
 					</span>
 					</span>
             </div>
-            <div class="container">
-					<span class="input input--email"> <input ng-change="reqAddress()" ng-model="address"
-                                                             class="input__field" type="text" id="address"/> <label
-                            class="input__label" for="address"> <span
-                            class="input__label-content">Address</span>
-                    </label> <span class="input__focuslabel"> <span
-                            class="input__focuslabel-content" aria-hidden="true">Address</span>
-					</span>
-					</span>
-            </div>
-            <div ng-repeat="item in items"><a href="{{item.link}}">{{item.title}}</a><span ng-click="showMap(item.mapx, item.mapy)">{{item.address}}</span></div>
-            <img src="{{imgSrc}}"/>
 
         </div>
 
@@ -155,7 +156,7 @@
 
     <div class="templateList3">
         <div class="wrapperB">
-            <a onclick="sendupdateReq()" class="button" href="#" role="button">
+            <a ng-click="sendUpdateReq()" class="button" href="#" role="button">
                 <span> N&nbsp; E&nbsp; X&nbsp; T</span>
 
                 <div class="icon">

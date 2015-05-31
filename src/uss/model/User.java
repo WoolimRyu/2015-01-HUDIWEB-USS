@@ -36,6 +36,10 @@ public class User {
 		this.password = password;
 	}
 
+	public void setRepresentiveCardId(Integer representiveCardId) {
+		this.representiveCardId = representiveCardId;
+	}
+
 	public User(String stringId, String password, String email, String name) {
 		this.stringId = stringId;
 		this.password = password;

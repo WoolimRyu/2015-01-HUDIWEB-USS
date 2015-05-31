@@ -70,8 +70,8 @@ function navigation() {
 
 function sendTemplateReq() {
 	$.ajax({
-		url : "/api/user?style=" + $('.active-img').attr('id'),
-		method : "PUT",
+		url : "/api/card?template=" + $('.active-img').attr('id').substring(1),
+		method : "put",
 		success : function(response) {
 
 			var reponseType = {
