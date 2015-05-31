@@ -19,7 +19,11 @@ public class User {
 	@RegularExpression("\\w+@\\w+\\.\\w+")
 	private String email;
 	private String name;
-	private String style;
+	private Integer representiveCardId;
+
+	public Integer getRepresentiveCardId() {
+		return representiveCardId;
+	}
 
 	@Exclude
 	private List<Group> groups;
@@ -32,27 +36,11 @@ public class User {
 		this.password = password;
 	}
 
-	public User(String stringId, String password, String email, String name, String style) {
+	public User(String stringId, String password, String email, String name) {
 		this.stringId = stringId;
 		this.password = password;
 		this.email = email;
 		this.name = name;
-		this.style = style;
-	}
-
-
-	@Override
-	public String toString() {
-		return "User [userId=" + userId + ", stringId=" + stringId + ", password=" + password + ", email=" + email + ", name=" + name + ", style="
-				+ style + ", groups=" + groups + "]";
-	}
-
-	public String getStyle() {
-		return style;
-	}
-
-	public void setStyle(String style) {
-		this.style = style;
 	}
 
 	public void setUserId(Integer id) {
@@ -101,8 +89,10 @@ public class User {
 		int result = 1;
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + ((stringId == null) ? 0 : stringId.hashCode());
+		result = prime * result
+				+ ((password == null) ? 0 : password.hashCode());
+		result = prime * result
+				+ ((stringId == null) ? 0 : stringId.hashCode());
 		return result;
 	}
 
@@ -137,15 +127,12 @@ public class User {
 			return false;
 		return true;
 	}
-	
-	
 
 	public void update(User usersended) {
 		if (usersended.name != null)
 			this.name = usersended.name;
-		if (usersended.style != null)
-			this.style = usersended.style;
+		if (usersended.representiveCardId != null)
+			this.representiveCardId = usersended.representiveCardId;
 	}
-
 
 }

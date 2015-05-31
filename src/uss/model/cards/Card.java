@@ -19,14 +19,24 @@ public class Card {
 	private String photo;
 	private String message;
 
+	public void setCardId(Integer cardId) {
+		this.cardId = cardId;
+	}
+
 	public Card() {
 
 	}
 
+	public Card(Integer cardId) {
+		this.cardId = cardId;
+	}
+
 	@Override
 	public String toString() {
-		return "Card [cardId=" + cardId + ", userId=" + userId + ", phoneNumber=" + phoneNumber + ", company=" + company + ", position=" + position
-				+ ", template=" + template + ", photo=" + photo + ", message=" + message + "]";
+		return "Card [cardId=" + cardId + ", userId=" + userId
+				+ ", phoneNumber=" + phoneNumber + ", company=" + company
+				+ ", position=" + position + ", template=" + template
+				+ ", photo=" + photo + ", message=" + message + "]";
 	}
 
 	public void setUserId(Integer userId) {
@@ -76,6 +86,5 @@ public class Card {
 	public String getCompanyAdress() {
 		return companyAdress;
 	}
-	
 
 }

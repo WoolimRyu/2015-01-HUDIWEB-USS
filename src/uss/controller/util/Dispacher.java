@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import uss.constants.UriPath;
 import uss.model.User;
+import uss.model.cards.Card;
 import uss.util.SessionUtil;
 
 @Controller
@@ -23,15 +24,15 @@ public class Dispacher {
 	@RequestMapping(value = "/{userId}", method = RequestMethod.GET)
 	public String search(@PathVariable String userId, HttpSession session) {
 		User user = dao.find(new User(userId, null));
-		if (user == null)
+		Card card = new Card(user.getRepresentiveCardId());
+		card = dao.find(card);
+		if (card == null)
 			return UriPath.HOME;
 		User seuser = SessionUtil.getUser(session);
 		if (seuser != null)
 			if (seuser.getStringId().equals(userId))
-				return "/myprofile/" + user.getStyle() + ".html";
-		if (user.getStyle() == null)
-			return UriPath.Profile.STYLE1;
-		return "/profile/" + user.getStyle() + ".html";
+				return "/myprofile/t" + card.getTemplate() + ".html";
+		return "/profile/t" + card.getTemplate() + ".html";
 	}
-	
+
 }
