@@ -550,7 +550,7 @@ font-size: 60px;
     top: 245px; 
     left: 209px;*/ 
     max-height: 300px; 
-    z-index: 9999; 
+    z-index: 100; 
     display: block;
 }
 

@@ -19,8 +19,8 @@
 	<meta name="author" content="Codrops" />
 	<link rel="shortcut icon" href="../favicon.ico">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
 	<!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load --> 
 	<script src="js/modernizr.custom.25376.js"></script>
 </head>
@@ -92,8 +92,8 @@
 							</footer>
 						</div>
 
-						<div ng-controller="searchController" class="test">
-					      <form ng-submit="submit()">
+						<div ng-controller="searchController" class="test search">
+					      <form ng-submit="submit()" autocomplete="off">
 							<input type="text" id="search" class="input-search" ng-change="autocomplete()" ng-model="query"> 
 							<input type="submit" value="submit">
 						  </form>
@@ -101,7 +101,7 @@
 					      <div class="suggestion-box">
 					        <div ng-repeat="suggestion in suggestions" class="suggestions">
 					          <div class="suggestion"><a ng-model="query" ng-click="submit()">{{suggestion.left.name}}</a></div>
-				</div>
+							</div>
 					      </div>
 
 					      <div ng-repeat="result in results">
