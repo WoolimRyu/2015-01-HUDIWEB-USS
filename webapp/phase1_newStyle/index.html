@@ -1,66 +1,97 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<title>Perspective Page View Navigation</title>
-		<meta name="description" content="Perspective Page View Navigation: Transforms the page in 3D to reveal a menu" />
-		<meta name="keywords" content="3d page, menu, navigation, mobile, perspective, css transform, web development, web design" />
-		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load --> 
-		<script src="js/modernizr.custom.25376.js"></script>
-	</head>
-	<body>
-		<div id="perspective" class="perspective effect-airbnb">
-			<div class="container">
-				<div class="wrapper"><!-- wrapper needed for scroll -->
-					<!-- Top Navigation -->
-					<div class="codrops-top clearfix">
-						<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/ProgressButtonStyles/"><span>Previous Demo</span></a>
-						<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=17915"><span>Back to the Codrops Article</span></a></span>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Perspective Page View Navigation</title>
+
+	<link
+		href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+		rel="stylesheet">
+	<link rel='stylesheet prefetch'
+		href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+	<link rel='stylesheet prefetch'
+		href='http://fonts.googleapis.com/css?family=Open+Sans'>
+
+	<meta name="description" content="Perspective Page View Navigation: Transforms the page in 3D to reveal a menu" />
+	<meta name="keywords" content="3d page, menu, navigation, mobile, perspective, css transform, web development, web design" />
+	<meta name="author" content="Codrops" />
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load --> 
+	<script src="js/modernizr.custom.25376.js"></script>
+</head>
+<body>
+	<div id="perspective" class="perspective effect-laydown">
+		<div class="container" style="height:100%;">
+			<div class="wrapper" style="height:100%;"><!-- wrapper needed for scroll -->
+				<!-- Top Navigation -->
+				<div class="main clearfix" style="height:15%;">
+					<div class="column">
+						<p><button id="showMenu">Show Menu</button></p>
 					</div>
-					<header class="codrops-header">
-						<h1>Perspective Page View Navigation <span>Transforms the page in 3D to reveal a menu</span></h1>	
-					</header>
-					<div class="main clearfix">
-						<div class="column">
-							<p><button id="showMenu">Show Menu</button></p>
-							<p>Click on this button to see the content being pushed away in 3D to reveal a navigation or other items.</p>
-						</div>
-						<div class="column">
-							<nav class="codrops-demos">
-								<a href="index.html" class="current-demo">Airbnb Effect</a>
-								<a href="index2.html">Move Left</a>
-								<a href="index3.html">Rotate Left</a>
-								<a href="index4.html">Move Down</a>
-								<a href="index5.html">Rotate Top</a>
-								<a href="index6.html">Lay Down</a>
-							</nav>
-						</div>
-						<div class="related">
-							<p>If you enjoyed this demo you might also like:</p>
-							<p><a href="http://tympanus.net/Tutorials/AnimatedBorderMenus/">Animated Border Menus</a></p>
-							<p><a href="http://tympanus.net/Development/SidebarTransitions/">Transitions for Off-Canvas Navigations</a></p>
-						</div>
-					</div><!-- /main -->
-				</div><!-- wrapper -->
-			</div><!-- /container -->
-			<nav class="outer-nav left vertical">
-				<a href="#" class="icon-home">Home</a>
-				<a href="#" class="icon-news">News</a>
-				<a href="#" class="icon-image">Images</a>
-				<a href="#" class="icon-upload">Uploads</a>
-				<a href="#" class="icon-star">Favorites</a>
-				<a href="#" class="icon-mail">Messages</a>
-				<a href="#" class="icon-lock">Security</a>
-			</nav>
-		</div><!-- /perspective -->
-		<script src="js/classie.js"></script>
-		<script src="js/menu.js"></script>
-	</body>
+				</div><!-- /main -->
+
+				<div class="bottom" style="height:85%; border:1px solid black;">
+					<div class="templateList1">
+								<div class="templateListTitle">
+									템플릿을 선택해주세요.<br>
+								</div>
+								<div class="templateListSubTitle">
+									각 템플릿마다의 특징이 있습니다. 회원님이 원하는 스타일의 프로필 템플릿을 선택해주십시오. <br>
+								</div>
+							</div>
+							<div class="templateList2">
+								<div class="templatePick">
+									<div class="carousel">
+										<a class="prev-btn" href="#"><</a>
+										<div class="card" id="t1"
+											style="background: url(http://s10.postimg.org/cv7a0ewop/pic1.png)">
+										</div>
+										<div class="card" id="t2"
+											style="background: url(http://s30.postimg.org/neica7hep/pic2.png)"></div>
+										<div class="card" id="t3"
+											style="background: url(http://s30.postimg.org/fjgzmvmjl/pic3.png)"></div>
+										<div class="card" id="t4"></div>
+										<div class="card" id="t5"></div>
+
+										<a class="next-btn" href="#">></a>
+									</div>
+									<div class="nav-elements"></div>
+								</div>
+							</div>
+							<div class="templateList3">
+								<div class="wrapperB">
+									<a  onclick='sendTemplateReq()' class="button" href="#" role="button"> <span> N&nbsp;
+											E&nbsp; X&nbsp; T</span>
+										<div class="icon">
+											<i class="fa fa-arrow-right"></i> <i class="fa fa-check"></i>
+										</div>
+									</a>
+								</div>
+							</div>
+				</div>
+			</div><!-- wrapper -->
+		</div><!-- /container -->
+		<nav class="outer-nav top horizontal">
+			<a href="#" class="icon-home">My Profile</a>
+			<a href="#" class="icon-news">Card List</a>
+			<a href="#" class="icon-image">Search People</a>
+			<a href="#" class="icon-mail">Contact Us</a>
+			<a href="#" class="icon-lock">Security</a>
+		</nav>
+	</div><!-- /perspective -->
+
+
+	<script
+		src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src="js/classie.js"></script>
+	<script src="js/menu.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/picker.js"></script>
+	<script src="js/templateList.js"></script>
+</body>
 </html>
