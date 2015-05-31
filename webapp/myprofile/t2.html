@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <link rel='stylesheet prefetch'
+          href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link href='http://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/t2style.css">
+</head>
+
+<body ng-app="uss" ng-controller="userController">
+<p class="lines-text-after-before"></p>
+
+
+<header class="title" ng-controller="userController">
+    <section>
+        <header>
+            <h2 updatable='user.name'></h2>
+            <p> {{user.name}} name
+
+            <br> <span updatable='user.company'></span></p>
+            
+            <div id="team" style="display:block;">
+						<figure>
+							<img id="testTh" src="http://500px.com/graphics/pages/team/squares/oleg.jpg">
+					
+						</figure>
+					</div>
+			</div>
+			
+            <h2>{{user.message}}message</h2>
+            <p class="lines-text-after-before"></p>
+            <div class="bottom">{{user.phoneNumber}} <br> {{user.email}}</div>
+        </header>
+    </section>
+</header>
+<br/>
+
+<hr/>
+<footer id="footerT">
+    <p><a href="#contactP">CONTACT ME</a></p>
+
+    <div id="contactP" class="temp">
+        <ul class="icons">
+            <li class="icon">
+                <a href="/https://github.com">
+                    <i class="fa fa-github fa-lg"></i>
+                </a>
+            </li>
+            <li class="icon">
+                <a href="https://facebook.com">
+                    <i class="fa fa-facebook fa-lg"></i>
+                </a>
+            </li>
+            <li class="icon">
+                <a href="https://twitter.com">
+                    <i class="fa fa-twitter fa-lg"></i>
+                </a>
+            </li>
+            <li class="icon">
+                <a href="https://dribbble.com">
+                    <i class="fa fa-dribbble fa-lg"></i>
+                </a>
+            </li>
+            <li class="icon">
+                <a href="https://dribbble.com">
+                    <i class="fa fa-dribbble fa-lg"></i>
+                </a>
+            </li>
+            <li class="icon">
+                <a href="/https://github.com">
+                    <i class="fa fa-github fa-lg"></i>
+                </a>
+            </li>
+            <li class="icon">
+                <a href="https://twitter.com">
+                    <i class="fa fa-twitter fa-lg"></i>
+                </a>
+            </li>
+            <li class="icon">
+                <a href="https://facebook.com">
+                    <i class="fa fa-facebook fa-lg"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+<script src="/library/angular/angular.min.js"></script>
+<script src="/library/angular/angular-route.min.js"></script>
+<script src="/js/myprofile.js"></script>
+</body>
+
+</html>

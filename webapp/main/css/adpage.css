@@ -410,3 +410,75 @@ figcaption {
   margin-top:20px;
   text-align:center;
 }
+
+.disBox{
+	background-color:rgba(255,255,255,0.4); margin-right: 50px; width: 280px; height: 300px; float: left;
+}
+.disBox2{
+	background-color:rgba(255,255,255,0.4); margin-right: 50px; width: 280px; height: 300px; float: left;
+}
+.disBox3{
+	background-color:rgba(255,255,255,0.4); width: 280px; height: 300px; float: left;
+}
+.communityABC{
+	display:block;
+}
+.banner{
+	display:block;
+}
+#postSection{
+	display: block;
+}
+.intro{
+	display : block;
+}
+
+/* 반응형 */
+@media (max-width: 1143px) {
+    .disBox ,.disBox2 ,.disBox3{
+    	width : 30%;
+    	margin-right:20px;
+    }
+}
+
+@media (max-width: 1001px) {
+    .communityABC{
+    	display : none;
+    }
+}
+
+@media (max-width: 1228px) {
+    #teamOne{
+    	display : none;
+    }
+    .banner {
+    display:none;
+    }
+    #postSection {
+    	display:none;
+    }
+}
+
+@media (max-width: 600px) {
+	.tochange{
+		margin-left:1px;
+		text-align:left;
+		width:80%;
+	}
+	.container{
+		margin-top:40px;
+		width:90%;
+	}
+    .intro{
+    	display:none;
+    }
+    .scroll-more .scroll {
+    	display:none;
+    }
+    a{
+    	display:none;
+    }
+    .scroll-more{
+    	display:none;
+    }
+}
