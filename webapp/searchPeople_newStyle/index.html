@@ -93,15 +93,15 @@
 						</div>
 
 						<div ng-controller="searchController" class="test">
-					      <form class="search">
-					        <input type="text" id="search" class="input-search" ng-change="autocomplete()">
-					        <input type="submit" ng-submit="submit()" ng-model="query">
-					      </form>
+					      <form ng-submit="submit()">
+							<input type="text" id="search" class="input-search" ng-change="autocomplete()" ng-model="query"> 
+							<input type="submit" value="submit">
+						  </form>
 					      
 					      <div class="suggestion-box">
 					        <div ng-repeat="suggestion in suggestions" class="suggestions">
-					          <div class="suggestion">{{suggestion.left.name}}</div>
-					        </div>
+					          <div class="suggestion"><a ng-model="query" ng-click="submit()">{{suggestion.left.name}}</a></div>
+				</div>
 					      </div>
 
 					      <div ng-repeat="result in results">
