@@ -70,7 +70,7 @@
 				</span>
 			</div>
 			<div class="containerBot">
-				<span class="input input--email"> <input ng-change="reqAddress()" ng-model="card.companyAddress"
+				<span class="input input--address"> <input ng-change="reqAddress()" ng-model="card.companyAddress"
 					class="input__field" type="text" id="address"/> <label
 					class="input__label" for="address"> <span
 					class="input__label-content">Company Address</span>
@@ -79,8 +79,8 @@
 			</span>
 		</span>
 	</div>
-	<div ng-repeat="item in items" ng-click="setAdress(item)">{{item.title}}<span>{{item.address}}</span><img src="{{item.src}}"/></div>
-
+	
+	<div class="listSide" ng-repeat="item in items" ng-click="setAdress(item)">{{item.title}}<span>{{item.address}}</span><img src="{{item.src}}"/></div>
 
 	<div class="containerBot">
 		<span class="input input--phone"> <input ng-model="card.phoneNumber"
