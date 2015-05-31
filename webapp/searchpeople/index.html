@@ -61,11 +61,15 @@
     </div>
   </nav>
 
-  <section class="wrapper clearfix" data-section="search">
-    <div class="bookmarklet">___________________     SEARCH</div>
-    <div ng-controller="searchController" class="searchBody">
-       <label for="search" class="search-label"></label>
-       <input type="text" id="search" class="input-search" ng-change=autocomplete() ng-submit=submit() ng-model="query"/>
+  <section class="wrapper">
+    <div class="card-wrapper">
+      <div ng-show=""></div>
+    </div>
+    <div ng-controller="searchController" class="search-wrapper">
+      <form class="search">
+        <input type="text" id="search" class="input-search" ng-change=autocomplete()>
+        <input type="submit" ng-submit=submit() ng-model="query">
+      </form>
       
       <div class="suggestion-box">
         <div ng-repeat="suggestion in suggestions" class="suggestions">
