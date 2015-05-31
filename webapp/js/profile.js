@@ -28,7 +28,8 @@ app.factory('$req', function ($http) {
             ERROR: 0,
             ERROR_USER_ALERT: 1,
             SUCCESS: 2,
-            SUCCESS_USER_ALERT: 3
+            SUCCESS_USER_ALERT: 3,
+            SUCCESS_SESSION_NULL: 4
         };
 
         var success = http.success;
@@ -44,6 +45,10 @@ app.factory('$req', function ($http) {
                         break;
                     case reponseType.SUCCESS_USER_ALERT:
                         alert(response.message);
+                        break;
+                    case reponseType.SUCCESS_SESSION_NULL:
+                        alert("Login Session Not Exist or Expired, Please Login");
+                        location.href = "/";
                         break;
                 }
                 call(response.object);
@@ -65,8 +70,8 @@ app.controller('cardController', function ($scope, $req, $routeParams, $timeout)
     };
 
     $scope.addCard = function () {
-        $req('/api/addcard/add', {cardId: $scope.card.cardId}).onResponse(function(response){
-           alert($scope.card.name + "is added in my cards");
+        $req('/api/addcard/add', {cardId: $scope.card.cardId}).onResponse(function (response) {
+            alert($scope.card.name + "is added in my cards");
         });
     }
 

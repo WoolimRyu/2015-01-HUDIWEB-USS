@@ -39,6 +39,8 @@ public class CardController {
 		DAO dao = new DAO(new Transaction());
 		Card card = new Card();
 		User user = SessionUtil.getUser(session);
+		if(user == null)
+			return Result.getErrorSessionExpired();
 		card.setUserId(user.getUserId());
 		if (!dao.insert(card))
 			return Result.getErrorSqlExcute();
@@ -54,6 +56,8 @@ public class CardController {
 	@RequestMapping(method = RequestMethod.PUT)
 	public Response update(Card card, HttpSession session) {
 		User user = SessionUtil.getUser(session);
+		if(user == null)
+			return Result.getErrorSessionExpired();
 		Integer cardId = SessionUtil.getCardId(session);
 		if (cardId == null)
 			cardId = user.getRepresentiveCardId();

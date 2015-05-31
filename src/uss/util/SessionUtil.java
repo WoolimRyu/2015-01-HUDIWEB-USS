@@ -25,5 +25,9 @@ public class SessionUtil {
 		return cardId;
 	}
 
+	public static void logout(HttpSession session) {
+		session.removeAttribute(USER);
+	}
+
 
 }

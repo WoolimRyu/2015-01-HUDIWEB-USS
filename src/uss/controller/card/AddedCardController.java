@@ -29,6 +29,8 @@ public class AddedCardController {
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public Response cardAdd(HttpSession session, String cardId) {
 		User user = SessionUtil.getUser(session);
+		if(user == null)
+			return Result.getErrorSessionExpired();
 		AddedCards cards = new AddedCards(user.getUserId(),
 				Integer.parseInt(cardId), null);
 		if (!dao.insert(cards))

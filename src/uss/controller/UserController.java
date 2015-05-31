@@ -60,11 +60,19 @@ public class UserController {
 		session.setAttribute(USER, findedUser);
 		return Result.getSuccess(findedUser);
 	}
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.POST)
+	public String logout(User user, HttpSession session) {
+		SessionUtil.logout(session);
+		return "redirect:/";
+	}
 
 	@RequestMapping(value = "/user", method = RequestMethod.PUT)
 	public Response update(@ModelAttribute User usersended, HttpSession session) {
 		System.out.println(usersended);
 		User user = SessionUtil.getUser(session);
+		if(user == null)
+			return Result.getErrorSessionExpired();
 		user.update(usersended);
 		if (!dao.update(user))
 			return Result.getErrorSqlExcute();
