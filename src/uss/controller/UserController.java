@@ -51,10 +51,11 @@ public class UserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public Object login(User user, HttpSession session) {
+		String password = user.getPassword();
 		User findedUser = dao.find(user, "stringId");
 		if (findedUser == null)
 			return Result.Login.getErrorUserNull();
-		if (!findedUser.getPassword().equals(user.getPassword()))
+		if (!findedUser.getPassword().equals(password))
 			return Result.Login.getErrorPasswordNotMatched();
 		session.setAttribute(USER, findedUser);
 		return Result.getSuccess(findedUser);

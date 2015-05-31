@@ -27,10 +27,10 @@ public class CardController {
 	DAO dao;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public Response get(Card card) {
+	public Response get(User user) {
+		User u = dao.find(user);
+		Card card = new Card(u.getRepresentiveCardId());
 		Card c = dao.find(card);
-		if (c == null)
-			return Result.getErrorSearchNotFound();
 		return Result.getSuccess(c);
 	}
 
@@ -53,7 +53,11 @@ public class CardController {
 
 	@RequestMapping(method = RequestMethod.PUT)
 	public Response update(Card card, HttpSession session) {
-		card.setCardId(SessionUtil.getCardId(session));
+		User user = SessionUtil.getUser(session);
+		Integer cardId = SessionUtil.getCardId(session);
+		if (cardId == null)
+			cardId = user.getRepresentiveCardId();
+		card.setCardId(cardId);
 		if (!dao.update(card))
 			return Result.getErrorSqlExcute();
 		return Result.getSuccess();

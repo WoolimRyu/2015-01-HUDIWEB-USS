@@ -57,7 +57,7 @@ app.factory('$req', function ($http) {
 
 
 
-app.controller('userController', function ($scope, $req, $routeParams, $timeout) {
+app.controller('cardController', function ($scope, $req, $routeParams, $timeout) {
     $scope.user = {};
 
     $scope.logout = function () {

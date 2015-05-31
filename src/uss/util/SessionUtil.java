@@ -22,8 +22,6 @@ public class SessionUtil {
 
 	public static Integer getCardId(HttpSession session) {
 		Integer cardId = (Integer) session.getAttribute(CARD_ID);
-		if (cardId == null)
-			throw new SessionNullException();
 		return cardId;
 	}
 
