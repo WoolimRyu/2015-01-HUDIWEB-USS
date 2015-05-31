@@ -207,11 +207,11 @@
 
 		<div class="test">
 			<ol class="rectangle-list">
-				<li ng-repeat="friend in friends | filter:selected"><a href="">
-						<div class="userName">{{friend.name}}</div>
+				<li ng-repeat="card in cards | filter:selected"><a href="">
+						<div class="userName">{{card.name}}</div>
 						<div class="userInfo">
-							<div class="userJob">{{friend.job}}</div>
-							<div class="userPhone">{{friend.phoneNumber}}</div>
+							<div class="userJob">{{card.company}}</div>
+							<div class="userPhone">{{card.phoneNumber}}</div>
 						</div>
 				</a></li>
 			</ol>

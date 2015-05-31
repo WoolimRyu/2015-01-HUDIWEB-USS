@@ -77,8 +77,8 @@ app.factory('$req', function ($http) {
 });
 
 var scope;
-app.controller('userController', function ($scope, $req, $routeParams, $timeout) {
-    $scope.user = {};
+app.controller('cardController', function ($scope, $req, $routeParams, $timeout) {
+    $scope.card = {};
 
     scope = $scope;
     $scope.logout = function () {
@@ -86,17 +86,17 @@ app.controller('userController', function ($scope, $req, $routeParams, $timeout)
         location.href = "/";
     };
 
-    $scope.$watch('user', function(){
-        $req('/api/user', $scope.user, "PUT").onResponse(
+    $scope.$watch('card', function(){
+        $req('/api/card', $scope.user, "PUT").onResponse(
             function (response) {
               //  $scope.user = response;
             }
         );
     }, true);
 
-    $req('/api/user', {stringId: location.pathname.substring(1)}).onResponse(
+    $req('/api/card', {stringId: location.pathname.substring(1)}).onResponse(
         function (response) {
-            $scope.user = response;
+            $scope.card = response;
         }
     );
 });

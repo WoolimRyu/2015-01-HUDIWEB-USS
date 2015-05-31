@@ -1,95 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
-    <link rel='stylesheet prefetch'
-          href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css'>
-    <link href='http://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/css/t2style.css">
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<link rel='stylesheet prefetch'
+	href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css'>
+<link href='http://fonts.googleapis.com/css?family=Rye' rel='stylesheet'
+	type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oswald'
+	rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/css/t2style.css">
 </head>
 
-<body ng-app="uss" ng-controller="userController">
-<p class="lines-text-after-before"></p>
+<body ng-app="uss" ng-controller="cardController">
+	<p class="lines-text-after-before"></p>
 
 
-<header class="title" ng-controller="userController">
-    <section>
-        <header>
-            <p> {{user.name}} name
-            <br> {{user.company}} company</p>
-            
-            <div id="team" style="display:block;">
-						<figure>
-							<img id="testTh" src="http://500px.com/graphics/pages/team/squares/oleg.jpg">
-					
-						</figure>
-					</div>
-			</div>
-			
-            <h2>{{user.message}}message</h2>
-            <p class="lines-text-after-before"></p>
-            <div class="bottom">{{user.phoneNumber}} <br> {{user.email}}</div>
-        </header>
-    </section>
-</header>
-<br/>
+	<header class="title" ng-controller="cardController">
+		<section>
+			<header>
+				<p>
+					{{card.name}} name <br> {{card.company}} company
+				</p>
 
-<hr/>
-<footer id="footerT">
-    <p><a href="#contactP">CONTACT ME</a></p>
+				<a href="#0" class="cd-popup-trigger"><button class="mapBtn">
+						<i class="fa fa-map-marker fa-2x"></i>
+					</button></a>
 
-    <div id="contactP" class="temp">
-        <ul class="icons">
-            <li class="icon">
-                <a href="/https://github.com">
-                    <i class="fa fa-github fa-lg"></i>
-                </a>
-            </li>
-            <li class="icon">
-                <a href="https://facebook.com">
-                    <i class="fa fa-facebook fa-lg"></i>
-                </a>
-            </li>
-            <li class="icon">
-                <a href="https://twitter.com">
-                    <i class="fa fa-twitter fa-lg"></i>
-                </a>
-            </li>
-            <li class="icon">
-                <a href="https://dribbble.com">
-                    <i class="fa fa-dribbble fa-lg"></i>
-                </a>
-            </li>
-            <li class="icon">
-                <a href="https://dribbble.com">
-                    <i class="fa fa-dribbble fa-lg"></i>
-                </a>
-            </li>
-            <li class="icon">
-                <a href="/https://github.com">
-                    <i class="fa fa-github fa-lg"></i>
-                </a>
-            </li>
-            <li class="icon">
-                <a href="https://twitter.com">
-                    <i class="fa fa-twitter fa-lg"></i>
-                </a>
-            </li>
-            <li class="icon">
-                <a href="https://facebook.com">
-                    <i class="fa fa-facebook fa-lg"></i>
-                </a>
-            </li>
-        </ul>
-    </div>
-</footer>
+				<div id="team" style="display: block;">
+					<figure>
+						<img id="testTh"
+							src="http://500px.com/graphics/pages/team/squares/oleg.jpg">
 
-<script src="/library/angular/angular.min.js"></script>
-<script src="/library/angular/angular-route.min.js"></script>
-<script src="/js/profile.js"></script>
+					</figure>
+				</div>
+				</div>
+
+				<h2>{{card.message}}message</h2>
+				<p class="lines-text-after-before"></p>
+				<div class="bottom">
+					{{card.phoneNumber}} <br> {{card.email}}
+				</div>
+			</header>
+		</section>
+	</header>
+	<br />
+
+	<hr />
+	<footer id="footerT">
+		<p>
+			<a href="#contactP">CONTACT ME</a>
+		</p>
+
+		<div id="contactP" class="temp">
+			<ul class="icons">
+				<li class="icon"><a href="/https://github.com"> <i
+						class="fa fa-github fa-lg"></i>
+				</a></li>
+				<li class="icon"><a href="https://facebook.com"> <i
+						class="fa fa-facebook fa-lg"></i>
+				</a></li>
+				<li class="icon"><a href="https://twitter.com"> <i
+						class="fa fa-twitter fa-lg"></i>
+				</a></li>
+				<li class="icon"><a href="https://dribbble.com"> <i
+						class="fa fa-dribbble fa-lg"></i>
+				</a></li>
+				<li class="icon"><a href="https://dribbble.com"> <i
+						class="fa fa-dribbble fa-lg"></i>
+				</a></li>
+				<li class="icon"><a href="/https://github.com"> <i
+						class="fa fa-github fa-lg"></i>
+				</a></li>
+				<li class="icon"><a href="https://twitter.com"> <i
+						class="fa fa-twitter fa-lg"></i>
+				</a></li>
+				<li class="icon"><a href="https://facebook.com"> <i
+						class="fa fa-facebook fa-lg"></i>
+				</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<div class="cd-popup" role="alert">
+		<div class="cd-popup-container">
+			<br>
+			<br>
+			<br> Company Map <img src="{{card.mapSrc}}"></img> <a href="#0"
+				class="cd-popup-close img-replace">Close</a>
+		</div>
+		<!-- cd-popup-container -->
+	</div>
+	<!-- cd-popup -->
+	
+	<script
+	src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src="/library/angular/angular.min.js"></script>
+	<script src="/library/angular/angular-route.min.js"></script>
+	<script src="/js/profile.js"></script>
+	<script src="/js/map.js"></script>
 </body>
 
 </html>
