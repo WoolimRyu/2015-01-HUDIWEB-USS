@@ -39,15 +39,17 @@ public class Dispacher {
 		}
 		return "/profile/t" + card.getTemplate() + ".html";
 	}
-	
+
 	@RequestMapping(value = "/home/dispatch", method = RequestMethod.GET)
 	public String dispatch(HttpSession session) {
 		User user = SessionUtil.getUser(session);
+		if (user == null)
+			return "redirect:main/";
 		if(user.getRepresentiveCardId() == null || user.getRepresentiveCardId().equals(0))
 			return "redirect:myprofile/first/";
 		return "redirect:myprofile/list/";
 	}
-	
+
 	@ExceptionHandler(SessionNullException.class)
 	public String handle1(SessionNullException e) {
 		return "redirect:home/login.html";
