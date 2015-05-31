@@ -20,6 +20,7 @@ public class User {
 	private String email;
 	private String name;
 	private Integer representiveCardId;
+	private String authcode;
 
 	public Integer getRepresentiveCardId() {
 		return representiveCardId;
@@ -65,6 +66,14 @@ public class User {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public void setAuthcode(String authcode) {
+		this.authcode = authcode;
+	}
+	
+	public String getAuthcode() {
+		return authcode;
 	}
 
 	public Integer getUserId() {

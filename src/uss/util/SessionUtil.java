@@ -11,8 +11,6 @@ public class SessionUtil {
 
 	public static User getUser(HttpSession session) throws SessionNullException {
 		User user = (User) session.getAttribute(USER);
-		if (user == null)
-			throw new SessionNullException();
 		return user;
 	}
 
@@ -24,8 +22,6 @@ public class SessionUtil {
 
 	public static Integer getCardId(HttpSession session) {
 		Integer cardId = (Integer) session.getAttribute(CARD_ID);
-		if (cardId == null)
-			throw new SessionNullException();
 		return cardId;
 	}
 

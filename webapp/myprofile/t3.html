@@ -14,7 +14,7 @@
 
 </head>
 
-<body ng-app="uss" ng-controller="userController">
+<body ng-app="uss" ng-controller="cardController">
 <header>
     <h1>W<span>oo</span>L<span>i</span>m<span>R</span>YU</h1>
     <button><i class="fa fa-bars"></i></button>
@@ -29,7 +29,7 @@
 </nav>
 <main>
     <article>
-        <p>{{user.name}}<br>{{user.email}}<br>{{user.phoneNumber}}<br>{{user.company}}<br>{{user.message}}</p>
+        <span updatable="card.name"></span><span updatable="card.email"></span><span updatable="card.phoneNumber"></span><br><span updatable="card.company"></span><br><span updatable="card.message"></span>
     </article>
 
 
@@ -51,6 +51,6 @@
 <script src="/js/t3.js"></script>
 <script src="/library/angular/angular.min.js"></script>
 <script src="/library/angular/angular-route.min.js"></script>
-<script src="/js/profile.js"></script>
+<script src="/js/myprofile.js"></script>
 </body>
 </html>

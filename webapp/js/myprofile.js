@@ -87,7 +87,7 @@ app.controller('cardController', function ($scope, $req, $routeParams, $timeout)
     };
 
     $scope.$watch('card', function(){
-        $req('/api/card', $scope.user, "PUT").onResponse(
+        $req('/api/card', $scope.card, "PUT").onResponse(
             function (response) {
               //  $scope.user = response;
             }

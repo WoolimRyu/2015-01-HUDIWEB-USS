@@ -2,6 +2,7 @@ package uss.controller;
 
 import java.util.List;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpSession;
 
 import next.jdbc.mysql.DAO;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import uss.mail.AuthMail;
+import uss.mail.EmailSender;
 import uss.model.User;
 import uss.model.cards.Card;
 import uss.response.Response;
@@ -26,7 +29,10 @@ public class UserController {
 
 	@Autowired
 	DAO dao;
-
+	
+	@Autowired
+	private EmailSender emailSender;
+	
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	public Response get(User user) {
 		User found = dao.find(user);
@@ -36,21 +42,22 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/user", method = RequestMethod.POST)
-	public Response register(User user) {
+	public Response register(User user) throws MessagingException {
 		if (!dao.insert(user))
 			return Result.getErrorSqlExcute();
+		emailSender.sendEmail(new AuthMail(user));
 		return Result.getSuccess(user);
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public Response login(User user, HttpSession session) {
+	public Object login(User user, HttpSession session) {
+		String password = user.getPassword();
 		User findedUser = dao.find(user, "stringId");
 		if (findedUser == null)
 			return Result.Login.getErrorUserNull();
-		if (!findedUser.getPassword().equals(user.getPassword()))
+		if (!findedUser.getPassword().equals(password))
 			return Result.Login.getErrorPasswordNotMatched();
 		session.setAttribute(USER, findedUser);
-		System.out.println(session.getAttribute(USER));
 		return Result.getSuccess(findedUser);
 	}
 

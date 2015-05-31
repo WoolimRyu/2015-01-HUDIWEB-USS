@@ -11,17 +11,17 @@
     <link rel="stylesheet" href="/css/t2style.css">
 </head>
 
-<body ng-app="uss" ng-controller="userController">
+<body ng-app="uss" ng-controller="cardController">
 <p class="lines-text-after-before"></p>
 
 
-<header class="title" ng-controller="userController">
+<header class="title">
     <section>
         <header>
-            <h2 updatable='user.name'></h2>
+            <h2 updatable='card.name'></h2>
             <p> {{user.name}} name
 
-            <br> <span updatable='user.company'></span></p>
+            <br> <span updatable='card.company'></span></p>
             
             <div id="team" style="display:block;">
 						<figure>
@@ -31,9 +31,9 @@
 					</div>
 			</div>
 			
-            <h2>{{user.message}}message</h2>
+            <h2>{{card.message}}message</h2>
             <p class="lines-text-after-before"></p>
-            <div class="bottom">{{user.phoneNumber}} <br> {{user.email}}</div>
+            <div class="bottom">{{card.phoneNumber}} <br> {{card.email}}</div>
         </header>
     </section>
 </header>
