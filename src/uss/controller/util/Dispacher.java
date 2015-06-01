@@ -3,6 +3,7 @@ package uss.controller.util;
 import javax.servlet.http.HttpSession;
 
 import next.jdbc.mysql.DAO;
+import next.jdbc.mysql.maker.PackageCreator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import uss.constants.UriPath;
+import uss.launcher.DBLauncher;
 import uss.model.User;
 import uss.model.cards.Card;
 import uss.util.SessionUtil;
@@ -28,6 +30,13 @@ public class Dispacher {
 	public String logout(User user, HttpSession session) {
 		SessionUtil.logout(session);
 		return "redirect:/";
+	}
+	
+	@RequestMapping(value = "/api/serverstart", method = RequestMethod.GET)
+	public String ser() {
+		PackageCreator.reset();
+		DBLauncher.insertTestData();
+		return "ok";
 	}
 
 
