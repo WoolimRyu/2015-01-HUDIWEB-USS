@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>USS-woolim</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link
+	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<link rel='stylesheet prefetch'
+	href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+<link rel='stylesheet prefetch'
+	href='http://fonts.googleapis.com/css?family=Open+Sans'>
+
+<link rel="stylesheet" href="css/style.css" media="screen"
+	type="text/css" />
+<link rel="stylesheet" href="css/picker.css" media="screen"
+	type="text/css" />
+<link rel="stylesheet" href="css/templateList.css" media="screen"
+	type="text/css" />
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="logo" style="height:170px; width:220px; ">
+
+		</div>
+		<a href="#" class="toggle_menu"> <i class="fa fa-navicon"></i>
+		</a>
+
+		<nav class="menu">
+			<ul>
+				<li onclick="location.href='/myprofile/first'"><a href="#" data-link="home">My Profile</a></li>
+				<li onclick="location.href='/cardlist/list'"><a href="#" data-link="list">Card List</a></li>
+				<li onclick="location.href='/searchpeople'"><a href="#" data-link="search">Search People</a></li>
+				<li onclick="location.href='/contactus'"><a href="#" data-link="contact">Contact Us</a></li>
+				<li onclick="location.href='/api/logout'" style="margin-top:200px;"><a href="#" data-link="logout">Log Out</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<section class="wrapper clearfix" data-section="home">
+		<div class="templateList1">
+			<div class="templateListTitle">
+				템플릿을 선택해주세요.<br>
+			</div>
+			<div class="templateListSubTitle">
+				각 템플릿마다의 특징이 있습니다. 회원님이 원하는 스타일의 프로필 템플릿을 선택해주십시오. <br>
+			</div>
+		</div>
+		<div class="templateList2">
+			<div class="templatePick">
+				<div class="carousel">
+					<a class="prev-btn" href="#"><</a>
+					<div class="card" id="t1"
+						style="background: url(http://s10.postimg.org/cv7a0ewop/pic1.png)">
+					</div>
+					<div class="card" id="t2"
+						style="background: url(http://s30.postimg.org/neica7hep/pic2.png)"></div>
+					<div class="card" id="t3"
+						style="background: url(http://s30.postimg.org/fjgzmvmjl/pic3.png)"></div>
+					<div class="card" id="t4"></div>
+					<div class="card" id="t5"></div>
+
+					<a class="next-btn" href="#">></a>
+				</div>
+				<div class="nav-elements"></div>
+			</div>
+		</div>
+		<div class="templateList3">
+			<div class="wrapperB">
+				<a  onclick='sendTemplateReq()' class="button" href="#" role="button"> <span> N&nbsp;
+						E&nbsp; X&nbsp; T</span>
+					<div class="icon">
+						<i class="fa fa-arrow-right"></i> <i class="fa fa-check"></i>
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/index.js"></script>
+	<script src="js/templateList.js"></script>
+
+	<script
+		src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src="js/picker.js"></script>
+</body>
+
+</html>

@@ -27,11 +27,4 @@ $(document).ready(function() {
       $('.input--email').removeClass('input--filled');
     }
   });
-  $('.input--address .input__field').keyup(function() {
-    if ($(this).val()) {
-      $('.input--address').addClass('input--filled');
-    } else {
-      $('.input--address').removeClass('input--filled');
-    }
-  });
 });

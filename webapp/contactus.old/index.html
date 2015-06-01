@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>USS-woolim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="logo" style="height:170px; width:220px; ">
+
+    </div>
+
+    <a href="#" class="toggle_menu">
+      <i class="fa fa-navicon"></i>
+    </a>
+
+    <nav class="menu">
+      <ul>
+        <li onclick="location.href='/myprofile/first'"><a href="#" data-link="home">My Profile</a></li>
+				<li onclick="location.href='/cardlist/list'"><a href="#" data-link="list">Card List</a></li>
+				<li onclick="location.href='/searchpeople'"><a href="#" data-link="search">Search People</a></li>
+				<li onclick="location.href='/contactus'"><a href="#" data-link="contact">Contact Us</a></li>
+				<li onclick="location.href='/main'" style="margin-top:200px;"><a href="#" data-link="logout">Log Out</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<section class="wrapper clearfix" data-section="contact">
+   <div class="inner">
+     <div class="inner_thumb">
+       <img src="http://s7.postimg.org/hev6uf6bf/cittybanner.jpg" class="media" alt=""/>
+     </div>
+     <div class="inner_text">
+       <form action="">
+         <label>
+           Name
+           <input type="text" placeholder="Your name" />
+         </label>
+         <label>
+           Email
+           <input type="email" placeholder="Your email" required />
+         </label>
+         <label>
+           Message
+           <textarea placeholder="Your message"></textarea>
+         </label>
+
+         <label>
+           <input type="submit" value="Send" />
+         </label>
+       </form>
+     </div>
+   </div>
+</section>
+
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>

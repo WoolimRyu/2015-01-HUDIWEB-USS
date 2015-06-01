@@ -1,64 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
 <head>
-<meta charset="UTF-8">
-<title>USS-woolim</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link
-	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
-	rel="stylesheet">
-<link rel="stylesheet" href="css/style.css" media="screen"
-	type="text/css" />
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:700'
-	rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="css/ad.css">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Perspective Page View Navigation</title>
+	<meta name="description" content="Perspective Page View Navigation: Transforms the page in 3D to reveal a menu" />
+	<meta name="keywords" content="3d page, menu, navigation, mobile, perspective, css transform, web development, web design" />
+	<meta name="author" content="Codrops" />
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load --> 
+	<script src="js/modernizr.custom.25376.js"></script>
 </head>
-
 <body>
-	<header class="header">
-		<div class="logo" style="height: 170px; width: 220px;"></div>
 
-		<a href="#" class="toggle_menu"> <i class="fa fa-navicon"></i>
-		</a>
+	<div id="perspective" class="perspective effect-laydown">
+		<div class="container" style="height:100%;">
+			<div class="wrapper" style="height:100%;"><!-- wrapper needed for scroll -->
+				<!-- Top Navigation -->
+				<div class="main clearfix" style="height:15%;">
+					<div class="column">
+						<p><button id="showMenu">Show Menu</button></p>
+					</div>
+				</div><!-- /main -->
 
-		<nav class="menu">
-			<ul>
-				<li onclick="location.href='/myprofile/first'"><a href="#"
-					data-link="home">My Profile</a></li>
-				<li onclick="location.href='/cardlist/list'"><a href="#"
-					data-link="list">Card List</a></li>
-				<li onclick="location.href='/searchpeople'"><a href="#"
-					data-link="search">Search People</a></li>
-				<li onclick="location.href='/contactus'"><a href="#"
-					data-link="contact">Contact Us</a></li>
-				<li onclick="location.href='/main'" style="margin-top: 200px;"><a
-					href="#" data-link="logout">Log Out</a></li>
-			</ul>
+				<div class="bottom" style="height:85%; border:1px solid black;">
+					<div class="adBody">
+						<span class="tochange">Web / Mobile Business Card</span>
+					</div>
+					<div class="container2">
+						<div class="title" contenteditable>About</div>
+						<div class="title lg" contenteditable>ME</div>
+					</div>
+					<div class="subscription">
+						아직 프로필이 없으시군요! <br> 지금 바로 회원님의 명함을 만들어보세요!
+					</div>
+					<div class="btnPlace">
+						<button class="ripple" id="makeNewCard">Create Profile</button>
+					</div>
+				</div>
+			</div><!-- wrapper -->
+		</div><!-- /container -->
+		<nav class="outer-nav top horizontal">
+			<a href="#" class="icon-home">My Profile</a>
+			<a href="#" class="icon-news">Card List</a>
+			<a href="#" class="icon-image">Search People</a>
+			<a href="#" class="icon-mail">Contact Us</a>
+			<a href="#" class="icon-lock">Log Out</a>
 		</nav>
-	</header>
+	</div><!-- /perspective -->
 
-	<section class="wrapper clearfix" data-section="home">
-		<div class="adBody">
-			<span class="tochange">Web / Mobile Business Card</span>
-		</div>
-		<div class="container">
-			<div class="title" contenteditable>About</div>
-			<div class="title lg" contenteditable>ME</div>
-		</div>
-		<div class="subscription">
-			아직 프로필이 없으시군요! <br> 지금 바로 회원님의 명함을 만들어보세요!
-		</div>
-		<div class="btnPlace">
-			<button class="ripple" id="makeNewCard">Create Profile</button>
-		</div>
-	</section>
-
-	<script
-		src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-	<script src="js/index.js"></script>
-	<script src="js/ad.js"></script>
-	<script src="js/btn.js"></script>
-
+	<script src="js/classie.js"></script>
+	<script src="js/menu.js"></script>
 </body>
-
 </html>
