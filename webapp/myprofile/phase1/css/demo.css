@@ -444,7 +444,7 @@ h1 {
 .templateList3 {
   margin-top:100px;
   margin-left:1%;
-  width:300px;
+  width:100%;
 	border: 1px solid #fafafa;
 }
 
@@ -701,3 +701,25 @@ width:28%;
 
 
 
+.button {
+	margin-left:33px;
+  display: block;
+  /*background-color: #c0392b;*/
+  background-color: grey;
+  width: 230px;
+  height: 53px;
+  line-height: 100px;
+  color: #fff;
+  /*  position: absolute;*/
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: -15px;
+  right: 0;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}

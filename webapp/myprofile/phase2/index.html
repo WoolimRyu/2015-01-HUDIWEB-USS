@@ -84,10 +84,10 @@
 			</span>
 		</span>
                         </div>
-
-                        <div class="listSide" ng-repeat="item in items" ng-click="setAdress(item)">{{item.title}}<span>{{item.address}}</span><img
-                                src="{{item.src}}"/></div>
-
+							
+							<div class="maplistS" style="position:absolute; width:320px; height:150px;margin-left:70%;overflow:scroll;border:1px solid black;" >
+                        <div class="listSide" ng-repeat="item in items" ng-click="setAdress(item)">{{item.title}}<span>{{item.address}}</span></div>
+</div>
                         <div class="containerBot">
 		<span class="input input--phone"> <input ng-model="card.phoneNumber"
                                                  class="input__field" type="text" id="phone"/> <label
