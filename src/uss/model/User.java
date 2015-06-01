@@ -41,11 +41,13 @@ public class User {
 		this.representiveCardId = representiveCardId;
 	}
 
-	public User(String stringId, String password, String email, String name) {
+	public User(String stringId, String password, String email, String name,
+			Integer representiveCardId) {
 		this.stringId = stringId;
 		this.password = password;
 		this.email = email;
 		this.name = name;
+		this.representiveCardId = representiveCardId;
 	}
 
 	public void setUserId(Integer id) {
@@ -67,11 +69,11 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public void setAuthcode(String authcode) {
 		this.authcode = authcode;
 	}
-	
+
 	public String getAuthcode() {
 		return authcode;
 	}

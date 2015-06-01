@@ -36,6 +36,23 @@ public class Card {
 	public Card() {
 
 	}
+	
+	
+
+	public Card(Integer userId, String name, String phoneNumber, String email,
+			String company, String companyAddress, String mapSrc,
+			String position, Integer template) {
+		super();
+		this.userId = userId;
+		this.name = name;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+		this.company = company;
+		this.companyAddress = companyAddress;
+		this.mapSrc = mapSrc;
+		this.position = position;
+		this.template = template;
+	}
 
 	public void setName(String name) {
 		this.name = name;
