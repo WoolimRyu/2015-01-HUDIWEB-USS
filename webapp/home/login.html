@@ -35,7 +35,7 @@
 
               <input type="text" name="id" class="login__input name" ng-model="user.stringId" ng-minlength="3" ng-maxlength="10" placeholder="User ID"/>
 
-              <p class="alert" ng-show="userForm.id.$invalid">아이디는 3글자에서 10글자까지 허용됩니다. </p>
+              <p class="alert" ng-show="userForm.id.$invalid">아이디는 3글자에서 10글자이내 입니다. </p>
 
           </div>
           
@@ -51,7 +51,7 @@
 
               <input type="password" name="password" class="login__input pass" ng-model="user.password" ng-minlength="8" placeholder="Password"/>
 
-              <p  class="alert"  ng-show="userForm.password.$invalid">패스워드는 최소 8글자 이상이어야 합니다. </p>
+              <p  class="alert"  ng-show="userForm.password.$invalid">패스워드는 최소 8글자 이상입니다. </p>
 
           </div>
           
