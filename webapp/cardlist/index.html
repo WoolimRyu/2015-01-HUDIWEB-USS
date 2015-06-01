@@ -41,30 +41,22 @@
 
             <div class="bottom" style="height:85%; border:1px solid black;">
                 <div class="profile">
+                        <header class="title">
+                            <div class="sectionS">
+                                <header>
+                                    <p>{{card.name}}</p>
 
+                                    <p>
+                                        {{card.phoneNumber}} <br> {{card.email}}
+                                    </p>
 
-                    <fieldset class="responsive-fonts" style="text-align: center;">
-                        <br>
+                                    <div class="bottom">
+                                        {{card.company}}<br> {{card.position}}
+                                    </div>
+                                </header>
+                            </div>
+                        </header>
 
-                        <h2>{{card.name}}</h2>
-
-                        <h2>{{card.email}}</h2>
-
-                        <h2>{{card.phoneNumber}}</h2>
-
-                        <h2>{{card.company}}</h2>
-                        <button class="phoneCallBtn"
-                                style="margin-left: 29%; display: none;">
-                            <h2>Save Number / Call Me</h2>
-                        </button>
-                        <a href="#0" class="cd-popup-trigger">
-                            <button class="mapBtn">
-                                <i class="fa fa-map-marker fa-2x"></i>
-                            </button>
-                        </a>
-
-
-                    </fieldset>
 
                     <div class="temp">
                         <ul class="icons">
@@ -209,7 +201,7 @@
     <nav class="outer-nav top horizontal">
         <a href="/myprofile/mylist/" class="icon-home">My Profile</a>
         <a href="/cardlist" class="icon-news">Card List</a>
-        <a href="/searchPeople" class="icon-image">Search People</a>
+        <a href="/searchpeople" class="icon-image">Search People</a>
         <a href="/contactus" class="icon-mail">Contact Us</a>
         <a href="/api/logout" class="icon-lock">Log Out</a>
     </nav>

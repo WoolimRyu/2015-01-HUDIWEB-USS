@@ -104,6 +104,7 @@
 							</div>
 					      </div>
 
+							<div ng-show="results.length==0">검색결과가 없습니다.</div>
 					      <div ng-repeat="result in results">
 					        <ol class="rectangle-list">
 					         <li><a href=""><div class="userName">{{result.left.name}}</div>
