@@ -94,6 +94,10 @@ app.controller('listController', function ($scope, $req, $timeout) {
     });
 
 
+    $scope.setCard = function (card){
+    	$scope.card = card;
+    }
+    
     $scope.rightView = function (viewNum) {
         if (viewNum == 0) {
             $scope.viewNum1 = true;
