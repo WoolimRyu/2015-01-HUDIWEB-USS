@@ -38,12 +38,10 @@ app.factory('$req', function ($http) {
                      case reponseType.ERROR:
                          return;
                      case reponseType.ERROR_USER_ALERT:
-                         alert(response.message);
                          return;
                      case reponseType.SUCCESS:
                          break;
                      case reponseType.SUCCESS_USER_ALERT:
-                         alert(response.message);
                          break;
                  }
                 call(response.object);
@@ -57,7 +55,7 @@ app.factory('$req', function ($http) {
 
 var scope;
 app.controller('searchController', function($scope, $req) {
-    $scope.results = {};
+    $scope.results = [];
     $scope.suggestions = {};
 
     scope = $scope;
