@@ -4,7 +4,7 @@ var links = Array.prototype.slice
 
 //var menu = d('.menu').querySelector('ul'), menuBtn = d('.toggle_menu');
 
-//window.addEventListener('load', init, false);
+window.addEventListener('load', init, false);
 
 function d(el) {
 	if (el)
@@ -68,10 +68,14 @@ function navigation() {
 	});
 }
 
+$('#makeNewCard').click(function() {
+	sendTemplateReq();
+});
+
 function sendTemplateReq() {
 	$.ajax({
-		url : "/api/card?template=" + $('.active-img').attr('id').substring(1),
-		method : "put",
+		url : "/api/card",
+		method : "POST",
 		success : function(response) {
 
 			var reponseType = {
@@ -93,7 +97,7 @@ function sendTemplateReq() {
 				alert(response.message);
 				break;
 			}
-			location.href = "/myprofile/phase2/";
+			location.href = "/myprofile/phase1/";
 			return;
 		}
 	});

@@ -22,6 +22,14 @@ public class Dispacher {
 
 	@Autowired
 	DAO dao;
+	
+	
+	@RequestMapping(value = "/api/logout", method = RequestMethod.GET)
+	public String logout(User user, HttpSession session) {
+		SessionUtil.logout(session);
+		return "redirect:/";
+	}
+
 
 	@RequestMapping(value = "/{userId}", method = RequestMethod.GET)
 	public String search(@PathVariable String userId, HttpSession session) {

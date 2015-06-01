@@ -2,7 +2,7 @@ var links = Array.prototype.slice
 		.call(document.querySelectorAll('[data-link]')), sections = Array.prototype.slice
 		.call(document.querySelectorAll('[data-section]'));
 
-var menu = d('.menu').querySelector('ul'), menuBtn = d('.toggle_menu');
+//var menu = d('.menu').querySelector('ul'), menuBtn = d('.toggle_menu');
 
 window.addEventListener('load', init, false);
 
