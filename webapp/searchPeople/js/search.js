@@ -38,7 +38,6 @@ app.factory('$req', function ($http) {
                      case reponseType.ERROR:
                          return;
                      case reponseType.ERROR_USER_ALERT:
-                         alert(response.message);
                          return;
                      case reponseType.SUCCESS:
                          break;
